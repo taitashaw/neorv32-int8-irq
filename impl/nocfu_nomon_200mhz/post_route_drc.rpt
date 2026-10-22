@@ -1,0 +1,78 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Wed Oct 21 11:04:37 2026
+| Host         : build-host running 64-bit Ubuntu 24.04.5 LTS
+| Command      : report_drc -file impl/nocfu_nomon_200mhz/post_route_drc.rpt
+| Design       : int8_irq_top
+| Device       : xczu7ev-ffvc1156-2-e
+| Speed File   : -2
+| Design State : Fully Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: int8_irq_top
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max checks: <unlimited>
+             Checks found: 7
++-----------+----------+------------------------+--------+
+| Rule      | Severity | Description            | Checks |
++-----------+----------+------------------------+--------+
+| DPOP-3    | Warning  | PREG Output pipelining | 2      |
+| DPOP-4    | Warning  | MREG Output pipelining | 4      |
+| RTSTAT-10 | Warning  | No routable loads      | 1      |
++-----------+----------+------------------------+--------+
+
+2. REPORT DETAILS
+-----------------
+DPOP-3#1 Warning
+PREG Output pipelining  
+DSP neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_alu_inst/cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/res0 output neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_alu_inst/cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/res0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-3#2 Warning
+PREG Output pipelining  
+DSP neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_alu_inst/cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/res0__0 output neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_alu_inst/cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/res0__0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-4#1 Warning
+MREG Output pipelining  
+DSP neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_alu_inst/cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg multiplier stage neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_alu_inst/cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-4#2 Warning
+MREG Output pipelining  
+DSP neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_alu_inst/cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg__0 multiplier stage neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_alu_inst/cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg__0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-4#3 Warning
+MREG Output pipelining  
+DSP neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_alu_inst/cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/res0 multiplier stage neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_alu_inst/cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/res0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-4#4 Warning
+MREG Output pipelining  
+DSP neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_alu_inst/cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/res0__0 multiplier stage neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_alu_inst/cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/res0__0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+RTSTAT-10#1 Warning
+No routable loads  
+10 net(s) have no routable loads. The problem bus(es) and/or net(s) are neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_lsu_inst/xbus_adr_o[1:0],
+neorv32_inst/core_complex_gen[0].core_complex_inst/icache_enabled.icache_inst/req_reg[addr][14][0],
+neorv32_inst/core_complex_gen[0].core_complex_inst/icache_enabled.icache_inst/xbus_cti_o[0],
+neorv32_inst/core_complex_gen[0].core_complex_inst/icache_enabled.icache_inst/xbus_sel_o[3:0],
+neorv32_inst/io_system.uart0_enabled.uart0_inst/uart0_txd_o
+neorv32_inst/memory_system.xbus_enabled.xbus_inst/xbus_cyc_o.
+Related violations: <none>
+
+

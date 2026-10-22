@@ -1,0 +1,11 @@
+gate: log=sim/logs/xsim_final.log
+gate: N_IRQ=2000 CRIT_N=50
+scenario     n   min   max     mean  bound headroom  result
+BASE      2000    13    34    14.37     63       29  PASS
+DIV       2000    33   119    78.96    127        8  PASS
+LDST      2000    15    91    61.18    139       48  PASS
+CRIT      2000    12   464   232.40    521       57  PASS
+B2B       2009    32    64    43.83    111       47  PASS
+ICOLD     2001    13   106    79.62    180       74  PASS
+GATE PASS
+gate_final rc=0

@@ -1,0 +1,17 @@
+{
+  "_comment": "Worst-case latency budgets in clock cycles, request edge to handler-start report on the trace port. Formula and every constant are explained in the README. Constants: S = 2 (irq_pnd and irq_buf registers), E = 9 (handler fetch hits the i-cache), R = 20 (one 64-byte line refill from IMEM), Rs = 52 (one line refill from the slow XBUS memory, MEM_LATE = 16), T = longest commit-to-commit time of one instruction in that loop (sim/logs/instr_cycles_smoke.txt).",
+  "BASE":  63,
+  "DIV":   127,
+  "LDST":  139,
+  "CRIT":  521,
+  "B2B":   111,
+  "ICOLD": 180,
+  "_derivation": {
+    "BASE":  "S + 2T + E + 2R = 2 + 2*6 + 9 + 40 (T = 6: ALU op after a taken branch)",
+    "DIV":   "S + 2T + E + 2R = 2 + 2*38 + 9 + 40 (T = 38: serial divide)",
+    "LDST":  "S + 2T + E + 2R = 2 + 2*44 + 9 + 40 (T = 44: store to the slow memory)",
+    "CRIT":  "S + W + 2T + E + 2R = 2 + 458 + 12 + 9 + 40 (W = csrci 3 + li 2 + 50 x (addi 6 + bnez 3) + csrsi 3 = 458, T = 6)",
+    "B2B":   "S + H + T + E + 2R = 2 + 54 + 6 + 9 + 40 (H = handler from the ACK store to mret = 54)",
+    "ICOLD": "S + 2T + E + Rs + T = 2 + 2*39 + 9 + 52 + 39 (T = 39: ALU op that waits for an IMEM refill after fence.i; one such refill can be in flight when the trap arrives)"
+  }
+}

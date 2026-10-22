@@ -1,0 +1,51 @@
+== cfu source: rtl/neorv32_cpu_alu_cfu.vhd  vectors: tb/cfu_vectors_getacc.txt  expected latency: 2  2026-10-21T20:15:58Z
+a6c15ee521ec5dc5a92c6d10bd5fa57c360c699bd729b260f5de634bab098218  rtl/neorv32_cpu_alu_cfu.vhd
+f5b921c2be1d5e1ec0a898712fa18c5120d1219197886e47dc09f98abeacf7ed  tb/cfu_vectors_getacc.txt
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_package.vhd" into library neorv32
+INFO: [VRFC 10-163] Analyzing VHDL file "rtl/neorv32_cpu_alu_cfu.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_alu_cfu'
+INFO: [VRFC 10-163] Analyzing VHDL file "tb/tb_cfu_int8_ext.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'tb_cfu_int8_ext'
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/2025.2/Vivado/bin/unwrapped/lnx64.o/xelab --debug typical -L neorv32 neorv32.tb_cfu_int8_ext -s tb_cfu -generic_top EXP_LAT=2 -generic_top VEC_FILE=vectors.txt 
+Multi-threading is on. Using 22 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_textio
+Compiling package neorv32.neorv32_package
+Compiling architecture neorv32_cpu_alu_cfu_rtl of entity neorv32.neorv32_cpu_alu_cfu [neorv32_cpu_alu_cfu_default]
+Compiling architecture sim of entity neorv32.tb_cfu_int8_ext
+Built simulation snapshot tb_cfu
+
+****** xsim v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Wed Oct 21 16:16:02 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_cfu/xsim_script.tcl
+# xsim {tb_cfu} -autoloadwcfg -tclbatch {run.tcl}
+Time resolution is 1 ps
+source run.tcl
+## run all
+Note: CFU UNIT TB: vectors 29375, checked results 29001 (DOT4ACC 25023, SETACC 2714, GETACC 1264, SELBANK 0), illegal encodings watched 374, errors 0
+Time: 903730 ns  Iteration: 0  Process: /tb_cfu_int8_ext/stim  File: tb/tb_cfu_int8_ext.vhd
+Note: CFU UNIT TB: PASS
+Time: 903730 ns  Iteration: 0  Process: /tb_cfu_int8_ext/stim  File: tb/tb_cfu_int8_ext.vhd
+## quit
+INFO: xsimkernel Simulation Memory Usage: 289104 KB (Peak: 338436 KB), Simulation CPU Usage: 1360 ms
+INFO: [Common 17-206] Exiting xsim at Wed Oct 21 16:16:06 2026...
+== done 2026-10-21T20:16:06Z

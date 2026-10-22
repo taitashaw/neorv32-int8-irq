@@ -1,0 +1,4 @@
+T DOT4   (infer, run_pass, main, irq_entry; window W2): (30, 722, 'sb\ta5,0(a7)')
+T DOT4BB (loop_dot4bb, irq_entry; window W3):          (0, None, None)
+i-cache refill bursts (first strobe to last ack, cycles):  [(2, 1), (18, 944), (19, 2), (20, 285)]
+CFU start to done (cycles): [(2, 4170)]

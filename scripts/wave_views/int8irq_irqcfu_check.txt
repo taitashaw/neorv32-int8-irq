@@ -1,0 +1,7 @@
+t=32474730ns (between edge k-2 and k-1) irq_mei=0
+t=32474740ns  (between edge k-1 and k)   irq_mei=1 monitor_pend=0
+t=32474750ns  (just after edge k)        monitor_pend=1
+t=32475230ns (between edge m-2 and m-1) trace.valid=0 trace.intr=1
+t=32475240ns  (between edge m-1 and m)   trace.valid=1 trace.intr=1 stopwatch=49
+t=32475250ns  (just after edge m)        smp_valid=1 smp_lat=50 st_last=50 st_max=74 viol=0 nviol=0 bound=133
+t=32475530ns run stopped here; marker A = edge k = 32474745 ns, marker B = edge m = 32475245 ns, B - A = 500 ns = 50 cycles of 10 ns

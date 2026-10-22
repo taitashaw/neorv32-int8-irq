@@ -1,0 +1,5 @@
+{
+  "_comment": "Provisional bounds for the DOT4 smoke run only (used to measure instruction times before the real bounds are set). Not a gate.",
+  "DOT4": 1000,
+  "DOT4BB": 1000
+}

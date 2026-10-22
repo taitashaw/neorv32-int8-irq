@@ -1,0 +1,63 @@
+#-----------------------------------------------------------
+# xsim v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Wed Oct 21 10:36:19 2026
+# Process ID         : 3579180
+# Current directory  : sim/run_off_int8_sw
+# Command line       : xsim -mode tcl -source {xsim.dir/tb_snap/xsim_script.tcl}
+# Log file           : sim/run_off_int8_sw/xsim.log
+# Journal file       : sim/run_off_int8_sw/xsim.jou
+# Running On         : build-host
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.5 LTS
+# Processor Detail   : Intel(R) Core(TM) Ultra 9 275HX
+# CPU Frequency      : 2988.265 MHz
+# CPU Physical cores : 24
+# CPU Logical cores  : 24
+# Host memory        : 66815 MB
+# Swap memory        : 8589 MB
+# Total Virtual      : 75404 MB
+# Available Virtual  : 22029 MB
+#-----------------------------------------------------------
+source xsim.dir/tb_snap/xsim_script.tcl
+# xsim {tb_snap} -autoloadwcfg -tclbatch {run.tcl}
+Time resolution is 1 ps
+source run.tcl
+## run 100ms
+Warning: [NEORV32] Using DEFAULT on-chip debugger authenticator. Replace by custom module.
+Time: 0 ps  Iteration: 0  Process: /neorv32_tb/neorv32_top_inst/ocd_enabled/debug_dm_inst/authenticator_enabled/neorv32_debug_auth_inst/line__67  File: neorv32/rtl/core/neorv32_debug_auth.vhd
+Warning: [neoTRNG] Simulation-mode enabled (NO TRUE/PHYSICAL RANDOM)!
+Time: 0 ps  Iteration: 0  Process: /neorv32_tb/neorv32_top_inst/io_system/trng_enabled/trng_inst/neoTRNG_inst/line__330  File: neorv32/rtl/core/neorv32_trng.vhd
+Note: [neoTRNG] The neoTRNG (v3.4) - A Tiny and Platform-Independent True Random Number Generator, github.com/stnolting/neoTRNG
+Time: 0 ps  Iteration: 0  Process: /neorv32_tb/neorv32_top_inst/io_system/trng_enabled/trng_inst/neoTRNG_inst/line__320  File: neorv32/rtl/core/neorv32_trng.vhd
+Note: [NEORV32] CPU tuning options: trace fast_mul fast_mul_regs=1 fast_shift rf_arch=sram_sync 
+Time: 0 ps  Iteration: 0  Process: /neorv32_tb/neorv32_top_inst/\core_complex_gen(0)\/core_complex_inst/cpu_inst/hello_neorv32/line__201  File: neorv32/rtl/core/neorv32_cpu.vhd
+Note: [NEORV32] CPU ISA: rv32icmx_zca_zicntr_zicsr_zifencei_zkt_sdext_sdtrig_smcntrpmf_smpmp_xcfu
+Time: 0 ps  Iteration: 0  Process: /neorv32_tb/neorv32_top_inst/\core_complex_gen(0)\/core_complex_inst/cpu_inst/hello_neorv32/line__156  File: neorv32/rtl/core/neorv32_cpu.vhd
+Note: [NEORV32] BOOT_MODE_SELECT 2 - booting IMEM image
+Time: 0 ps  Iteration: 0  Process: /neorv32_tb/neorv32_top_inst/config_checks/line__455  File: neorv32/rtl/core/neorv32_top.vhd
+Warning: [NEORV32] Assuming this is a simulation.
+Time: 0 ps  Iteration: 0  Process: /neorv32_tb/neorv32_top_inst/config_checks/line__443  File: neorv32/rtl/core/neorv32_top.vhd
+Note: [NEORV32] Processor Configuration: CPU (single-core) IMEM-ROM DMEM I-CACHE SMC XBUS CLINT GPIO UART0 UART1 SPI SDI TWI TWD PWM WDT TRNG CFS NEOLED GPTMR ONEWIRE DMA SLINK SYSINFO TRACER OCD OCD-AUTH OCD-HWBP 
+Time: 0 ps  Iteration: 0  Process: /neorv32_tb/neorv32_top_inst/config_checks/line__406  File: neorv32/rtl/core/neorv32_top.vhd
+Note: [NEORV32] The NEORV32 RISC-V Processor (v01.13.06.00), github.com/stnolting/neorv32
+Time: 0 ps  Iteration: 0  Process: /neorv32_tb/neorv32_top_inst/config_checks/line__397  File: neorv32/rtl/core/neorv32_top.vhd
+
+INT8 MLP 16-64-32-32-5, plain software, 64 test vectors
+MISA=0x40801104 MXISA=0x90000d9b Xcfu=1
+vec 0: logits -16 1308 -206 535 -1294 class 1 cycles 121345
+vec 1: logits 857 1854 2 955 -2748 class 1 cycles 121280
+vec 2: logits -615 663 -84 -346 376 class 1 cycles 121351
+vec 3: logits -5107 2856 1107 -6457 7004 class 4 cycles 121442
+logit mismatches: 0 of 320
+class mismatches vs INT8 reference: 0 of 64
+class agreement with Keras float: 64 of 64
+cycles per inference: mean 121392 (total 7769102 / 64), min 121219, max 121642
+instructions per inference: mean 31837 (total 2037602)
+INT8 RESULT: PASS
+run: Time (s): cpu = 00:00:00.07 ; elapsed = 00:11:44 . Memory (MB): peak = 1364.758 ; gain = 0.000 ; free physical = 8507 ; free virtual = 21399
+## quit
+INFO: xsimkernel Simulation Memory Usage: 283068 KB (Peak: 340404 KB), Simulation CPU Usage: 690310 ms
+INFO: [Common 17-206] Exiting xsim at Wed Oct 21 10:48:06 2026...

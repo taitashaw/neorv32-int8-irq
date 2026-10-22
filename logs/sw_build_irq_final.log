@@ -1,0 +1,10 @@
+../../neorv32/sw/lib/source/neorv32_uart.c: In function 'neorv32_uart_setup':
+../../neorv32/sw/lib/source/neorv32_uart.c:92:2: warning: #warning UART0_SIM_MODE (primary UART) enabled! Sending all UART0.TX data to text.io simulation output instead of real UART0 transmitter. Use this for simulation only! [-Wcpp]
+   92 | #warning UART0_SIM_MODE (primary UART) enabled! \
+      |  ^~~~~~~
+Memory utilization:
+   text	   data	    bss	    dec	    hex	filename
+   3284	      0	      4	   3288	    cd8	main.elf
+Compiling image generator...
+Generating neorv32_imem_image.vhd
+Executable (VHD): 3284 bytes

@@ -1,0 +1,93 @@
+
+****** xsim v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Wed Oct 21 16:22:29 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_snap/xsim_script.tcl
+# xsim {tb_snap} -autoloadwcfg -tclbatch {scripts/find_getacc_times.tcl}
+Time resolution is 1 ps
+source scripts/find_getacc_times.tcl
+## set W  /int8irq_wave_top
+## set T  $W/tb
+## set D  $T/dut
+## set CC "$D/neorv32_inst/\\core_complex_gen(0)\\/core_complex_inst"
+## set F  "$CC/cpu_inst/cpu_alu_inst/cpu_alu_cfu_enabled/cpu_alu_cfu_inst"
+## set H  $W/helper
+## proc val {p} {
+##   if {[string first "\\" $p] >= 0} {
+##     set i [string last / $p]
+##     current_scope [string range $p 0 [expr {$i-1}]]
+##     set n [string range $p [expr {$i+1}] end]
+##     if {[catch {set v [get_value -radix dec $n]}]} { if {[catch {set v [get_value $n]}]} { set v ? } }
+##     current_scope /
+##     return $v
+##   }
+##   if {[catch {set v [get_value -radix dec $p]}]} { if {[catch {set v [get_value $p]}]} { set v ? } }
+##   return $v
+## }
+## proc hexv {p} {
+##   if {[catch {set v [get_value -radix hex $p]}]} { set v ? }
+##   return $v
+## }
+## set t0 $::env(FIND_T0)
+## set t1 $::env(FIND_T1)
+## run ${t0}ns
+Note: [NEORV32] CPU tuning options: trace fast_mul fast_mul_regs=1 fast_shift rf_arch=sram_sync 
+Time: 0 ps  Iteration: 0  Process: /int8irq_wave_top/tb/dut/neorv32_inst/\core_complex_gen(0)\/core_complex_inst/cpu_inst/hello_neorv32/line__201  File: neorv32/rtl/core/neorv32_cpu.vhd
+Note: [NEORV32] CPU ISA: rv32icmx_zca_zicntr_zicsr_zifencei_zkt_xcfu
+Time: 0 ps  Iteration: 0  Process: /int8irq_wave_top/tb/dut/neorv32_inst/\core_complex_gen(0)\/core_complex_inst/cpu_inst/hello_neorv32/line__156  File: neorv32/rtl/core/neorv32_cpu.vhd
+Note: [NEORV32] BOOT_MODE_SELECT 2 - booting IMEM image
+Time: 0 ps  Iteration: 0  Process: /int8irq_wave_top/tb/dut/neorv32_inst/config_checks/line__455  File: neorv32/rtl/core/neorv32_top.vhd
+Warning: [NEORV32] Assuming this is a simulation.
+Time: 0 ps  Iteration: 0  Process: /int8irq_wave_top/tb/dut/neorv32_inst/config_checks/line__443  File: neorv32/rtl/core/neorv32_top.vhd
+Note: [NEORV32] Processor Configuration: CPU (single-core) IMEM-ROM DMEM I-CACHE XBUS UART0 SYSINFO 
+Time: 0 ps  Iteration: 0  Process: /int8irq_wave_top/tb/dut/neorv32_inst/config_checks/line__406  File: neorv32/rtl/core/neorv32_top.vhd
+Note: [NEORV32] The NEORV32 RISC-V Processor (v01.13.06.00), github.com/stnolting/neorv32
+Time: 0 ps  Iteration: 0  Process: /int8irq_wave_top/tb/dut/neorv32_inst/config_checks/line__397  File: neorv32/rtl/core/neorv32_top.vhd
+IRQLAT start N_IRQ=2000 CRIT_N=0
+DOT4 build: handler touches CFU = 1
+vec 0: logits -16 1308 -206 535 -1294 class 1 cycles 35171
+vec 1: logits 857 1854 2 955 -2748 class 1 cycles 35285
+DOT4REF vectors=64 logit_mismatches=0 class_mismatches=0 cycles_mean=35155 cycles_min=34942 cycles_max=35348
+run: Time (s): cpu = 00:00:00.16 ; elapsed = 00:02:34 . Memory (MB): peak = 1444.578 ; gain = 0.000 ; free physical = 17839 ; free virtual = 29035
+## set t $t0
+## set in_handler 0
+## set seen_mret 0
+## while {$t < $t1} {
+##   set ins [val $H/instruction]
+##   if {$ins ne "none"} {
+##     puts "FOUND cfu edge=[expr {$t-5}] instruction=$ins rs1=[val $F/rs1_i] acc=[val $F/acc] result=[val $F/result_o]"
+##   }
+##   if {[val $D/trace.valid] eq "1"} {
+##     set pc [hexv $D/trace.pc_rdata]
+##     if {[val $D/trace.intr] eq "1"} { set in_handler 1; puts "FOUND handler_first edge=[expr {$t-5}] pc=$pc" }
+##     if {$in_handler && $seen_mret} { puts "FOUND back edge=[expr {$t-5}] pc=$pc acc=[val $F/acc]"; set in_handler 0; set seen_mret 0 }
+##     set cmd [string tolower [hexv $D/trace.cmd32]]
+##     if {$in_handler && $cmd eq "00512423"} { puts "FOUND save_store edge=[expr {$t-5}] pc=$pc addr=[hexv $D/trace.mem_addr] wdata=[hexv $D/trace.mem_wdata]" }
+##     if {$in_handler && $cmd eq "00812283"} { puts "FOUND restore_load edge=[expr {$t-5}] pc=$pc addr=[hexv $D/trace.mem_addr] rdata=[hexv $D/trace.mem_rdata]" }
+##     if {$in_handler && $cmd eq "30200073"} { set seen_mret 1; puts "FOUND mret edge=[expr {$t-5}] pc=$pc" }
+##   }
+##   run 10ns
+##   incr t 10
+## }
+FOUND cfu edge=32474915 instruction=DOT4ACC rs1=61539072 acc=-21 result=-21
+FOUND handler_first edge=32475235 pc=000007c0
+FOUND cfu edge=32475345 instruction=GETACC rs1=0 acc=6 result=6
+FOUND save_store edge=32475435 pc=000007d0 addr=80001f38 wdata=00000006
+FOUND cfu edge=32475615 instruction=SETACC rs1=0 acc=6 result=6
+FOUND restore_load edge=32475845 pc=00000800 addr=80001f38 rdata=00000006
+FOUND cfu edge=32475855 instruction=SETACC rs1=6 acc=0 result=0
+FOUND mret edge=32476065 pc=00000814
+FOUND back edge=32476315 pc=000003f2 acc=6
+FOUND cfu edge=32476505 instruction=DOT4ACC rs1=-921425921 acc=6 result=6
+FOUND cfu edge=32476755 instruction=DOT4ACC rs1=149815247 acc=2259 result=2259
+FOUND cfu edge=32477005 instruction=DOT4ACC rs1=-250936837 acc=-307 result=-307
+## puts "FIND_DONE t=$t"
+FIND_DONE t=32477250
+## quit
+INFO: xsimkernel Simulation Memory Usage: 290596 KB (Peak: 339928 KB), Simulation CPU Usage: 148970 ms
+INFO: [Common 17-206] Exiting xsim at Wed Oct 21 16:25:10 2026...

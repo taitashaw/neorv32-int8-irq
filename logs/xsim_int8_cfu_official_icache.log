@@ -1,0 +1,303 @@
+Running as unit: run-r8a532934aa4d4f5cb32731e698293cc8.scope; invocation ID: fa5e456583a64f6fa73b48a67313b354
+rtl/neorv32_cpu_alu_cfu.vhd
+== xvhdl 2026-10-21T14:30:42Z
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_package.vhd" into library neorv32
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_sys.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_sys_reset'
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_sys_clock'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_prim.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_prim_fifo'
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_prim_spram'
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_prim_mul'
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_prim_cnt'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_cpu_decompressor.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_decompressor'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_cpu_frontend.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_frontend'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_cpu_control.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_control'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_cpu_hwtrig.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_hwtrig'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_cpu_counters.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_counters'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_cpu_alu_shifter.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_alu_shifter'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_cpu_alu_muldiv.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_alu_muldiv'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_cpu_alu_bitmanip.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_alu_bitmanip'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_cpu_alu_fpu.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_alu_fpu'
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_alu_fpu_normalizer'
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_alu_fpu_f2i'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_cpu_alu_cond.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_alu_cond'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_cpu_alu_crypto.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_alu_crypto'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_cpu_alu.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_alu'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_cpu_lsu.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_lsu'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_cpu_pmp.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_pmp'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_cpu_trace.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_trace'
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_trace_simlog'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_cpu.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_cache.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cache'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_bus.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_bus_switch'
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_bus_reg'
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_bus_gateway'
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_bus_io_switch'
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_bus_amo_rmw'
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_bus_amo_rvs'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_core_complex.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_core_complex'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_dma.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_dma'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_smc.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_smc'
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_smc_mac'
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_smc_phy'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_xbus.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_xbus'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_sdi.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_sdi'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_gpio.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_gpio'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_wdt.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_wdt'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_clint.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_clint'
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_clint_mtimecmp'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_uart.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_uart'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_spi.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_spi'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_twi.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_twi'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_twd.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_twd'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_pwm.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_pwm'
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_pwm_channel'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_trng.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_trng'
+INFO: [VRFC 10-3107] analyzing entity 'neoTRNG'
+INFO: [VRFC 10-3107] analyzing entity 'neoTRNG_cell'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_neoled.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_neoled'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_gptmr.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_gptmr'
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_gptmr_slice'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_onewire.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_onewire'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_slink.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_slink'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_tracer.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_tracer'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_sysinfo.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_sysinfo'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_debug_dtm.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_debug_dtm'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_debug_auth.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_debug_auth'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_debug_dm.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_debug_dm'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_top.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_top'
+INFO: [VRFC 10-163] Analyzing VHDL file "rtl/neorv32_cpu_alu_cfu.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_alu_cfu'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_cpu_regfile.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_regfile'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_cache_ram.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cache_ram'
+INFO: [VRFC 10-163] Analyzing VHDL file "sim/images/int8_cfu/neorv32_imem_image.vhd" into library neorv32
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_imem.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_imem'
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_imem_rom'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_dmem.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_dmem'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_bootrom_image.vhd" into library neorv32
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_bootrom.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_bootrom'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_cfs.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cfs'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/sim/jtag_dmi_pkg.vhd" into library neorv32
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/sim/sim_uart_rx.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'sim_uart_rx'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/sim/xbus_memory.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'xbus_memory'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/sim/xbus_gateway.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'xbus_gateway'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/sim/xbus_fmem.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'xbus_fmem'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/sim/psram_model.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'psram_model'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/sim/neorv32_tb.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_tb'
+== xelab 2026-10-21T14:30:43Z generics: -generic_top DUAL_CORE_EN=false -generic_top JTAG_TESTS_EN=false -generic_top TRACE_LOG_EN=false -generic_top RISCV_ISA_C=true -generic_top RISCV_ISA_E=false -generic_top RISCV_ISA_M=true -generic_top RISCV_ISA_U=false -generic_top RISCV_ISA_Zaamo=false -generic_top RISCV_ISA_Zalrsc=false -generic_top RISCV_ISA_Zba=false -generic_top RISCV_ISA_Zbb=false -generic_top RISCV_ISA_Zbc=false -generic_top RISCV_ISA_Zbkb=false -generic_top RISCV_ISA_Zbkc=false -generic_top RISCV_ISA_Zbkx=false -generic_top RISCV_ISA_Zbs=false -generic_top RISCV_ISA_Zcb=false -generic_top RISCV_ISA_Zcmop=false -generic_top RISCV_ISA_Zfinx=false -generic_top RISCV_ISA_Zibi=false -generic_top RISCV_ISA_Zicntr=true -generic_top RISCV_ISA_Zicond=false -generic_top RISCV_ISA_Zihpm=false -generic_top RISCV_ISA_Zimop=false -generic_top RISCV_ISA_Zknd=false -generic_top RISCV_ISA_Zkne=false -generic_top RISCV_ISA_Zknh=false -generic_top RISCV_ISA_Zksed=false -generic_top RISCV_ISA_Zksh=false -generic_top RISCV_ISA_Zmmul=false -generic_top RISCV_ISA_Xcfu=true -generic_top CPU_FAST_MUL_EN=true -generic_top CPU_FAST_MUL_REGS=1 -generic_top CPU_FAST_SHIFT_EN=true -generic_top ICACHE_EN=true -generic_top ICACHE_NUM_BLOCKS=4 -generic_top CACHE_BLOCK_SIZE=64 -generic_top DCACHE_EN=false -generic_top IMEM_SIZE=32768 -generic_top DMEM_SIZE=8192
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/2025.2/Vivado/bin/unwrapped/lnx64.o/xelab --debug off -L neorv32 neorv32.neorv32_tb -s tb_snap -generic_top DUAL_CORE_EN=false -generic_top JTAG_TESTS_EN=false -generic_top TRACE_LOG_EN=false -generic_top RISCV_ISA_C=true -generic_top RISCV_ISA_E=false -generic_top RISCV_ISA_M=true -generic_top RISCV_ISA_U=false -generic_top RISCV_ISA_Zaamo=false -generic_top RISCV_ISA_Zalrsc=false -generic_top RISCV_ISA_Zba=false -generic_top RISCV_ISA_Zbb=false -generic_top RISCV_ISA_Zbc=false -generic_top RISCV_ISA_Zbkb=false -generic_top RISCV_ISA_Zbkc=false -generic_top RISCV_ISA_Zbkx=false -generic_top RISCV_ISA_Zbs=false -generic_top RISCV_ISA_Zcb=false -generic_top RISCV_ISA_Zcmop=false -generic_top RISCV_ISA_Zfinx=false -generic_top RISCV_ISA_Zibi=false -generic_top RISCV_ISA_Zicntr=true -generic_top RISCV_ISA_Zicond=false -generic_top RISCV_ISA_Zihpm=false -generic_top RISCV_ISA_Zimop=false -generic_top RISCV_ISA_Zknd=false -generic_top RISCV_ISA_Zkne=false -generic_top RISCV_ISA_Zknh=false -generic_top RISCV_ISA_Zksed=false -generic_top RISCV_ISA_Zksh=false -generic_top RISCV_ISA_Zmmul=false -generic_top RISCV_ISA_Xcfu=true -generic_top CPU_FAST_MUL_EN=true -generic_top CPU_FAST_MUL_REGS=1 -generic_top CPU_FAST_SHIFT_EN=true -generic_top ICACHE_EN=true -generic_top ICACHE_NUM_BLOCKS=4 -generic_top CACHE_BLOCK_SIZE=64 -generic_top DCACHE_EN=false -generic_top IMEM_SIZE=32768 -generic_top DMEM_SIZE=8192 
+Multi-threading is on. Using 22 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.math_real
+Compiling package ieee.numeric_std
+Compiling package neorv32.neorv32_package
+Compiling package neorv32.jtag_dmi_pkg
+Compiling package neorv32.neorv32_imem_image
+Compiling architecture psram_model_sim of entity neorv32.psram_model [psram_model_default]
+Compiling architecture neorv32_sys_reset_rtl of entity neorv32.neorv32_sys_reset [neorv32_sys_reset_default]
+Compiling architecture neorv32_sys_clock_rtl of entity neorv32.neorv32_sys_clock [neorv32_sys_clock_default]
+Compiling architecture neorv32_prim_spram_rtl of entity neorv32.neorv32_prim_spram [\neorv32_prim_spram(awidth=6,dwi...]
+Compiling architecture neorv32_prim_spram_rtl of entity neorv32.neorv32_prim_spram [\neorv32_prim_spram(awidth=2,dwi...]
+Compiling architecture neorv32_cache_ram_rtl of entity neorv32.neorv32_cache_ram [\neorv32_cache_ram(tag_width=24,...]
+Compiling architecture neorv32_cache_rtl of entity neorv32.neorv32_cache [\neorv32_cache(num_blocks=4,bloc...]
+Compiling architecture neorv32_cpu_hwtrig_rtl of entity neorv32.neorv32_cpu_hwtrig [\neorv32_cpu_hwtrig(num_triggers...]
+Compiling architecture neorv32_prim_cnt_rtl of entity neorv32.neorv32_prim_cnt [\neorv32_prim_cnt(cwidth=64)\]
+Compiling architecture neorv32_cpu_counters_rtl of entity neorv32.neorv32_cpu_counters [\neorv32_cpu_counters(zicntr_en=...]
+Compiling architecture neorv32_cpu_pmp_rtl of entity neorv32.neorv32_cpu_pmp [\neorv32_cpu_pmp(num_regions=5,g...]
+Compiling architecture neorv32_cpu_trace_rtl of entity neorv32.neorv32_cpu_trace [neorv32_cpu_trace_default]
+Compiling architecture neorv32_prim_fifo_rtl of entity neorv32.neorv32_prim_fifo [\neorv32_prim_fifo(awidth=1,dwid...]
+Compiling architecture neorv32_cpu_decompressor_rtl of entity neorv32.neorv32_cpu_decompressor [\neorv32_cpu_decompressor(zcb_en...]
+Compiling architecture neorv32_cpu_frontend_rtl of entity neorv32.neorv32_cpu_frontend [\neorv32_cpu_frontend(hart_id=0,...]
+Compiling architecture neorv32_cpu_control_rtl of entity neorv32.neorv32_cpu_control [\neorv32_cpu_control(hart_id=0,v...]
+Compiling architecture neorv32_cpu_regfile_rtl of entity neorv32.neorv32_cpu_regfile [\neorv32_cpu_regfile(awidth=5,ar...]
+Compiling architecture neorv32_prim_mul_rtl of entity neorv32.neorv32_prim_mul [\neorv32_prim_mul(dwidth=32)\]
+Compiling architecture neorv32_cpu_alu_muldiv_rtl of entity neorv32.neorv32_cpu_alu_muldiv [\neorv32_cpu_alu_muldiv(fast_mul...]
+Compiling architecture neorv32_cpu_alu_cfu_rtl of entity neorv32.neorv32_cpu_alu_cfu [neorv32_cpu_alu_cfu_default]
+Compiling architecture neorv32_cpu_alu_shifter_rtl of entity neorv32.neorv32_cpu_alu_shifter [\neorv32_cpu_alu_shifter(fast_sh...]
+Compiling architecture neorv32_cpu_alu_rtl of entity neorv32.neorv32_cpu_alu [\neorv32_cpu_alu(riscv_isa_m=tru...]
+Compiling architecture neorv32_cpu_lsu_rtl of entity neorv32.neorv32_cpu_lsu [\neorv32_cpu_lsu(hart_id=0,amo_e...]
+Compiling architecture neorv32_cpu_rtl of entity neorv32.neorv32_cpu [\neorv32_cpu(debug_park_addr="11...]
+Compiling architecture neorv32_bus_switch_rtl of entity neorv32.neorv32_bus_switch [\neorv32_bus_switch(b_read_only=...]
+Compiling architecture neorv32_core_complex_rtl of entity neorv32.neorv32_core_complex [\neorv32_core_complex(debug_park...]
+Compiling architecture neorv32_prim_fifo_rtl of entity neorv32.neorv32_prim_fifo [\neorv32_prim_fifo(awidth=3,dwid...]
+Compiling architecture neorv32_dma_rtl of entity neorv32.neorv32_dma [\neorv32_dma(dsc_fifo=8)\]
+Compiling architecture neorv32_bus_switch_rtl of entity neorv32.neorv32_bus_switch [neorv32_bus_switch_default]
+Compiling architecture neorv32_imem_rom_rtl of entity neorv32.neorv32_imem_rom [\neorv32_imem_rom(awidth=15,outr...]
+Compiling architecture neorv32_imem_rtl of entity neorv32.neorv32_imem [\neorv32_imem(awidth=15,initrom=...]
+Compiling architecture neorv32_prim_spram_rtl of entity neorv32.neorv32_prim_spram [\neorv32_prim_spram(awidth=11,dw...]
+Compiling architecture neorv32_dmem_rtl of entity neorv32.neorv32_dmem [\neorv32_dmem(awidth=13,outreg=t...]
+Compiling architecture neorv32_prim_fifo_rtl of entity neorv32.neorv32_prim_fifo [\neorv32_prim_fifo(awidth=4,dwid...]
+Compiling architecture neorv32_smc_mac_rtl of entity neorv32.neorv32_smc_mac [neorv32_smc_mac_default]
+Compiling architecture neorv32_smc_phy_rtl of entity neorv32.neorv32_smc_phy [neorv32_smc_phy_default]
+Compiling architecture neorv32_smc_rtl of entity neorv32.neorv32_smc [\neorv32_smc(burst_en=true,burst...]
+Compiling architecture neorv32_bus_reg_rtl of entity neorv32.neorv32_bus_reg [neorv32_bus_reg_default]
+Compiling architecture neorv32_xbus_rtl of entity neorv32.neorv32_xbus [\neorv32_xbus(regstage_en=true)\]
+Compiling architecture neorv32_cfs_rtl of entity neorv32.neorv32_cfs [neorv32_cfs_default]
+Compiling architecture neorv32_prim_fifo_rtl of entity neorv32.neorv32_prim_fifo [\neorv32_prim_fifo(awidth=2,dwid...]
+Compiling architecture neorv32_prim_fifo_rtl of entity neorv32.neorv32_prim_fifo [\neorv32_prim_fifo(awidth=2,dwid...]
+Compiling architecture neorv32_sdi_rtl of entity neorv32.neorv32_sdi [\neorv32_sdi(rtx_fifo=4)\]
+Compiling architecture neorv32_gpio_rtl of entity neorv32.neorv32_gpio [\neorv32_gpio(gpio_num=32,gpio_d...]
+Compiling architecture neorv32_wdt_rtl of entity neorv32.neorv32_wdt [neorv32_wdt_default]
+Compiling architecture neorv32_clint_mtimecmp_rtl of entity neorv32.neorv32_clint_mtimecmp [neorv32_clint_mtimecmp_default]
+Compiling architecture neorv32_clint_rtl of entity neorv32.neorv32_clint [\neorv32_clint(num_harts=1)\]
+Compiling architecture neorv32_prim_fifo_rtl of entity neorv32.neorv32_prim_fifo [\neorv32_prim_fifo(awidth=5,dwid...]
+Compiling architecture neorv32_uart_rtl of entity neorv32.neorv32_uart [\neorv32_uart(uart_rx_fifo=32,ua...]
+Compiling architecture neorv32_prim_fifo_rtl of entity neorv32.neorv32_prim_fifo [\neorv32_prim_fifo(awidth=0,dwid...]
+Compiling architecture neorv32_uart_rtl of entity neorv32.neorv32_uart [\neorv32_uart(uart_rx_fifo=1,uar...]
+Compiling architecture neorv32_prim_fifo_rtl of entity neorv32.neorv32_prim_fifo [\neorv32_prim_fifo(awidth=2,dwid...]
+Compiling architecture neorv32_spi_rtl of entity neorv32.neorv32_spi [\neorv32_spi(io_spi_fifo=4)\]
+Compiling architecture neorv32_prim_fifo_rtl of entity neorv32.neorv32_prim_fifo [\neorv32_prim_fifo(awidth=2,dwid...]
+Compiling architecture neorv32_twi_rtl of entity neorv32.neorv32_twi [\neorv32_twi(io_twi_fifo=4)\]
+Compiling architecture neorv32_twd_rtl of entity neorv32.neorv32_twd [\neorv32_twd(twd_rx_fifo=4,twd_t...]
+Compiling architecture neorv32_pwm_channel_rtl of entity neorv32.neorv32_pwm_channel [neorv32_pwm_channel_default]
+Compiling architecture neorv32_pwm_rtl of entity neorv32.neorv32_pwm [\neorv32_pwm(num_channels=8)\]
+Compiling architecture neotrng_cell_rtl of entity neorv32.neoTRNG_cell [\neoTRNG_cell(num_inv=5,sim_mode...]
+Compiling architecture neotrng_cell_rtl of entity neorv32.neoTRNG_cell [\neoTRNG_cell(num_inv=7,sim_mode...]
+Compiling architecture neotrng_cell_rtl of entity neorv32.neoTRNG_cell [\neoTRNG_cell(num_inv=9,sim_mode...]
+Compiling architecture neotrng_rtl of entity neorv32.neoTRNG [\neoTRNG(num_cells=3,num_inv_sta...]
+Compiling architecture neorv32_trng_rtl of entity neorv32.neorv32_trng [\neorv32_trng(trng_fifo=4,num_ro...]
+Compiling architecture neorv32_prim_fifo_rtl of entity neorv32.neorv32_prim_fifo [\neorv32_prim_fifo(awidth=3,dwid...]
+Compiling architecture neorv32_neoled_rtl of entity neorv32.neorv32_neoled [\neorv32_neoled(fifo_depth=8)\]
+Compiling architecture neorv32_gptmr_slice_rtl of entity neorv32.neorv32_gptmr_slice [neorv32_gptmr_slice_default]
+Compiling architecture neorv32_gptmr_rtl of entity neorv32.neorv32_gptmr [\neorv32_gptmr(num_slices=4)\]
+Compiling architecture neorv32_prim_fifo_rtl of entity neorv32.neorv32_prim_fifo [\neorv32_prim_fifo(awidth=3,dwid...]
+Compiling architecture neorv32_prim_fifo_rtl of entity neorv32.neorv32_prim_fifo [\neorv32_prim_fifo(awidth=3,dwid...]
+Compiling architecture neorv32_onewire_rtl of entity neorv32.neorv32_onewire [\neorv32_onewire(onewire_fifo=8)...]
+Compiling architecture neorv32_prim_fifo_rtl of entity neorv32.neorv32_prim_fifo [\neorv32_prim_fifo(awidth=2,dwid...]
+Compiling architecture neorv32_prim_fifo_rtl of entity neorv32.neorv32_prim_fifo [\neorv32_prim_fifo(awidth=0,dwid...]
+Compiling architecture neorv32_slink_rtl of entity neorv32.neorv32_slink [\neorv32_slink(slink_rx_fifo=4,s...]
+Compiling architecture neorv32_prim_fifo_rtl of entity neorv32.neorv32_prim_fifo [\neorv32_prim_fifo(awidth=5,dwid...]
+Compiling architecture neorv32_tracer_rtl of entity neorv32.neorv32_tracer [\neorv32_tracer(trace_depth=32,d...]
+Compiling architecture neorv32_bus_io_switch_rtl of entity neorv32.neorv32_bus_io_switch [\neorv32_bus_io_switch(dev_size=...]
+Compiling architecture neorv32_sysinfo_rtl of entity neorv32.neorv32_sysinfo [\neorv32_sysinfo(bus_tmo_int=16,...]
+Compiling architecture neorv32_debug_dtm_rtl of entity neorv32.neorv32_debug_dtm [\neorv32_debug_dtm(idcode_versio...]
+Compiling architecture neorv32_debug_auth_rtl of entity neorv32.neorv32_debug_auth [neorv32_debug_auth_default]
+Compiling architecture neorv32_debug_dm_rtl of entity neorv32.neorv32_debug_dm [\neorv32_debug_dm(num_harts=1,au...]
+Compiling architecture neorv32_bus_gateway_rtl of entity neorv32.neorv32_bus_gateway [\neorv32_bus_gateway(a_en=true,a...]
+Compiling architecture neorv32_top_rtl of entity neorv32.neorv32_top [\neorv32_top(clock_frequency=100...]
+Compiling architecture neorv32_prim_fifo_rtl of entity neorv32.neorv32_prim_fifo [\neorv32_prim_fifo(awidth=0,dwid...]
+Compiling architecture sim_uart_rx_rtl of entity neorv32.sim_uart_rx [\sim_uart_rx(name="tb.uart0_rx",...]
+Compiling architecture sim_uart_rx_rtl of entity neorv32.sim_uart_rx [\sim_uart_rx(name="tb.uart1_rx",...]
+Compiling architecture xbus_gateway_rtl of entity neorv32.xbus_gateway [\xbus_gateway(dev_0_size=64,dev_...]
+Compiling architecture xbus_memory_rtl of entity neorv32.xbus_memory [\xbus_memory(mem_rst=true,mem_si...]
+Compiling architecture xbus_fmem_rtl of entity neorv32.xbus_fmem [\xbus_fmem(mem_size=16)\]
+Compiling architecture neorv32_tb_rtl of entity neorv32.neorv32_tb
+Built simulation snapshot tb_snap
+== xsim run 40ms start 2026-10-21T14:30:48Z
+
+****** xsim v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Wed Oct 21 10:30:50 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_snap/xsim_script.tcl
+# xsim {tb_snap} -autoloadwcfg -tclbatch {run.tcl}
+Time resolution is 1 ps
+source run.tcl
+## run 40ms
+Warning: [NEORV32] Using DEFAULT on-chip debugger authenticator. Replace by custom module.
+Time: 0 ps  Iteration: 0  Process: /neorv32_tb/neorv32_top_inst/ocd_enabled/debug_dm_inst/authenticator_enabled/neorv32_debug_auth_inst/line__67  File: neorv32/rtl/core/neorv32_debug_auth.vhd
+Warning: [neoTRNG] Simulation-mode enabled (NO TRUE/PHYSICAL RANDOM)!
+Time: 0 ps  Iteration: 0  Process: /neorv32_tb/neorv32_top_inst/io_system/trng_enabled/trng_inst/neoTRNG_inst/line__330  File: neorv32/rtl/core/neorv32_trng.vhd
+Note: [neoTRNG] The neoTRNG (v3.4) - A Tiny and Platform-Independent True Random Number Generator, github.com/stnolting/neoTRNG
+Time: 0 ps  Iteration: 0  Process: /neorv32_tb/neorv32_top_inst/io_system/trng_enabled/trng_inst/neoTRNG_inst/line__320  File: neorv32/rtl/core/neorv32_trng.vhd
+Note: [NEORV32] CPU tuning options: trace fast_mul fast_mul_regs=1 fast_shift rf_arch=sram_sync 
+Time: 0 ps  Iteration: 0  Process: /neorv32_tb/neorv32_top_inst/\core_complex_gen(0)\/core_complex_inst/cpu_inst/hello_neorv32/line__201  File: neorv32/rtl/core/neorv32_cpu.vhd
+Note: [NEORV32] CPU ISA: rv32icmx_zca_zicntr_zicsr_zifencei_zkt_sdext_sdtrig_smcntrpmf_smpmp_xcfu
+Time: 0 ps  Iteration: 0  Process: /neorv32_tb/neorv32_top_inst/\core_complex_gen(0)\/core_complex_inst/cpu_inst/hello_neorv32/line__156  File: neorv32/rtl/core/neorv32_cpu.vhd
+Note: [NEORV32] BOOT_MODE_SELECT 2 - booting IMEM image
+Time: 0 ps  Iteration: 0  Process: /neorv32_tb/neorv32_top_inst/config_checks/line__455  File: neorv32/rtl/core/neorv32_top.vhd
+Warning: [NEORV32] Assuming this is a simulation.
+Time: 0 ps  Iteration: 0  Process: /neorv32_tb/neorv32_top_inst/config_checks/line__443  File: neorv32/rtl/core/neorv32_top.vhd
+Note: [NEORV32] Processor Configuration: CPU (single-core) IMEM-ROM DMEM I-CACHE SMC XBUS CLINT GPIO UART0 UART1 SPI SDI TWI TWD PWM WDT TRNG CFS NEOLED GPTMR ONEWIRE DMA SLINK SYSINFO TRACER OCD OCD-AUTH OCD-HWBP 
+Time: 0 ps  Iteration: 0  Process: /neorv32_tb/neorv32_top_inst/config_checks/line__406  File: neorv32/rtl/core/neorv32_top.vhd
+Note: [NEORV32] The NEORV32 RISC-V Processor (v01.13.06.00), github.com/stnolting/neorv32
+Time: 0 ps  Iteration: 0  Process: /neorv32_tb/neorv32_top_inst/config_checks/line__397  File: neorv32/rtl/core/neorv32_top.vhd
+
+INT8 MLP 16-64-32-32-5, CFU dot4 instruction, 64 test vectors
+MISA=0x40801104 MXISA=0x90000d9b Xcfu=1
+vec 0: logits -16 1308 -206 535 -1294 class 1 cycles 36571
+vec 1: logits 857 1854 2 955 -2748 class 1 cycles 36510
+vec 2: logits -615 663 -84 -346 376 class 1 cycles 36567
+vec 3: logits -5107 2856 1107 -6457 7004 class 4 cycles 36684
+logit mismatches: 0 of 320
+class mismatches vs INT8 reference: 0 of 64
+class agreement with Keras float: 64 of 64
+cycles per inference: mean 36623 (total 2343920 / 64), min 36443, max 36884
+instructions per inference: mean 8697 (total 556642)
+INT8 RESULT: PASS
+run: Time (s): cpu = 00:00:00.03 ; elapsed = 00:03:49 . Memory (MB): peak = 1364.758 ; gain = 0.000 ; free physical = 10365 ; free virtual = 22039
+## quit
+INFO: xsimkernel Simulation Memory Usage: 283068 KB (Peak: 340404 KB), Simulation CPU Usage: 227340 ms
+INFO: [Common 17-206] Exiting xsim at Wed Oct 21 10:34:41 2026...
+== xsim done 2026-10-21T14:34:41Z

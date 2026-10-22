@@ -1,0 +1,58 @@
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/2025.2/Vivado/bin/unwrapped/lnx64.o/xelab --debug off -L neorv32 -generic_top FAST_MUL_EN=false -generic_top FAST_SHIFT_EN=false neorv32.int8_irq_tb -s tb_snap 
+Multi-threading is on. Using 22 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package neorv32.neorv32_package
+Compiling package std.env
+Compiling package neorv32.neorv32_imem_image
+Compiling architecture irq_lat_mon_rtl of entity neorv32.irq_lat_mon [irq_lat_mon_default]
+Compiling architecture neorv32_sys_reset_rtl of entity neorv32.neorv32_sys_reset [neorv32_sys_reset_default]
+Compiling architecture neorv32_sys_clock_rtl of entity neorv32.neorv32_sys_clock [neorv32_sys_clock_default]
+Compiling architecture neorv32_prim_spram_rtl of entity neorv32.neorv32_prim_spram [\neorv32_prim_spram(awidth=6,dwi...]
+Compiling architecture neorv32_prim_spram_rtl of entity neorv32.neorv32_prim_spram [\neorv32_prim_spram(awidth=2,dwi...]
+Compiling architecture neorv32_cache_ram_rtl of entity neorv32.neorv32_cache_ram [\neorv32_cache_ram(tag_width=24,...]
+Compiling architecture neorv32_cache_rtl of entity neorv32.neorv32_cache [\neorv32_cache(num_blocks=4,bloc...]
+Compiling architecture neorv32_prim_cnt_rtl of entity neorv32.neorv32_prim_cnt [\neorv32_prim_cnt(cwidth=64)\]
+Compiling architecture neorv32_cpu_counters_rtl of entity neorv32.neorv32_cpu_counters [\neorv32_cpu_counters(zicntr_en=...]
+Compiling architecture neorv32_cpu_trace_rtl of entity neorv32.neorv32_cpu_trace [neorv32_cpu_trace_default]
+Compiling architecture neorv32_prim_fifo_rtl of entity neorv32.neorv32_prim_fifo [\neorv32_prim_fifo(awidth=1,dwid...]
+Compiling architecture neorv32_cpu_decompressor_rtl of entity neorv32.neorv32_cpu_decompressor [\neorv32_cpu_decompressor(zcb_en...]
+Compiling architecture neorv32_cpu_frontend_rtl of entity neorv32.neorv32_cpu_frontend [\neorv32_cpu_frontend(hart_id=0,...]
+Compiling architecture neorv32_cpu_control_rtl of entity neorv32.neorv32_cpu_control [\neorv32_cpu_control(hart_id=0,v...]
+Compiling architecture neorv32_cpu_regfile_rtl of entity neorv32.neorv32_cpu_regfile [\neorv32_cpu_regfile(awidth=5,ar...]
+Compiling architecture neorv32_cpu_alu_muldiv_rtl of entity neorv32.neorv32_cpu_alu_muldiv [\neorv32_cpu_alu_muldiv(fast_mul...]
+Compiling architecture neorv32_cpu_alu_cfu_rtl of entity neorv32.neorv32_cpu_alu_cfu [neorv32_cpu_alu_cfu_default]
+Compiling architecture neorv32_cpu_alu_shifter_rtl of entity neorv32.neorv32_cpu_alu_shifter [\neorv32_cpu_alu_shifter(fast_sh...]
+Compiling architecture neorv32_cpu_alu_rtl of entity neorv32.neorv32_cpu_alu [\neorv32_cpu_alu(riscv_isa_m=tru...]
+Compiling architecture neorv32_cpu_lsu_rtl of entity neorv32.neorv32_cpu_lsu [\neorv32_cpu_lsu(hart_id=0,amo_e...]
+Compiling architecture neorv32_cpu_rtl of entity neorv32.neorv32_cpu [\neorv32_cpu(debug_park_addr="11...]
+Compiling architecture neorv32_bus_switch_rtl of entity neorv32.neorv32_bus_switch [\neorv32_bus_switch(b_read_only=...]
+Compiling architecture neorv32_core_complex_rtl of entity neorv32.neorv32_core_complex [\neorv32_core_complex(debug_park...]
+Compiling architecture neorv32_imem_rom_rtl of entity neorv32.neorv32_imem_rom [\neorv32_imem_rom(awidth=15,outr...]
+Compiling architecture neorv32_imem_rtl of entity neorv32.neorv32_imem [\neorv32_imem(awidth=15,initrom=...]
+Compiling architecture neorv32_prim_spram_rtl of entity neorv32.neorv32_prim_spram [\neorv32_prim_spram(awidth=11,dw...]
+Compiling architecture neorv32_dmem_rtl of entity neorv32.neorv32_dmem [\neorv32_dmem(awidth=13,outreg=f...]
+Compiling architecture neorv32_xbus_rtl of entity neorv32.neorv32_xbus [\neorv32_xbus(regstage_en=false)...]
+Compiling architecture neorv32_prim_fifo_rtl of entity neorv32.neorv32_prim_fifo [\neorv32_prim_fifo(awidth=0,dwid...]
+Compiling architecture neorv32_uart_rtl of entity neorv32.neorv32_uart [\neorv32_uart(uart_rx_fifo=1,uar...]
+Compiling architecture neorv32_bus_reg_rtl of entity neorv32.neorv32_bus_reg [neorv32_bus_reg_default]
+Compiling architecture neorv32_bus_io_switch_rtl of entity neorv32.neorv32_bus_io_switch [\neorv32_bus_io_switch(dev_size=...]
+Compiling architecture neorv32_sysinfo_rtl of entity neorv32.neorv32_sysinfo [\neorv32_sysinfo(bus_tmo_int=16,...]
+Compiling architecture neorv32_bus_gateway_rtl of entity neorv32.neorv32_bus_gateway [\neorv32_bus_gateway(a_en=true,a...]
+Compiling architecture neorv32_top_rtl of entity neorv32.neorv32_top [\neorv32_top(clock_frequency=100...]
+Compiling architecture int8_irq_top_rtl of entity neorv32.int8_irq_top [\int8_irq_top(fast_mul_en=false,...]
+Compiling architecture xbus_gateway_rtl of entity neorv32.xbus_gateway [\xbus_gateway(dev_0_en=true,dev_...]
+Compiling architecture xbus_memory_rtl of entity neorv32.xbus_memory [\xbus_memory(mem_size=4096,mem_l...]
+Compiling architecture int8_irq_tb_rtl of entity neorv32.int8_irq_tb
+Built simulation snapshot tb_snap

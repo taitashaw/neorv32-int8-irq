@@ -1,0 +1,14 @@
+== build dot4_clobber: N_IRQ=2000 HANDLER_TOUCHES_CFU=1 CFU_SAVE=0 2026-10-21T20:07:57Z
+make: Entering directory 'sw/build_dot4_clobber'
+../../neorv32/sw/lib/source/neorv32_uart.c: In function 'neorv32_uart_setup':
+../../neorv32/sw/lib/source/neorv32_uart.c:92:2: warning: #warning UART0_SIM_MODE (primary UART) enabled! Sending all UART0.TX data to text.io simulation output instead of real UART0 transmitter. Use this for simulation only! [-Wcpp]
+   92 | #warning UART0_SIM_MODE (primary UART) enabled! \
+      |  ^~~~~~~
+Memory utilization:
+   text	   data	    bss	    dec	    hex	filename
+  11428	      0	    152	  11580	   2d3c	main.elf
+Generating neorv32_imem_image.vhd
+Executable (VHD): 11428 bytes
+make: Leaving directory 'sw/build_dot4_clobber'
+   text	   data	    bss	    dec	    hex	filename
+  11428	      0	    152	  11580	   2d3c	sw/build_dot4_clobber/main.elf

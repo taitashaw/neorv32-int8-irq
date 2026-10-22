@@ -1,0 +1,57 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Wed Oct 21 11:01:13 2026
+| Host         : build-host running 64-bit Ubuntu 24.04.5 LTS
+| Command      : report_utilization -hierarchical -file impl/cfu3_mon_300mhz/post_route_utilization_hier.rpt
+| Design       : int8_irq_top
+| Device       : xczu7ev-ffvc1156-2-e
+| Speed File   : -2
+| Design State : Routed
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++----------------------------------------------------------+------------------------+------------+------------+---------+------+------+--------+--------+------+------------+
+|                         Instance                         |         Module         | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | URAM | DSP Blocks |
++----------------------------------------------------------+------------------------+------------+------------+---------+------+------+--------+--------+------+------------+
+| int8_irq_top                                             |                  (top) |       3151 |       3011 |     140 |    0 | 1985 |      4 |      4 |    0 |          4 |
+|   (int8_irq_top)                                         |                  (top) |          0 |          0 |       0 |    0 |    1 |      0 |      0 |    0 |          0 |
+|   mon_enabled.mon_inst                                   |            irq_lat_mon |        536 |        496 |      40 |    0 |  437 |      0 |      0 |    0 |          0 |
+|   neorv32_inst                                           |            neorv32_top |       2615 |       2515 |     100 |    0 | 1547 |      4 |      4 |    0 |          4 |
+|     core_complex_gen[0].core_complex_inst                |   neorv32_core_complex |       2412 |       2312 |     100 |    0 | 1282 |      0 |      0 |    0 |          4 |
+|       icache_enabled.icache_inst                         |          neorv32_cache |        234 |        190 |      44 |    0 |  106 |      0 |      0 |    0 |          0 |
+|         (icache_enabled.icache_inst)                     |          neorv32_cache |         92 |         92 |       0 |    0 |   50 |      0 |      0 |    0 |          0 |
+|         neorv32_cache_ram_inst                           |      neorv32_cache_ram |        143 |         99 |      44 |    0 |   56 |      0 |      0 |    0 |          0 |
+|           tag_ram_inst                                   |     neorv32_prim_spram |         57 |         45 |      12 |    0 |   24 |      0 |      0 |    0 |          0 |
+|       bus_switch_inst                                    |     neorv32_bus_switch |         90 |         90 |       0 |    0 |    6 |      0 |      0 |    0 |          0 |
+|       cpu_inst                                           |            neorv32_cpu |       2090 |       2034 |      56 |    0 | 1170 |      0 |      0 |    0 |          4 |
+|         cpu_regfile_inst                                 |    neorv32_cpu_regfile |        211 |        179 |      32 |    0 |   64 |      0 |      0 |    0 |          0 |
+|         cnts_enabled.cpu_counters_inst                   |   neorv32_cpu_counters |          4 |          4 |       0 |    0 |  134 |      0 |      0 |    0 |          0 |
+|           base_enabled.instret_inst                      |     neorv32_prim_cnt_8 |          2 |          2 |       0 |    0 |   66 |      0 |      0 |    0 |          0 |
+|           base_enabled.cycle_inst                        |       neorv32_prim_cnt |          2 |          2 |       0 |    0 |   66 |      0 |      0 |    0 |          0 |
+|         cpu_alu_inst                                     |        neorv32_cpu_alu |        570 |        570 |       0 |    0 |  403 |      0 |      0 |    0 |          4 |
+|           cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst     | neorv32_cpu_alu_muldiv |        230 |        230 |       0 |    0 |  140 |      0 |      0 |    0 |          4 |
+|             (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst) | neorv32_cpu_alu_muldiv |        121 |        121 |       0 |    0 |  106 |      0 |      0 |    0 |          0 |
+|             multiplier_core_parallel.multiplier_inst     |       neorv32_prim_mul |        109 |        109 |       0 |    0 |   34 |      0 |      0 |    0 |          4 |
+|           cpu_alu_cfu_enabled.cpu_alu_cfu_inst           |    neorv32_cpu_alu_cfu |        324 |        324 |       0 |    0 |  197 |      0 |      0 |    0 |          0 |
+|         cpu_control_inst                                 |    neorv32_cpu_control |       1010 |       1010 |       0 |    0 |  419 |      0 |      0 |    0 |          0 |
+|         cpu_frontend_inst                                |   neorv32_cpu_frontend |        242 |        218 |      24 |    0 |   44 |      0 |      0 |    0 |          0 |
+|           prefetch_buffer[1].ipb_inst                    |    neorv32_prim_fifo_7 |        160 |        148 |      12 |    0 |    4 |      0 |      0 |    0 |          0 |
+|           prefetch_buffer[0].ipb_inst                    |      neorv32_prim_fifo |         52 |         40 |      12 |    0 |    4 |      0 |      0 |    0 |          0 |
+|         cpu_lsu_inst                                     |        neorv32_cpu_lsu |         22 |         22 |       0 |    0 |  102 |      0 |      0 |    0 |          0 |
+|     io_system.bus_io_switch_inst                         |  neorv32_bus_io_switch |         12 |         12 |       0 |    0 |   75 |      0 |      0 |    0 |          0 |
+|       neorv32_bus_reg_inst                               |        neorv32_bus_reg |         12 |         12 |       0 |    0 |   75 |      0 |      0 |    0 |          0 |
+|     io_system.uart0_enabled.uart0_inst                   |           neorv32_uart |         76 |         76 |       0 |    0 |   99 |      0 |      0 |    0 |          0 |
+|       (io_system.uart0_enabled.uart0_inst)               |           neorv32_uart |         51 |         51 |       0 |    0 |   79 |      0 |      0 |    0 |          0 |
++----------------------------------------------------------+------------------------+------------+------------+---------+------+------+--------+--------+------+------------+
+* Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining
+
+

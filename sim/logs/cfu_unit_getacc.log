@@ -1,0 +1,189 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_package.vhd" into library neorv32
+INFO: [VRFC 10-163] Analyzing VHDL file "rtl/neorv32_cpu_alu_cfu.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_alu_cfu'
+INFO: [VRFC 10-163] Analyzing VHDL file "tb/tb_cfu_int8.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'tb_cfu_int8'
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/2025.2/Vivado/bin/unwrapped/lnx64.o/xelab --debug typical -L neorv32 neorv32.tb_cfu_int8 -s tb_cfu -generic_top EXP_LAT=2 
+Multi-threading is on. Using 22 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_textio
+Compiling package neorv32.neorv32_package
+Compiling architecture neorv32_cpu_alu_cfu_rtl of entity neorv32.neorv32_cpu_alu_cfu [neorv32_cpu_alu_cfu_default]
+Compiling architecture sim of entity neorv32.tb_cfu_int8
+Built simulation snapshot tb_cfu
+
+****** xsim v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Wed Oct 21 16:09:30 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_cfu/xsim_script.tcl
+# xsim {tb_cfu} -autoloadwcfg -tclbatch {run.tcl}
+Time resolution is 1 ps
+source run.tcl
+## run all
+Error: vector 12: valid asserted for an illegal encoding
+Time: 390 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 1254: valid asserted for an illegal encoding
+Time: 37830 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 1855: valid asserted for an illegal encoding
+Time: 56040 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 2405: valid asserted for an illegal encoding
+Time: 72720 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 2685: valid asserted for an illegal encoding
+Time: 81300 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 2910: valid asserted for an illegal encoding
+Time: 88230 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 3166: valid asserted for an illegal encoding
+Time: 96090 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 3293: valid asserted for an illegal encoding
+Time: 100080 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 3614: valid asserted for an illegal encoding
+Time: 109890 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 3647: valid asserted for an illegal encoding
+Time: 111060 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 3966: valid asserted for an illegal encoding
+Time: 120810 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 4164: valid asserted for an illegal encoding
+Time: 126930 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 4865: valid asserted for an illegal encoding
+Time: 148140 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 5105: valid asserted for an illegal encoding
+Time: 155520 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 5392: valid asserted for an illegal encoding
+Time: 164310 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 5513: valid asserted for an illegal encoding
+Time: 168120 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 5602: valid asserted for an illegal encoding
+Time: 170970 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 5898: valid asserted for an illegal encoding
+Time: 180030 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 6118: valid asserted for an illegal encoding
+Time: 186810 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 6358: valid asserted for an illegal encoding
+Time: 194190 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 6618: valid asserted for an illegal encoding
+Time: 202170 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 6990: valid asserted for an illegal encoding
+Time: 213510 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 7031: valid asserted for an illegal encoding
+Time: 214920 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 7263: valid asserted for an illegal encoding
+Time: 222060 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 7585: valid asserted for an illegal encoding
+Time: 231900 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 7878: valid asserted for an illegal encoding
+Time: 240870 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 7952: valid asserted for an illegal encoding
+Time: 243270 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 8209: valid asserted for an illegal encoding
+Time: 251160 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 8680: valid asserted for an illegal encoding
+Time: 265470 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 9371: valid asserted for an illegal encoding
+Time: 286380 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 9711: valid asserted for an illegal encoding
+Time: 296760 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 9902: valid asserted for an illegal encoding
+Time: 302670 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 10182: valid asserted for an illegal encoding
+Time: 311250 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 10580: valid asserted for an illegal encoding
+Time: 323370 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 10806: valid asserted for an illegal encoding
+Time: 330330 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 11736: valid asserted for an illegal encoding
+Time: 358410 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 12041: valid asserted for an illegal encoding
+Time: 367740 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 12080: valid asserted for an illegal encoding
+Time: 369090 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 12424: valid asserted for an illegal encoding
+Time: 379590 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 12810: valid asserted for an illegal encoding
+Time: 391350 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 12981: valid asserted for an illegal encoding
+Time: 396660 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 13165: valid asserted for an illegal encoding
+Time: 402360 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 13311: valid asserted for an illegal encoding
+Time: 406920 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 13581: valid asserted for an illegal encoding
+Time: 415200 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 13822: valid asserted for an illegal encoding
+Time: 422610 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 13909: valid asserted for an illegal encoding
+Time: 425400 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 14144: valid asserted for an illegal encoding
+Time: 432630 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 14375: valid asserted for an illegal encoding
+Time: 439740 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 14597: valid asserted for an illegal encoding
+Time: 446580 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 14860: valid asserted for an illegal encoding
+Time: 454650 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 15115: valid asserted for an illegal encoding
+Time: 462480 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 15588: valid asserted for an illegal encoding
+Time: 476850 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 15886: valid asserted for an illegal encoding
+Time: 485970 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 16076: valid asserted for an illegal encoding
+Time: 491850 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 16424: valid asserted for an illegal encoding
+Time: 502470 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 16620: valid asserted for an illegal encoding
+Time: 508530 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 17046: valid asserted for an illegal encoding
+Time: 521490 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 17266: valid asserted for an illegal encoding
+Time: 528270 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 17332: valid asserted for an illegal encoding
+Time: 530430 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 17685: valid asserted for an illegal encoding
+Time: 541200 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 18110: valid asserted for an illegal encoding
+Time: 554130 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 18277: valid asserted for an illegal encoding
+Time: 559320 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 18548: valid asserted for an illegal encoding
+Time: 567630 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 18836: valid asserted for an illegal encoding
+Time: 576450 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 19267: valid asserted for an illegal encoding
+Time: 589560 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 19848: valid asserted for an illegal encoding
+Time: 607170 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 20097: valid asserted for an illegal encoding
+Time: 614820 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 20118: valid asserted for an illegal encoding
+Time: 615630 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 20363: valid asserted for an illegal encoding
+Time: 623160 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 20484: valid asserted for an illegal encoding
+Time: 626970 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: vector 20759: valid asserted for an illegal encoding
+Time: 635400 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Note: CFU UNIT TB: vectors 20782, checked results 20571, errors 71
+Time: 636160 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+Error: CFU UNIT TB: FAIL
+Time: 636160 ns  Iteration: 0  Process: /tb_cfu_int8/stim  File: tb/tb_cfu_int8.vhd
+## quit
+INFO: xsimkernel Simulation Memory Usage: 289104 KB (Peak: 338436 KB), Simulation CPU Usage: 1630 ms
+INFO: [Common 17-206] Exiting xsim at Wed Oct 21 16:09:35 2026...

@@ -1,0 +1,2086 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Wed Oct 21 11:01:18 2026
+# Process ID         : 3803846
+# Current directory  : impl/nocfu_nomon_100mhz
+# Command line       : vivado -mode batch -nojournal -log impl/nocfu_nomon_100mhz/vivado_console.log -source scripts/ooc_combined.tcl -tclargs false false 100 impl/nocfu_nomon_100mhz impl/imem_image_for_impl.vhd rtl/neorv32_cpu_alu_cfu.vhd
+# Log file           : impl/nocfu_nomon_100mhz/vivado_console.log
+# Journal file       : 
+# Running On         : build-host
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.5 LTS
+# Processor Detail   : Intel(R) Core(TM) Ultra 9 275HX
+# CPU Frequency      : 1791.500 MHz
+# CPU Physical cores : 24
+# CPU Logical cores  : 24
+# Host memory        : 66815 MB
+# Swap memory        : 8589 MB
+# Total Virtual      : 75404 MB
+# Available Virtual  : 21165 MB
+#-----------------------------------------------------------
+source scripts/ooc_combined.tcl
+# set cfu  [lindex $argv 0]
+# set mon  [lindex $argv 1]
+# set fmhz [lindex $argv 2]
+# set out  [lindex $argv 3]
+# set img  [lindex $argv 4]
+# set cfusrc [lindex $argv 5]
+# set part xczu7ev-ffvc1156-2-e
+# set B .
+# set R $B/neorv32
+# file mkdir $out
+# set fp [open $R/rtl/file_list_core.f r]
+# foreach l [split [read $fp] "\n"] {
+#   set l [string trim $l]
+#   if {$l eq ""} continue
+#   set f [string map [list {$NEORV32_HOME} $R] $l]
+#   if {[string match *neorv32_imem_image.vhd $f]} { set f $img }
+#   if {[string match */rtl/core/neorv32_cpu_alu_cfu.vhd $f]} { set f $cfusrc }
+#   read_vhdl -vhdl2008 -library neorv32 $f
+# }
+# close $fp
+# read_vhdl -vhdl2008 -library neorv32 $B/rtl/irq_lat_mon.vhd
+# read_vhdl -vhdl2008 -library neorv32 $B/rtl/int8_irq_top.vhd
+# set hz [expr {int($fmhz * 1000000)}]
+# synth_design -top int8_irq_top -part $part -mode out_of_context -generic CLOCK_FREQUENCY=$hz -generic CFU_EN=$cfu -generic MON_EN=$mon -generic SMP_PORT_EN=false -generic ICACHE_EN=true
+Command: synth_design -top int8_irq_top -part xczu7ev-ffvc1156-2-e -mode out_of_context -generic CLOCK_FREQUENCY=100000000 -generic CFU_EN=false -generic MON_EN=false -generic SMP_PORT_EN=false -generic ICACHE_EN=true
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 3804399
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2120.523 ; gain = 480.547 ; free physical = 7022 ; free virtual = 18652
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'int8_irq_top' [rtl/int8_irq_top.vhd:72]
+	Parameter CLOCK_FREQUENCY bound to: 100000000 - type: integer 
+	Parameter MON_EN bound to: 0 - type: bool 
+	Parameter CFU_EN bound to: 0 - type: bool 
+	Parameter ICACHE_EN bound to: 1 - type: bool 
+	Parameter SMP_PORT_EN bound to: 0 - type: bool 
+INFO: [Synth 8-638] synthesizing module 'neorv32_top' [neorv32/rtl/core/neorv32_top.vhd:298]
+	Parameter CLOCK_FREQUENCY bound to: 100000000 - type: integer 
+	Parameter TRACE_PORT_EN bound to: 0 - type: bool 
+	Parameter BOOT_MODE_SELECT bound to: 2 - type: integer 
+	Parameter RISCV_ISA_C bound to: 1 - type: bool 
+	Parameter RISCV_ISA_M bound to: 1 - type: bool 
+	Parameter RISCV_ISA_Zicntr bound to: 1 - type: bool 
+	Parameter RISCV_ISA_Xcfu bound to: 0 - type: bool 
+	Parameter CPU_FAST_MUL_EN bound to: 1 - type: bool 
+	Parameter CPU_FAST_MUL_REGS bound to: 1 - type: integer 
+	Parameter CPU_FAST_SHIFT_EN bound to: 1 - type: bool 
+	Parameter IMEM_EN bound to: 1 - type: bool 
+	Parameter IMEM_SIZE bound to: 32768 - type: integer 
+	Parameter DMEM_EN bound to: 1 - type: bool 
+	Parameter DMEM_SIZE bound to: 8192 - type: integer 
+	Parameter DMEM_OUTREG_EN bound to: 0 - type: bool 
+	Parameter ICACHE_EN bound to: 1 - type: bool 
+	Parameter ICACHE_NUM_BLOCKS bound to: 4 - type: integer 
+	Parameter CACHE_BLOCK_SIZE bound to: 64 - type: integer 
+	Parameter XBUS_EN bound to: 1 - type: bool 
+	Parameter IO_UART0_EN bound to: 1 - type: bool 
+INFO: [Synth 8-638] synthesizing module 'neorv32_sys_reset' [neorv32/rtl/core/neorv32_sys.vhd:34]
+INFO: [Synth 8-256] done synthesizing module 'neorv32_sys_reset' (0#1) [neorv32/rtl/core/neorv32_sys.vhd:34]
+INFO: [Synth 8-638] synthesizing module 'neorv32_sys_clock' [neorv32/rtl/core/neorv32_sys.vhd:105]
+INFO: [Synth 8-256] done synthesizing module 'neorv32_sys_clock' (0#1) [neorv32/rtl/core/neorv32_sys.vhd:105]
+INFO: [Synth 8-638] synthesizing module 'neorv32_core_complex' [neorv32/rtl/core/neorv32_core_complex.vhd:106]
+	Parameter HART_ID bound to: 0 - type: integer 
+	Parameter VENDOR_ID bound to: 32'b00000000000000000000000000000000 
+	Parameter BOOT_ADDR bound to: 32'b00000000000000000000000000000000 
+	Parameter DEBUG_PARK_ADDR bound to: 32'b11111111111111111111111100000100 
+	Parameter DEBUG_EXC_ADDR bound to: 32'b11111111111111111111111100000000 
+	Parameter RISCV_ISA_C bound to: 1 - type: bool 
+	Parameter RISCV_ISA_E bound to: 0 - type: bool 
+	Parameter RISCV_ISA_M bound to: 1 - type: bool 
+	Parameter RISCV_ISA_U bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zaamo bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zalrsc bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zba bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zbb bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zbc bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zbkb bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zbkc bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zbkx bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zbs bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zcb bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zcmop bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zfinx bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zibi bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zicntr bound to: 1 - type: bool 
+	Parameter RISCV_ISA_Zicond bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zihpm bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zimop bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zknd bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zkne bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zknh bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zksed bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zksh bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zmmul bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Sdext bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Sdtrig bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Smcntrpmf bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Smpmp bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Xcfu bound to: 0 - type: bool 
+	Parameter CPU_TRACE_EN bound to: 0 - type: bool 
+	Parameter CPU_CONSTT_BR_EN bound to: 0 - type: bool 
+	Parameter CPU_FAST_MUL_EN bound to: 1 - type: bool 
+	Parameter CPU_FAST_MUL_REGS bound to: 1 - type: integer 
+	Parameter CPU_FAST_SHIFT_EN bound to: 1 - type: bool 
+	Parameter CPU_RF_ARCH_SEL bound to: 0 - type: integer 
+	Parameter PMP_NUM_REGIONS bound to: 0 - type: integer 
+	Parameter PMP_MIN_GRANULARITY bound to: 4 - type: integer 
+	Parameter PMP_TOR_MODE_EN bound to: 0 - type: bool 
+	Parameter PMP_NAP_MODE_EN bound to: 0 - type: bool 
+	Parameter HPM_NUM_CNTS bound to: 0 - type: integer 
+	Parameter HPM_CNT_WIDTH bound to: 64 - type: integer 
+	Parameter NUM_HW_TRIGGERS bound to: 0 - type: integer 
+	Parameter ICACHE_EN bound to: 1 - type: bool 
+	Parameter ICACHE_NUM_BLOCKS bound to: 4 - type: integer 
+	Parameter DCACHE_EN bound to: 0 - type: bool 
+	Parameter DCACHE_NUM_BLOCKS bound to: 4 - type: integer 
+	Parameter CACHE_BLOCK_SIZE bound to: 64 - type: integer 
+	Parameter CACHE_BURSTS_EN bound to: 1 - type: bool 
+	Parameter CACHE_UC_BASE bound to: 4'b1111 
+	Parameter REGSTAGE_EN bound to: 0 - type: bool 
+INFO: [Synth 8-638] synthesizing module 'neorv32_cpu' [neorv32/rtl/core/neorv32_cpu.vhd:105]
+	Parameter HART_ID bound to: 0 - type: integer 
+	Parameter VENDOR_ID bound to: 32'b00000000000000000000000000000000 
+	Parameter BOOT_ADDR bound to: 32'b00000000000000000000000000000000 
+	Parameter DEBUG_PARK_ADDR bound to: 32'b11111111111111111111111100000100 
+	Parameter DEBUG_EXC_ADDR bound to: 32'b11111111111111111111111100000000 
+	Parameter RISCV_ISA_C bound to: 1 - type: bool 
+	Parameter RISCV_ISA_E bound to: 0 - type: bool 
+	Parameter RISCV_ISA_M bound to: 1 - type: bool 
+	Parameter RISCV_ISA_U bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zaamo bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zalrsc bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zba bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zbb bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zbc bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zbkb bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zbkc bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zbkx bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zbs bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zcb bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zcmop bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zfinx bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zibi bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zicntr bound to: 1 - type: bool 
+	Parameter RISCV_ISA_Zicond bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zihpm bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zimop bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zknd bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zkne bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zknh bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zksed bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zksh bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zmmul bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Sdext bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Sdtrig bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Smcntrpmf bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Smpmp bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Xcfu bound to: 0 - type: bool 
+	Parameter CPU_TRACE_EN bound to: 0 - type: bool 
+	Parameter CPU_CONSTT_BR_EN bound to: 0 - type: bool 
+	Parameter CPU_FAST_MUL_EN bound to: 1 - type: bool 
+	Parameter CPU_FAST_MUL_REGS bound to: 1 - type: integer 
+	Parameter CPU_FAST_SHIFT_EN bound to: 1 - type: bool 
+	Parameter CPU_RF_ARCH_SEL bound to: 0 - type: integer 
+	Parameter PMP_NUM_REGIONS bound to: 0 - type: integer 
+	Parameter PMP_MIN_GRANULARITY bound to: 4 - type: integer 
+	Parameter PMP_TOR_MODE_EN bound to: 0 - type: bool 
+	Parameter PMP_NAP_MODE_EN bound to: 0 - type: bool 
+	Parameter HPM_NUM_CNTS bound to: 0 - type: integer 
+	Parameter HPM_CNT_WIDTH bound to: 64 - type: integer 
+	Parameter NUM_HW_TRIGGERS bound to: 0 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'neorv32_cpu_frontend' [neorv32/rtl/core/neorv32_cpu_frontend.vhd:46]
+	Parameter HART_ID bound to: 0 - type: integer 
+	Parameter RISCV_C bound to: 1 - type: bool 
+	Parameter RISCV_ZCB bound to: 0 - type: bool 
+	Parameter RISCV_ZCMOP bound to: 0 - type: bool 
+INFO: [Synth 8-638] synthesizing module 'neorv32_prim_fifo' [neorv32/rtl/core/neorv32_prim.vhd:42]
+	Parameter AWIDTH bound to: 1 - type: integer 
+	Parameter DWIDTH bound to: 17 - type: integer 
+	Parameter OUTGATE bound to: 0 - type: bool 
+	Parameter ASYNCRD bound to: 1 - type: bool 
+INFO: [Synth 8-256] done synthesizing module 'neorv32_prim_fifo' (0#1) [neorv32/rtl/core/neorv32_prim.vhd:42]
+INFO: [Synth 8-638] synthesizing module 'neorv32_cpu_decompressor' [neorv32/rtl/core/neorv32_cpu_decompressor.vhd:33]
+	Parameter ZCB_EN bound to: 0 - type: bool 
+	Parameter ZCMOP_EN bound to: 0 - type: bool 
+INFO: [Synth 8-256] done synthesizing module 'neorv32_cpu_decompressor' (0#1) [neorv32/rtl/core/neorv32_cpu_decompressor.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'neorv32_cpu_frontend' (0#1) [neorv32/rtl/core/neorv32_cpu_frontend.vhd:46]
+INFO: [Synth 8-638] synthesizing module 'neorv32_cpu_control' [neorv32/rtl/core/neorv32_cpu_control.vhd:93]
+	Parameter HART_ID bound to: 0 - type: integer 
+	Parameter VENDOR_ID bound to: 32'b00000000000000000000000000000000 
+	Parameter BOOT_ADDR bound to: 32'b00000000000000000000000000000000 
+	Parameter DEBUG_PARK_ADDR bound to: 32'b11111111111111111111111100000100 
+	Parameter DEBUG_EXC_ADDR bound to: 32'b11111111111111111111111100000000 
+	Parameter RISCV_ISA_A bound to: 0 - type: bool 
+	Parameter RISCV_ISA_B bound to: 0 - type: bool 
+	Parameter RISCV_ISA_C bound to: 1 - type: bool 
+	Parameter RISCV_ISA_E bound to: 0 - type: bool 
+	Parameter RISCV_ISA_M bound to: 1 - type: bool 
+	Parameter RISCV_ISA_U bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zaamo bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zalrsc bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zba bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zbb bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zbc bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zbkb bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zbkc bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zbkx bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zbs bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zcb bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zcmop bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zfinx bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zibi bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zicntr bound to: 1 - type: bool 
+	Parameter RISCV_ISA_Zicond bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zihpm bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zimop bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zkn bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zknd bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zkne bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zknh bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zks bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zksed bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zksh bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zkt bound to: 1 - type: bool 
+	Parameter RISCV_ISA_Zmmul bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Sdext bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Sdtrig bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Smcntrpmf bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Smpmp bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Xcfu bound to: 0 - type: bool 
+	Parameter CPU_CONSTT_BR_EN bound to: 0 - type: bool 
+INFO: [Synth 8-256] done synthesizing module 'neorv32_cpu_control' (0#1) [neorv32/rtl/core/neorv32_cpu_control.vhd:93]
+INFO: [Synth 8-638] synthesizing module 'neorv32_cpu_counters' [neorv32/rtl/core/neorv32_cpu_counters.vhd:44]
+	Parameter ZICNTR_EN bound to: 1 - type: bool 
+	Parameter ZIHPM_EN bound to: 0 - type: bool 
+	Parameter SMCNTRPMF_EN bound to: 0 - type: bool 
+	Parameter UMODE_EN bound to: 0 - type: bool 
+	Parameter HPM_NUM bound to: 0 - type: integer 
+	Parameter HPM_WIDTH bound to: 64 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'neorv32_prim_cnt' [neorv32/rtl/core/neorv32_prim.vhd:446]
+	Parameter CWIDTH bound to: 64 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'neorv32_prim_cnt' (0#1) [neorv32/rtl/core/neorv32_prim.vhd:446]
+INFO: [Synth 8-256] done synthesizing module 'neorv32_cpu_counters' (0#1) [neorv32/rtl/core/neorv32_cpu_counters.vhd:44]
+	Parameter AWIDTH bound to: 5 - type: integer 
+	Parameter ARCHSEL bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'neorv32_cpu_regfile' declared at 'neorv32/rtl/core/neorv32_cpu_regfile.vhd:27' bound to instance 'cpu_regfile_inst' of component 'neorv32_cpu_regfile' [neorv32/rtl/core/neorv32_cpu.vhd:401]
+INFO: [Synth 8-638] synthesizing module 'neorv32_cpu_regfile' [neorv32/rtl/core/neorv32_cpu_regfile.vhd:50]
+	Parameter AWIDTH bound to: 5 - type: integer 
+	Parameter ARCHSEL bound to: 0 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'neorv32_cpu_regfile' (0#1) [neorv32/rtl/core/neorv32_cpu_regfile.vhd:50]
+INFO: [Synth 8-638] synthesizing module 'neorv32_cpu_alu' [neorv32/rtl/core/neorv32_cpu_alu.vhd:62]
+	Parameter RISCV_ISA_M bound to: 1 - type: bool 
+	Parameter RISCV_ISA_Zba bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zbb bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zbc bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zbkb bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zbkc bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zbkx bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zbs bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zfinx bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zibi bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zicond bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zknd bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zkne bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zknh bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zksed bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zksh bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Zmmul bound to: 0 - type: bool 
+	Parameter RISCV_ISA_Xcfu bound to: 0 - type: bool 
+	Parameter FAST_MUL_EN bound to: 1 - type: bool 
+	Parameter FAST_MUL_REGS bound to: 1 - type: integer 
+	Parameter FAST_SHIFT_EN bound to: 1 - type: bool 
+INFO: [Synth 8-226] default block is never used [neorv32/rtl/core/neorv32_cpu_alu.vhd:117]
+INFO: [Synth 8-638] synthesizing module 'neorv32_cpu_alu_shifter' [neorv32/rtl/core/neorv32_cpu_alu_shifter.vhd:39]
+	Parameter FAST_SHIFT_EN bound to: 1 - type: bool 
+INFO: [Synth 8-256] done synthesizing module 'neorv32_cpu_alu_shifter' (0#1) [neorv32/rtl/core/neorv32_cpu_alu_shifter.vhd:39]
+INFO: [Synth 8-638] synthesizing module 'neorv32_cpu_alu_muldiv' [neorv32/rtl/core/neorv32_cpu_alu_muldiv.vhd:43]
+	Parameter FAST_MUL_EN bound to: 1 - type: bool 
+	Parameter FAST_MUL_REGS bound to: 1 - type: integer 
+	Parameter DIVISION_EN bound to: 1 - type: bool 
+INFO: [Synth 8-638] synthesizing module 'neorv32_prim_mul' [neorv32/rtl/core/neorv32_prim.vhd:314]
+	Parameter DWIDTH bound to: 32 - type: integer 
+	Parameter NUM_REGS bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'neorv32_prim_mul' (0#1) [neorv32/rtl/core/neorv32_prim.vhd:314]
+INFO: [Synth 8-256] done synthesizing module 'neorv32_cpu_alu_muldiv' (0#1) [neorv32/rtl/core/neorv32_cpu_alu_muldiv.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'neorv32_cpu_alu' (0#1) [neorv32/rtl/core/neorv32_cpu_alu.vhd:62]
+INFO: [Synth 8-638] synthesizing module 'neorv32_cpu_lsu' [neorv32/rtl/core/neorv32_cpu_lsu.vhd:42]
+	Parameter HART_ID bound to: 0 - type: integer 
+	Parameter AMO_EN bound to: 0 - type: bool 
+INFO: [Synth 8-226] default block is never used [neorv32/rtl/core/neorv32_cpu_lsu.vhd:151]
+INFO: [Synth 8-256] done synthesizing module 'neorv32_cpu_lsu' (0#1) [neorv32/rtl/core/neorv32_cpu_lsu.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'neorv32_cpu' (0#1) [neorv32/rtl/core/neorv32_cpu.vhd:105]
+INFO: [Synth 8-638] synthesizing module 'neorv32_cache' [neorv32/rtl/core/neorv32_cache.vhd:47]
+	Parameter NUM_BLOCKS bound to: 4 - type: integer 
+	Parameter BLOCK_SIZE bound to: 64 - type: integer 
+	Parameter UC_BEGIN bound to: 4'b1111 
+	Parameter READ_ONLY bound to: 1 - type: bool 
+	Parameter BURSTS_EN bound to: 1 - type: bool 
+	Parameter TAG_WIDTH bound to: 24 - type: integer 
+	Parameter IDX_WIDTH bound to: 2 - type: integer 
+	Parameter OFS_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'neorv32_cache_ram' declared at 'neorv32/rtl/core/neorv32_cache_ram.vhd:20' bound to instance 'neorv32_cache_ram_inst' of component 'neorv32_cache_ram' [neorv32/rtl/core/neorv32_cache.vhd:542]
+INFO: [Synth 8-638] synthesizing module 'neorv32_cache_ram' [neorv32/rtl/core/neorv32_cache_ram.vhd:40]
+	Parameter TAG_WIDTH bound to: 24 - type: integer 
+	Parameter IDX_WIDTH bound to: 2 - type: integer 
+	Parameter OFS_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'neorv32_prim_spram' [neorv32/rtl/core/neorv32_prim.vhd:215]
+	Parameter AWIDTH bound to: 2 - type: integer 
+	Parameter DWIDTH bound to: 24 - type: integer 
+	Parameter OUTREG bound to: 0 - type: bool 
+INFO: [Synth 8-256] done synthesizing module 'neorv32_prim_spram' (0#1) [neorv32/rtl/core/neorv32_prim.vhd:215]
+INFO: [Synth 8-638] synthesizing module 'neorv32_prim_spram__parameterized0' [neorv32/rtl/core/neorv32_prim.vhd:215]
+	Parameter AWIDTH bound to: 6 - type: integer 
+	Parameter DWIDTH bound to: 8 - type: integer 
+	Parameter OUTREG bound to: 0 - type: bool 
+INFO: [Synth 8-256] done synthesizing module 'neorv32_prim_spram__parameterized0' (0#1) [neorv32/rtl/core/neorv32_prim.vhd:215]
+INFO: [Synth 8-256] done synthesizing module 'neorv32_cache_ram' (0#1) [neorv32/rtl/core/neorv32_cache_ram.vhd:40]
+INFO: [Synth 8-256] done synthesizing module 'neorv32_cache' (0#1) [neorv32/rtl/core/neorv32_cache.vhd:47]
+INFO: [Synth 8-638] synthesizing module 'neorv32_bus_switch' [neorv32/rtl/core/neorv32_bus.vhd:35]
+	Parameter ROUND_ROBIN_EN bound to: 0 - type: bool 
+	Parameter A_READ_ONLY bound to: 0 - type: bool 
+	Parameter B_READ_ONLY bound to: 1 - type: bool 
+INFO: [Synth 8-256] done synthesizing module 'neorv32_bus_switch' (0#1) [neorv32/rtl/core/neorv32_bus.vhd:35]
+INFO: [Synth 8-256] done synthesizing module 'neorv32_core_complex' (0#1) [neorv32/rtl/core/neorv32_core_complex.vhd:106]
+INFO: [Synth 8-638] synthesizing module 'neorv32_bus_gateway' [neorv32/rtl/core/neorv32_bus.vhd:302]
+	Parameter A_EN bound to: 1 - type: bool 
+	Parameter A_BASE bound to: 32'b00000000000000000000000000000000 
+	Parameter A_SIZE bound to: 32768 - type: integer 
+	Parameter A_TMO bound to: 16 - type: integer 
+	Parameter B_EN bound to: 1 - type: bool 
+	Parameter B_BASE bound to: 32'b10000000000000000000000000000000 
+	Parameter B_SIZE bound to: 8192 - type: integer 
+	Parameter B_TMO bound to: 16 - type: integer 
+	Parameter C_EN bound to: 0 - type: bool 
+	Parameter C_BASE bound to: 32'b11100000000000000000000000000000 
+	Parameter C_SIZE bound to: 268435456 - type: integer 
+	Parameter C_TMO bound to: 2048 - type: integer 
+	Parameter D_EN bound to: 1 - type: bool 
+	Parameter D_BASE bound to: 32'b11111111111000000000000000000000 
+	Parameter D_SIZE bound to: 2097152 - type: integer 
+	Parameter D_TMO bound to: 16 - type: integer 
+	Parameter X_EN bound to: 1 - type: bool 
+	Parameter X_TMO bound to: 2048 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'neorv32_bus_gateway' (0#1) [neorv32/rtl/core/neorv32_bus.vhd:302]
+	Parameter AWIDTH bound to: 15 - type: integer 
+	Parameter INITROM bound to: 1 - type: bool 
+	Parameter OUTREG bound to: 0 - type: bool 
+INFO: [Synth 8-3491] module 'neorv32_imem' declared at 'neorv32/rtl/core/neorv32_imem.vhd:19' bound to instance 'imem_inst' of component 'neorv32_imem' [neorv32/rtl/core/neorv32_top.vhd:818]
+INFO: [Synth 8-638] synthesizing module 'neorv32_imem' [neorv32/rtl/core/neorv32_imem.vhd:42]
+	Parameter AWIDTH bound to: 15 - type: integer 
+	Parameter INITROM bound to: 1 - type: bool 
+	Parameter OUTREG bound to: 0 - type: bool 
+	Parameter AWIDTH bound to: 15 - type: integer 
+	Parameter OUTREG bound to: 0 - type: bool 
+INFO: [Synth 8-3491] module 'neorv32_imem_rom' declared at 'neorv32/rtl/core/neorv32_imem.vhd:142' bound to instance 'imem_rom_inst' of component 'neorv32_imem_rom' [neorv32/rtl/core/neorv32_imem.vhd:69]
+INFO: [Synth 8-638] synthesizing module 'neorv32_imem_rom' [neorv32/rtl/core/neorv32_imem.vhd:155]
+	Parameter AWIDTH bound to: 15 - type: integer 
+	Parameter OUTREG bound to: 0 - type: bool 
+INFO: [Synth 8-256] done synthesizing module 'neorv32_imem_rom' (0#1) [neorv32/rtl/core/neorv32_imem.vhd:155]
+INFO: [Synth 8-256] done synthesizing module 'neorv32_imem' (0#1) [neorv32/rtl/core/neorv32_imem.vhd:42]
+	Parameter AWIDTH bound to: 13 - type: integer 
+	Parameter OUTREG bound to: 0 - type: bool 
+INFO: [Synth 8-3491] module 'neorv32_dmem' declared at 'neorv32/rtl/core/neorv32_dmem.vhd:19' bound to instance 'dmem_inst' of component 'neorv32_dmem' [neorv32/rtl/core/neorv32_top.vhd:848]
+INFO: [Synth 8-638] synthesizing module 'neorv32_dmem' [neorv32/rtl/core/neorv32_dmem.vhd:41]
+	Parameter AWIDTH bound to: 13 - type: integer 
+	Parameter OUTREG bound to: 0 - type: bool 
+INFO: [Synth 8-638] synthesizing module 'neorv32_prim_spram__parameterized1' [neorv32/rtl/core/neorv32_prim.vhd:215]
+	Parameter AWIDTH bound to: 11 - type: integer 
+	Parameter DWIDTH bound to: 8 - type: integer 
+	Parameter OUTREG bound to: 0 - type: bool 
+INFO: [Synth 8-256] done synthesizing module 'neorv32_prim_spram__parameterized1' (0#1) [neorv32/rtl/core/neorv32_prim.vhd:215]
+INFO: [Synth 8-256] done synthesizing module 'neorv32_dmem' (0#1) [neorv32/rtl/core/neorv32_dmem.vhd:41]
+INFO: [Synth 8-638] synthesizing module 'neorv32_xbus' [neorv32/rtl/core/neorv32_xbus.vhd:44]
+	Parameter REGSTAGE_EN bound to: 0 - type: bool 
+INFO: [Synth 8-256] done synthesizing module 'neorv32_xbus' (0#1) [neorv32/rtl/core/neorv32_xbus.vhd:44]
+INFO: [Synth 8-638] synthesizing module 'neorv32_bus_io_switch' [neorv32/rtl/core/neorv32_bus.vhd:595]
+	Parameter DEV_SIZE bound to: 65536 - type: integer 
+	Parameter DEV_00_EN bound to: 0 - type: bool 
+	Parameter DEV_00_BASE bound to: 32'b11111111111000000000000000000000 
+	Parameter DEV_01_EN bound to: 0 - type: bool 
+	Parameter DEV_01_BASE bound to: 0 - type: integer 
+	Parameter DEV_02_EN bound to: 0 - type: bool 
+	Parameter DEV_02_BASE bound to: 0 - type: integer 
+	Parameter DEV_03_EN bound to: 0 - type: bool 
+	Parameter DEV_03_BASE bound to: 0 - type: integer 
+	Parameter DEV_04_EN bound to: 0 - type: bool 
+	Parameter DEV_04_BASE bound to: 0 - type: integer 
+	Parameter DEV_05_EN bound to: 0 - type: bool 
+	Parameter DEV_05_BASE bound to: 0 - type: integer 
+	Parameter DEV_06_EN bound to: 0 - type: bool 
+	Parameter DEV_06_BASE bound to: 0 - type: integer 
+	Parameter DEV_07_EN bound to: 0 - type: bool 
+	Parameter DEV_07_BASE bound to: 0 - type: integer 
+	Parameter DEV_08_EN bound to: 0 - type: bool 
+	Parameter DEV_08_BASE bound to: 0 - type: integer 
+	Parameter DEV_09_EN bound to: 0 - type: bool 
+	Parameter DEV_09_BASE bound to: 0 - type: integer 
+	Parameter DEV_10_EN bound to: 0 - type: bool 
+	Parameter DEV_10_BASE bound to: 32'b11111111111010100000000000000000 
+	Parameter DEV_11_EN bound to: 0 - type: bool 
+	Parameter DEV_11_BASE bound to: 32'b11111111111010110000000000000000 
+	Parameter DEV_12_EN bound to: 0 - type: bool 
+	Parameter DEV_12_BASE bound to: 32'b11111111111011000000000000000000 
+	Parameter DEV_13_EN bound to: 0 - type: bool 
+	Parameter DEV_13_BASE bound to: 32'b11111111111011010000000000000000 
+	Parameter DEV_14_EN bound to: 0 - type: bool 
+	Parameter DEV_14_BASE bound to: 0 - type: integer 
+	Parameter DEV_15_EN bound to: 0 - type: bool 
+	Parameter DEV_15_BASE bound to: 32'b11111111111011110000000000000000 
+	Parameter DEV_16_EN bound to: 0 - type: bool 
+	Parameter DEV_16_BASE bound to: 32'b11111111111100000000000000000000 
+	Parameter DEV_17_EN bound to: 0 - type: bool 
+	Parameter DEV_17_BASE bound to: 32'b11111111111100010000000000000000 
+	Parameter DEV_18_EN bound to: 0 - type: bool 
+	Parameter DEV_18_BASE bound to: 32'b11111111111100100000000000000000 
+	Parameter DEV_19_EN bound to: 0 - type: bool 
+	Parameter DEV_19_BASE bound to: 32'b11111111111100110000000000000000 
+	Parameter DEV_20_EN bound to: 0 - type: bool 
+	Parameter DEV_20_BASE bound to: 32'b11111111111101000000000000000000 
+	Parameter DEV_21_EN bound to: 1 - type: bool 
+	Parameter DEV_21_BASE bound to: 32'b11111111111101010000000000000000 
+	Parameter DEV_22_EN bound to: 0 - type: bool 
+	Parameter DEV_22_BASE bound to: 32'b11111111111101100000000000000000 
+	Parameter DEV_23_EN bound to: 0 - type: bool 
+	Parameter DEV_23_BASE bound to: 32'b11111111111101110000000000000000 
+	Parameter DEV_24_EN bound to: 0 - type: bool 
+	Parameter DEV_24_BASE bound to: 32'b11111111111110000000000000000000 
+	Parameter DEV_25_EN bound to: 0 - type: bool 
+	Parameter DEV_25_BASE bound to: 32'b11111111111110010000000000000000 
+	Parameter DEV_26_EN bound to: 0 - type: bool 
+	Parameter DEV_26_BASE bound to: 32'b11111111111110100000000000000000 
+	Parameter DEV_27_EN bound to: 0 - type: bool 
+	Parameter DEV_27_BASE bound to: 32'b11111111111110110000000000000000 
+	Parameter DEV_28_EN bound to: 0 - type: bool 
+	Parameter DEV_28_BASE bound to: 32'b11111111111111000000000000000000 
+	Parameter DEV_29_EN bound to: 0 - type: bool 
+	Parameter DEV_29_BASE bound to: 32'b11111111111111010000000000000000 
+	Parameter DEV_30_EN bound to: 1 - type: bool 
+	Parameter DEV_30_BASE bound to: 32'b11111111111111100000000000000000 
+	Parameter DEV_31_EN bound to: 0 - type: bool 
+	Parameter DEV_31_BASE bound to: 32'b11111111111111110000000000000000 
+INFO: [Synth 8-638] synthesizing module 'neorv32_bus_reg' [neorv32/rtl/core/neorv32_bus.vhd:185]
+INFO: [Synth 8-256] done synthesizing module 'neorv32_bus_reg' (0#1) [neorv32/rtl/core/neorv32_bus.vhd:185]
+INFO: [Synth 8-256] done synthesizing module 'neorv32_bus_io_switch' (0#1) [neorv32/rtl/core/neorv32_bus.vhd:595]
+INFO: [Synth 8-638] synthesizing module 'neorv32_uart' [neorv32/rtl/core/neorv32_uart.vhd:43]
+	Parameter UART_RX_FIFO bound to: 1 - type: integer 
+	Parameter UART_TX_FIFO bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'neorv32_prim_fifo__parameterized0' [neorv32/rtl/core/neorv32_prim.vhd:42]
+	Parameter AWIDTH bound to: 0 - type: integer 
+	Parameter DWIDTH bound to: 8 - type: integer 
+	Parameter OUTGATE bound to: 0 - type: bool 
+	Parameter ASYNCRD bound to: 0 - type: bool 
+INFO: [Synth 8-256] done synthesizing module 'neorv32_prim_fifo__parameterized0' (0#1) [neorv32/rtl/core/neorv32_prim.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'neorv32_uart' (0#1) [neorv32/rtl/core/neorv32_uart.vhd:43]
+INFO: [Synth 8-638] synthesizing module 'neorv32_sysinfo' [neorv32/rtl/core/neorv32_sysinfo.vhd:69]
+	Parameter BUS_TMO_INT bound to: 16 - type: integer 
+	Parameter BUS_TMO_EXT bound to: 2048 - type: integer 
+	Parameter NUM_HARTS bound to: 1 - type: integer 
+	Parameter CLOCK_FREQUENCY bound to: 100000000 - type: integer 
+	Parameter BOOT_MODE_SELECT bound to: 2 - type: integer 
+	Parameter INT_BOOTLOADER_EN bound to: 0 - type: bool 
+	Parameter IMEM_EN bound to: 1 - type: bool 
+	Parameter IMEM_ROM bound to: 1 - type: bool 
+	Parameter IMEM_SIZE bound to: 32768 - type: integer 
+	Parameter DMEM_EN bound to: 1 - type: bool 
+	Parameter DMEM_SIZE bound to: 8192 - type: integer 
+	Parameter ICACHE_EN bound to: 1 - type: bool 
+	Parameter ICACHE_NUM_BLOCKS bound to: 4 - type: integer 
+	Parameter DCACHE_EN bound to: 0 - type: bool 
+	Parameter DCACHE_NUM_BLOCKS bound to: 4 - type: integer 
+	Parameter CACHE_BLOCK_SIZE bound to: 64 - type: integer 
+	Parameter CACHE_BURSTS_EN bound to: 1 - type: bool 
+	Parameter CACHE_UC_BASE bound to: 4'b1111 
+	Parameter SMC_EN bound to: 0 - type: bool 
+	Parameter XBUS_EN bound to: 1 - type: bool 
+	Parameter OCD_EN bound to: 0 - type: bool 
+	Parameter OCD_AUTH bound to: 0 - type: bool 
+	Parameter IO_GPIO_EN bound to: 0 - type: bool 
+	Parameter IO_CLINT_EN bound to: 0 - type: bool 
+	Parameter IO_UART0_EN bound to: 1 - type: bool 
+	Parameter IO_UART1_EN bound to: 0 - type: bool 
+	Parameter IO_SPI_EN bound to: 0 - type: bool 
+	Parameter IO_SDI_EN bound to: 0 - type: bool 
+	Parameter IO_TWI_EN bound to: 0 - type: bool 
+	Parameter IO_TWD_EN bound to: 0 - type: bool 
+	Parameter IO_PWM_EN bound to: 0 - type: bool 
+	Parameter IO_WDT_EN bound to: 0 - type: bool 
+	Parameter IO_TRNG_EN bound to: 0 - type: bool 
+	Parameter IO_CFS_EN bound to: 0 - type: bool 
+	Parameter IO_NEOLED_EN bound to: 0 - type: bool 
+	Parameter IO_GPTMR_EN bound to: 0 - type: bool 
+	Parameter IO_ONEWIRE_EN bound to: 0 - type: bool 
+	Parameter IO_DMA_EN bound to: 0 - type: bool 
+	Parameter IO_SLINK_EN bound to: 0 - type: bool 
+	Parameter IO_TRACER_EN bound to: 0 - type: bool 
+INFO: [Synth 8-256] done synthesizing module 'neorv32_sysinfo' (0#1) [neorv32/rtl/core/neorv32_sysinfo.vhd:69]
+INFO: [Synth 8-256] done synthesizing module 'neorv32_top' (0#1) [neorv32/rtl/core/neorv32_top.vhd:298]
+INFO: [Synth 8-256] done synthesizing module 'int8_irq_top' (0#1) [rtl/int8_irq_top.vhd:72]
+WARNING: [Synth 8-6014] Unused sequential element ctrl_reg[if_ready] was removed.  [neorv32/rtl/core/neorv32_cpu_control.vhd:199]
+WARNING: [Synth 8-6014] Unused sequential element ctrl_reg[pc_cur] was removed.  [neorv32/rtl/core/neorv32_cpu_control.vhd:199]
+WARNING: [Synth 8-6014] Unused sequential element ctrl_reg[pc_nxt] was removed.  [neorv32/rtl/core/neorv32_cpu_control.vhd:199]
+WARNING: [Synth 8-6014] Unused sequential element ctrl_reg[rf_rs1] was removed.  [neorv32/rtl/core/neorv32_cpu_control.vhd:199]
+WARNING: [Synth 8-6014] Unused sequential element ctrl_reg[rf_rs2] was removed.  [neorv32/rtl/core/neorv32_cpu_control.vhd:199]
+WARNING: [Synth 8-6014] Unused sequential element ctrl_reg[rf_rd] was removed.  [neorv32/rtl/core/neorv32_cpu_control.vhd:199]
+WARNING: [Synth 8-6014] Unused sequential element ctrl_reg[lsu_mo_en] was removed.  [neorv32/rtl/core/neorv32_cpu_control.vhd:199]
+WARNING: [Synth 8-6014] Unused sequential element ctrl_reg[lsu_mi_en] was removed.  [neorv32/rtl/core/neorv32_cpu_control.vhd:199]
+WARNING: [Synth 8-6014] Unused sequential element ctrl_reg[lsu_priv] was removed.  [neorv32/rtl/core/neorv32_cpu_control.vhd:199]
+WARNING: [Synth 8-6014] Unused sequential element ctrl_reg[csr_wdata] was removed.  [neorv32/rtl/core/neorv32_cpu_control.vhd:199]
+WARNING: [Synth 8-6014] Unused sequential element ctrl_reg[cnt_event] was removed.  [neorv32/rtl/core/neorv32_cpu_control.vhd:199]
+WARNING: [Synth 8-6014] Unused sequential element ctrl_reg[ir_funct3] was removed.  [neorv32/rtl/core/neorv32_cpu_control.vhd:199]
+WARNING: [Synth 8-6014] Unused sequential element ctrl_reg[ir_funct12] was removed.  [neorv32/rtl/core/neorv32_cpu_control.vhd:199]
+WARNING: [Synth 8-6014] Unused sequential element ctrl_reg[ir_opcode] was removed.  [neorv32/rtl/core/neorv32_cpu_control.vhd:199]
+WARNING: [Synth 8-6014] Unused sequential element ctrl_reg[ir_rvc] was removed.  [neorv32/rtl/core/neorv32_cpu_control.vhd:199]
+WARNING: [Synth 8-6014] Unused sequential element ctrl_reg[cpu_exec] was removed.  [neorv32/rtl/core/neorv32_cpu_control.vhd:199]
+WARNING: [Synth 8-6014] Unused sequential element ctrl_reg[cpu_priv] was removed.  [neorv32/rtl/core/neorv32_cpu_control.vhd:199]
+WARNING: [Synth 8-6014] Unused sequential element ctrl_reg[cpu_trap] was removed.  [neorv32/rtl/core/neorv32_cpu_control.vhd:199]
+WARNING: [Synth 8-6014] Unused sequential element ctrl_reg[cpu_sync_exc] was removed.  [neorv32/rtl/core/neorv32_cpu_control.vhd:199]
+WARNING: [Synth 8-6014] Unused sequential element ctrl_reg[cpu_debug] was removed.  [neorv32/rtl/core/neorv32_cpu_control.vhd:199]
+WARNING: [Synth 8-6014] Unused sequential element csr_reg[mcounteren] was removed.  [neorv32/rtl/core/neorv32_cpu_control.vhd:1167]
+WARNING: [Synth 8-6014] Unused sequential element csr_reg[dpc] was removed.  [neorv32/rtl/core/neorv32_cpu_control.vhd:1167]
+WARNING: [Synth 8-6014] Unused sequential element csr_reg[dscratch0] was removed.  [neorv32/rtl/core/neorv32_cpu_control.vhd:1167]
+WARNING: [Synth 8-3936] Found unconnected internal register 'one_reg.res_reg' and it is trimmed from '66' to '64' bits. [neorv32/rtl/core/neorv32_prim.vhd:340]
+WARNING: [Synth 8-6014] Unused sequential element ctrl_reg[sync] was removed.  [neorv32/rtl/core/neorv32_cache.vhd:120]
+WARNING: [Synth 8-6014] Unused sequential element ctrl_reg[cln] was removed.  [neorv32/rtl/core/neorv32_cache.vhd:120]
+WARNING: [Synth 8-6014] Unused sequential element ctrl_reg[ofs_buf] was removed.  [neorv32/rtl/core/neorv32_cache.vhd:120]
+WARNING: [Synth 8-6014] Unused sequential element wrack_reg was removed.  [neorv32/rtl/core/neorv32_imem.vhd:109]
+WARNING: [Synth 8-3917] design int8_irq_top has port mon_viol_o driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_valid_o driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_lat_o[31] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_lat_o[30] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_lat_o[29] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_lat_o[28] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_lat_o[27] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_lat_o[26] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_lat_o[25] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_lat_o[24] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_lat_o[23] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_lat_o[22] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_lat_o[21] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_lat_o[20] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_lat_o[19] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_lat_o[18] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_lat_o[17] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_lat_o[16] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_lat_o[15] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_lat_o[14] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_lat_o[13] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_lat_o[12] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_lat_o[11] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_lat_o[10] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_lat_o[9] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_lat_o[8] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_lat_o[7] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_lat_o[6] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_lat_o[5] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_lat_o[4] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_lat_o[3] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_lat_o[2] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_lat_o[1] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_lat_o[0] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_drain_o[31] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_drain_o[30] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_drain_o[29] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_drain_o[28] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_drain_o[27] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_drain_o[26] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_drain_o[25] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_drain_o[24] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_drain_o[23] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_drain_o[22] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_drain_o[21] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_drain_o[20] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_drain_o[19] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_drain_o[18] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_drain_o[17] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_drain_o[16] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_drain_o[15] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_drain_o[14] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_drain_o[13] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_drain_o[12] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_drain_o[11] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_drain_o[10] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_drain_o[9] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_drain_o[8] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_drain_o[7] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_drain_o[6] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_drain_o[5] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_drain_o[4] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_drain_o[3] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_drain_o[2] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_drain_o[1] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_drain_o[0] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_tag_o[31] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_tag_o[30] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_tag_o[29] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_tag_o[28] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_tag_o[27] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_tag_o[26] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_tag_o[25] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_tag_o[24] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_tag_o[23] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_tag_o[22] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_tag_o[21] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_tag_o[20] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_tag_o[19] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_tag_o[18] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_tag_o[17] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_tag_o[16] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_tag_o[15] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_tag_o[14] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_tag_o[13] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_tag_o[12] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_tag_o[11] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_tag_o[10] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_tag_o[9] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_tag_o[8] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_tag_o[7] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_tag_o[6] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_tag_o[5] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_tag_o[4] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_tag_o[3] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_tag_o[2] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_tag_o[1] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port smp_tag_o[0] driven by constant 0
+WARNING: [Synth 8-7129] Port bus_req_i[meta][4] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[meta][3] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[meta][2] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[meta][1] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[meta][0] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][31] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][30] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][29] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][28] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][27] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][26] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][25] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][24] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][23] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][22] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][21] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][20] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][19] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][18] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][17] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][16] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][15] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][14] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][13] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][12] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][11] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][10] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][9] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][8] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][7] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][6] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][5] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][4] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][1] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][0] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[ben][3] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[ben][2] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[ben][1] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[ben][0] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[amo] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[amoop][3] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[amoop][2] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[amoop][1] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[amoop][0] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[burst] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[lock] in module neorv32_sysinfo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[meta][4] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[meta][3] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[meta][2] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[meta][1] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[meta][0] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][31] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][30] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][29] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][28] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][27] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][26] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][25] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][24] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][23] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][22] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][21] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][20] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][19] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][18] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][17] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][16] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][15] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][14] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][13] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][12] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][11] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][10] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][9] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][8] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][7] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][6] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][5] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][4] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][3] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][1] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[addr][0] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[data][31] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[data][30] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[data][29] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[data][28] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[data][27] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[data][26] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[data][25] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[data][24] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[data][19] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[data][18] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[data][17] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[data][16] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[ben][3] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[ben][2] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[ben][1] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[ben][0] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[amo] in module neorv32_uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_req_i[amoop][3] in module neorv32_uart is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 2255.461 ; gain = 615.484 ; free physical = 7172 ; free virtual = 18769
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2267.336 ; gain = 627.359 ; free physical = 7242 ; free virtual = 18866
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu7ev-ffvc1156-2-e
+INFO: [Synth 8-6742] Reading net delay rules and data
+INFO: [Device 21-403] Loading part xczu7ev-ffvc1156-2-e
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2273.273 ; gain = 633.297 ; free physical = 7236 ; free virtual = 18859
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'fetch_reg[state]' in module 'neorv32_cpu_frontend'
+INFO: [Synth 8-802] inferred FSM for state register 'exec_reg[state]' in module 'neorv32_cpu_control'
+INFO: [Synth 8-802] inferred FSM for state register 'ctrl_reg[state]' in module 'neorv32_cpu_alu_muldiv'
+INFO: [Synth 8-802] inferred FSM for state register 'ctrl_reg[state]' in module 'neorv32_cache'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'neorv32_bus_switch'
+INFO: [Synth 8-802] inferred FSM for state register 'keeper_reg[state]' in module 'neorv32_bus_gateway'
+INFO: [Synth 8-6904] The RAM "neorv32_prim_fifo:/memory_large.memory_large_async_read.fifo_reg" of size (depth=2 x width=17) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+               s_restart |                              001 |                               00
+               s_request |                              010 |                               01
+               s_pending |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'fetch_reg[state]' using encoding 'one-hot' in module 'neorv32_cpu_frontend'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+               s_restart |                             0001 |                             0000
+              s_dispatch |                             0011 |                             0001
+            s_trap_enter |                             1000 |                             0010
+               s_execute |                             0010 |                             0100
+              s_alu_wait |                             0100 |                             0101
+               s_mem_req |                             0101 |                             0111
+               s_mem_rsp |                             1001 |                             1000
+                s_branch |                             0110 |                             0110
+                s_system |                             0111 |                             1001
+             s_trap_exit |                             0000 |                             0011
+                  iSTATE |                             1010 |                             1010
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'exec_reg[state]' using encoding 'sequential' in module 'neorv32_cpu_control'
+INFO: [Synth 8-6904] The RAM "neorv32_cpu_regfile:/arch_sram_sync.regfile_reg" of size (depth=32 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  s_idle |                              001 |                               00
+                  s_busy |                              010 |                               01
+                  s_done |                              100 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'ctrl_reg[state]' using encoding 'one-hot' in module 'neorv32_cpu_alu_muldiv'
+INFO: [Synth 8-6904] The RAM "neorv32_prim_spram:/memory_large.spram_reg" of size (depth=4 x width=24) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "neorv32_prim_spram__parameterized0:/memory_large.spram_reg" of size (depth=64 x width=8) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  s_idle |                             0000 |                            00000
+            s_sync_start |                             0001 |                            00011
+            s_sync_delay |                             0010 |                            00100
+            s_sync_check |                             0011 |                            00101
+             s_sync_next |                             0100 |                            00110
+                 s_check |                             0101 |                            00001
+                s_bypass |                             0110 |                            00010
+            s_read_start |                             0111 |                            00111
+             s_read_wait |                             1000 |                            01000
+            s_read_burst |                             1001 |                            01001
+             s_read_done |                             1010 |                            01010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'ctrl_reg[state]' using encoding 'sequential' in module 'neorv32_cache'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  s_idle |                               00 |                               00
+                s_busy_a |                               01 |                               01
+                s_busy_b |                               10 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'neorv32_bus_switch'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  s_idle |                              001 |                               00
+                  s_busy |                              010 |                               01
+                 s_error |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'keeper_reg[state]' using encoding 'one-hot' in module 'neorv32_bus_gateway'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2842.250 ; gain = 1202.273 ; free physical = 6335 ; free virtual = 17947
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   33 Bit       Adders := 2     
+	   3 Input   33 Bit       Adders := 1     
+	   2 Input   32 Bit       Adders := 5     
+	   3 Input   32 Bit       Adders := 1     
+	   2 Input   30 Bit       Adders := 1     
+	   2 Input   12 Bit       Adders := 2     
+	   2 Input   10 Bit       Adders := 3     
+	   2 Input    5 Bit       Adders := 2     
+	   2 Input    4 Bit       Adders := 3     
+	   2 Input    2 Bit       Adders := 5     
+	   2 Input    1 Bit       Adders := 4     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 6     
++---Registers : 
+	               64 Bit    Registers := 3     
+	               33 Bit    Registers := 2     
+	               32 Bit    Registers := 26    
+	               24 Bit    Registers := 2     
+	               20 Bit    Registers := 2     
+	               16 Bit    Registers := 2     
+	               12 Bit    Registers := 5     
+	               10 Bit    Registers := 4     
+	                9 Bit    Registers := 2     
+	                8 Bit    Registers := 10    
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 4     
+	                4 Bit    Registers := 9     
+	                3 Bit    Registers := 4     
+	                2 Bit    Registers := 6     
+	                1 Bit    Registers := 85    
++---Multipliers : 
+	              33x33  Multipliers := 1     
++---RAMs : 
+	              16K Bit	(2048 X 8 bit)          RAMs := 4     
+	             1024 Bit	(32 X 32 bit)          RAMs := 1     
+	              512 Bit	(64 X 8 bit)          RAMs := 4     
+	               96 Bit	(4 X 24 bit)          RAMs := 1     
+	               34 Bit	(2 X 17 bit)          RAMs := 2     
++---ROMs : 
+	                    ROMs := 1     
++---Muxes : 
+	   2 Input   64 Bit        Muxes := 3     
+	   4 Input   32 Bit        Muxes := 3     
+	   2 Input   32 Bit        Muxes := 52    
+	   3 Input   32 Bit        Muxes := 3     
+	   5 Input   32 Bit        Muxes := 1     
+	  11 Input   32 Bit        Muxes := 8     
+	   2 Input   31 Bit        Muxes := 1     
+	   2 Input   30 Bit        Muxes := 1     
+	   2 Input   28 Bit        Muxes := 1     
+	   2 Input   24 Bit        Muxes := 1     
+	   2 Input   16 Bit        Muxes := 3     
+	   2 Input   12 Bit        Muxes := 1     
+	   3 Input   12 Bit        Muxes := 1     
+	   2 Input   10 Bit        Muxes := 7     
+	   2 Input    9 Bit        Muxes := 2     
+	   2 Input    8 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 2     
+	   3 Input    5 Bit        Muxes := 1     
+	  11 Input    5 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 21    
+	  11 Input    4 Bit        Muxes := 6     
+	   9 Input    4 Bit        Muxes := 1     
+	   5 Input    4 Bit        Muxes := 1     
+	   3 Input    3 Bit        Muxes := 3     
+	   2 Input    3 Bit        Muxes := 8     
+	   7 Input    3 Bit        Muxes := 1     
+	  11 Input    3 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 9     
+	  11 Input    2 Bit        Muxes := 1     
+	   3 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 106   
+	   6 Input    1 Bit        Muxes := 3     
+	   3 Input    1 Bit        Muxes := 12    
+	  11 Input    1 Bit        Muxes := 45    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1728 (col length:144)
+BRAMs: 624 (col length: RAMB18 144 RAMB36 72)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6904] The RAM "\neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst /cpu_frontend_inst/prefetch_buffer[0].ipb_inst/memory_large.memory_large_async_read.fifo_reg" of size (depth=2 x width=17) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "\neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst /cpu_frontend_inst/prefetch_buffer[1].ipb_inst/memory_large.memory_large_async_read.fifo_reg" of size (depth=2 x width=17) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+DSP Report: Generating DSP cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/res0, operation Mode is: A2*B.
+DSP Report: register cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/res0 is absorbed into DSP cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/res0.
+DSP Report: operator cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/res0 is absorbed into DSP cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/res0.
+DSP Report: operator cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/res0 is absorbed into DSP cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/res0.
+DSP Report: Generating DSP cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: register cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg is absorbed into DSP cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg.
+DSP Report: operator cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/res0 is absorbed into DSP cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg.
+DSP Report: operator cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/res0 is absorbed into DSP cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg.
+DSP Report: Generating DSP cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/res0, operation Mode is: A2*B2.
+DSP Report: register cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/res0 is absorbed into DSP cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/res0.
+DSP Report: register cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/res0 is absorbed into DSP cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/res0.
+DSP Report: operator cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/res0 is absorbed into DSP cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/res0.
+DSP Report: operator cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/res0 is absorbed into DSP cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/res0.
+DSP Report: Generating DSP cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg, operation Mode is: (PCIN>>17)+A2*B.
+DSP Report: register cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg is absorbed into DSP cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg.
+DSP Report: register cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg is absorbed into DSP cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg.
+DSP Report: operator cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/res0 is absorbed into DSP cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg.
+DSP Report: operator cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/res0 is absorbed into DSP cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg.
+INFO: [Synth 8-6904] The RAM "\neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_regfile_inst/arch_sram_sync.regfile_reg " of size (depth=32 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "\neorv32_inst/core_complex_gen[0].core_complex_inst/icache_enabled.icache_inst/neorv32_cache_ram_inst/tag_ram_inst/memory_large.spram_reg " of size (depth=4 x width=24) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "\neorv32_inst/core_complex_gen[0].core_complex_inst/icache_enabled.icache_inst/neorv32_cache_ram_inst/data_ram_gen[0].data_ram_inst/memory_large.spram_reg " of size (depth=64 x width=8) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "\neorv32_inst/core_complex_gen[0].core_complex_inst/icache_enabled.icache_inst/neorv32_cache_ram_inst/data_ram_gen[1].data_ram_inst/memory_large.spram_reg " of size (depth=64 x width=8) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "\neorv32_inst/core_complex_gen[0].core_complex_inst/icache_enabled.icache_inst/neorv32_cache_ram_inst/data_ram_gen[2].data_ram_inst/memory_large.spram_reg " of size (depth=64 x width=8) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "\neorv32_inst/core_complex_gen[0].core_complex_inst/icache_enabled.icache_inst/neorv32_cache_ram_inst/data_ram_gen[3].data_ram_inst/memory_large.spram_reg " of size (depth=64 x width=8) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+WARNING: [Synth 8-3917] design int8_irq_top has port xbus_cti_o[2] driven by constant 0
+WARNING: [Synth 8-3917] design int8_irq_top has port mon_viol_o driven by constant 0
+INFO: [Common 17-14] Message 'Synth 8-3917' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-6904] The RAM "\neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst /cpu_frontend_inst/prefetch_buffer[0].ipb_inst/memory_large.memory_large_async_read.fifo_reg" of size (depth=2 x width=17) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "\neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst /cpu_frontend_inst/prefetch_buffer[1].ipb_inst/memory_large.memory_large_async_read.fifo_reg" of size (depth=2 x width=17) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "\neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_regfile_inst/arch_sram_sync.regfile_reg " of size (depth=32 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "int8_irq_top/neorv32_inst/core_complex_gen[0].core_complex_inst/icache_enabled.icache_inst/neorv32_cache_ram_inst/tag_ram_inst/memory_large.spram_reg" of size (depth=4 x width=24) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "int8_irq_top/neorv32_inst/core_complex_gen[0].core_complex_inst/icache_enabled.icache_inst/neorv32_cache_ram_inst/data_ram_gen[0].data_ram_inst/memory_large.spram_reg" of size (depth=64 x width=8) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "int8_irq_top/neorv32_inst/core_complex_gen[0].core_complex_inst/icache_enabled.icache_inst/neorv32_cache_ram_inst/data_ram_gen[1].data_ram_inst/memory_large.spram_reg" of size (depth=64 x width=8) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "int8_irq_top/neorv32_inst/core_complex_gen[0].core_complex_inst/icache_enabled.icache_inst/neorv32_cache_ram_inst/data_ram_gen[2].data_ram_inst/memory_large.spram_reg" of size (depth=64 x width=8) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "int8_irq_top/neorv32_inst/core_complex_gen[0].core_complex_inst/icache_enabled.icache_inst/neorv32_cache_ram_inst/data_ram_gen[3].data_ram_inst/memory_large.spram_reg" of size (depth=64 x width=8) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-7124] RAM ("int8_irq_top/neorv32_inst/memory_system.dmem_enabled.dmem_inst/dmem_ram_gen[0].dmem_ram/memory_large.spram_reg") is implemented using BRAM instead of URAM. Memory would be severely underutilized if URAMs are used
+INFO: [Synth 8-7124] RAM ("int8_irq_top/neorv32_inst/memory_system.dmem_enabled.dmem_inst/dmem_ram_gen[1].dmem_ram/memory_large.spram_reg") is implemented using BRAM instead of URAM. Memory would be severely underutilized if URAMs are used
+INFO: [Synth 8-7124] RAM ("int8_irq_top/neorv32_inst/memory_system.dmem_enabled.dmem_inst/dmem_ram_gen[2].dmem_ram/memory_large.spram_reg") is implemented using BRAM instead of URAM. Memory would be severely underutilized if URAMs are used
+INFO: [Synth 8-7124] RAM ("int8_irq_top/neorv32_inst/memory_system.dmem_enabled.dmem_inst/dmem_ram_gen[3].dmem_ram/memory_large.spram_reg") is implemented using BRAM instead of URAM. Memory would be severely underutilized if URAMs are used
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[47]) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[46]) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[45]) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[44]) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[43]) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[42]) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[41]) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[40]) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[39]) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[38]) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[37]) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[36]) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[35]) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[34]) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[33]) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[32]) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[31]) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[30]) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[29]) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[28]) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[27]) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[26]) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[25]) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[24]) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[23]) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[22]) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[21]) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[20]) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[19]) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[18]) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[17]) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[47]__0) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[46]__0) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[45]__0) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[44]__0) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[43]__0) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[42]__0) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[41]__0) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[40]__0) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[39]__0) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[38]__0) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[37]__0) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[36]__0) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[35]__0) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[34]__0) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[33]__0) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[32]__0) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[31]__0) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[30]__0) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[29]__0) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[28]__0) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[27]__0) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[26]__0) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[25]__0) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[24]__0) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[23]__0) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[22]__0) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[21]__0) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[20]__0) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[19]__0) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[18]__0) is unused and will be removed from module neorv32_cpu_alu.
+WARNING: [Synth 8-3332] Sequential element (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg[17]__0) is unused and will be removed from module neorv32_cpu_alu.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 3204.750 ; gain = 1564.773 ; free physical = 7261 ; free virtual = 18984
+---------------------------------------------------------------------------------
+ Sort Area is  cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/res0_0 : 0 0 : 2737 5113 : Used 1 time 0
+ Sort Area is  cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/res0_0 : 0 1 : 2376 5113 : Used 1 time 0
+ Sort Area is  cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/res0_3 : 0 0 : 2322 4453 : Used 1 time 0
+ Sort Area is  cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/res0_3 : 0 1 : 2131 4453 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++-------------+------------------------------------------------------------------------------------+---------------+----------------+
+|Module Name  | RTL Object                                                                         | Depth x Width | Implemented As | 
++-------------+------------------------------------------------------------------------------------+---------------+----------------+
+|int8_irq_top | neorv32_inst/memory_system.imem_enabled.imem_inst/imem_rom.imem_rom_inst/rdata_reg | 4096x32       | Block RAM      | 
+|int8_irq_top | neorv32_inst/memory_system.imem_enabled.imem_inst/imem_rom.imem_rom_inst/rdata_reg | 4096x32       | Block RAM      | 
++-------------+------------------------------------------------------------------------------------+---------------+----------------+
+
+
+Block RAM: Preliminary Mapping Report (see note below)
++-------------+---------------------------------------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+|Module Name  | RTL Object                                                                                        | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | Cascade Heights | 
++-------------+---------------------------------------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+|int8_irq_top | neorv32_inst/memory_system.dmem_enabled.dmem_inst/dmem_ram_gen[0].dmem_ram/memory_large.spram_reg | 2 K x 8(READ_FIRST)    | W | R |                        |   |   | Port A           | 1      | 0      | 1               | 
+|int8_irq_top | neorv32_inst/memory_system.dmem_enabled.dmem_inst/dmem_ram_gen[1].dmem_ram/memory_large.spram_reg | 2 K x 8(READ_FIRST)    | W | R |                        |   |   | Port A           | 1      | 0      | 1               | 
+|int8_irq_top | neorv32_inst/memory_system.dmem_enabled.dmem_inst/dmem_ram_gen[2].dmem_ram/memory_large.spram_reg | 2 K x 8(READ_FIRST)    | W | R |                        |   |   | Port A           | 1      | 0      | 1               | 
+|int8_irq_top | neorv32_inst/memory_system.dmem_enabled.dmem_inst/dmem_ram_gen[3].dmem_ram/memory_large.spram_reg | 2 K x 8(READ_FIRST)    | W | R |                        |   |   | Port A           | 1      | 0      | 1               | 
++-------------+---------------------------------------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++--------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+----------------------+----------------+
+|Module Name                                                                     | RTL Object                                                                                                                                                | Inference | Size (Depth x Width) | Primitives     | 
++--------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+----------------------+----------------+
+|\neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst /cpu_frontend_inst | prefetch_buffer[0].ipb_inst/memory_large.memory_large_async_read.fifo_reg                                                                                 | Implied   | 2 x 17               | RAM32M16 x 2   | 
+|\neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst /cpu_frontend_inst | prefetch_buffer[1].ipb_inst/memory_large.memory_large_async_read.fifo_reg                                                                                 | Implied   | 2 x 17               | RAM32M16 x 2   | 
+|\neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst                    | cpu_regfile_inst/arch_sram_sync.regfile_reg                                                                                                               | Implied   | 32 x 32              | RAM32X1D x 32  | 
+|int8_irq_top                                                                    | neorv32_inst/core_complex_gen[0].core_complex_inst/icache_enabled.icache_inst/neorv32_cache_ram_inst/tag_ram_inst/memory_large.spram_reg                  | Implied   | 4 x 24               | RAM16X1S x 24  | 
+|int8_irq_top                                                                    | neorv32_inst/core_complex_gen[0].core_complex_inst/icache_enabled.icache_inst/neorv32_cache_ram_inst/data_ram_gen[0].data_ram_inst/memory_large.spram_reg | Implied   | 64 x 8               | RAM64X1S x 8   | 
+|int8_irq_top                                                                    | neorv32_inst/core_complex_gen[0].core_complex_inst/icache_enabled.icache_inst/neorv32_cache_ram_inst/data_ram_gen[1].data_ram_inst/memory_large.spram_reg | Implied   | 64 x 8               | RAM64X1S x 8   | 
+|int8_irq_top                                                                    | neorv32_inst/core_complex_gen[0].core_complex_inst/icache_enabled.icache_inst/neorv32_cache_ram_inst/data_ram_gen[2].data_ram_inst/memory_large.spram_reg | Implied   | 64 x 8               | RAM64X1S x 8   | 
+|int8_irq_top                                                                    | neorv32_inst/core_complex_gen[0].core_complex_inst/icache_enabled.icache_inst/neorv32_cache_ram_inst/data_ram_gen[3].data_ram_inst/memory_large.spram_reg | Implied   | 64 x 8               | RAM64X1S x 8   | 
++--------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+----------------------+----------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++----------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name     | DSP Mapping     | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++----------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|neorv32_cpu_alu | A2*B            | 18     | 16     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|neorv32_cpu_alu | (PCIN>>17)+A*B  | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|neorv32_cpu_alu | A2*B2           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|neorv32_cpu_alu | (PCIN>>17)+A2*B | 18     | 16     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 1    | 
++----------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 3204.750 ; gain = 1564.773 ; free physical = 7302 ; free virtual = 19017
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++-------------+---------------------------------------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+|Module Name  | RTL Object                                                                                        | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | Cascade Heights | 
++-------------+---------------------------------------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+|int8_irq_top | neorv32_inst/memory_system.dmem_enabled.dmem_inst/dmem_ram_gen[0].dmem_ram/memory_large.spram_reg | 2 K x 8(READ_FIRST)    | W | R |                        |   |   | Port A           | 1      | 0      | 1               | 
+|int8_irq_top | neorv32_inst/memory_system.dmem_enabled.dmem_inst/dmem_ram_gen[1].dmem_ram/memory_large.spram_reg | 2 K x 8(READ_FIRST)    | W | R |                        |   |   | Port A           | 1      | 0      | 1               | 
+|int8_irq_top | neorv32_inst/memory_system.dmem_enabled.dmem_inst/dmem_ram_gen[2].dmem_ram/memory_large.spram_reg | 2 K x 8(READ_FIRST)    | W | R |                        |   |   | Port A           | 1      | 0      | 1               | 
+|int8_irq_top | neorv32_inst/memory_system.dmem_enabled.dmem_inst/dmem_ram_gen[3].dmem_ram/memory_large.spram_reg | 2 K x 8(READ_FIRST)    | W | R |                        |   |   | Port A           | 1      | 0      | 1               | 
++-------------+---------------------------------------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+
+
+Distributed RAM: Final Mapping Report
++--------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+----------------------+----------------+
+|Module Name                                                                     | RTL Object                                                                                                                                                | Inference | Size (Depth x Width) | Primitives     | 
++--------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+----------------------+----------------+
+|\neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst /cpu_frontend_inst | prefetch_buffer[0].ipb_inst/memory_large.memory_large_async_read.fifo_reg                                                                                 | Implied   | 2 x 17               | RAM32M16 x 2   | 
+|\neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst /cpu_frontend_inst | prefetch_buffer[1].ipb_inst/memory_large.memory_large_async_read.fifo_reg                                                                                 | Implied   | 2 x 17               | RAM32M16 x 2   | 
+|\neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst                    | cpu_regfile_inst/arch_sram_sync.regfile_reg                                                                                                               | Implied   | 32 x 32              | RAM32X1D x 32  | 
+|int8_irq_top                                                                    | neorv32_inst/core_complex_gen[0].core_complex_inst/icache_enabled.icache_inst/neorv32_cache_ram_inst/tag_ram_inst/memory_large.spram_reg                  | Implied   | 4 x 24               | RAM16X1S x 24  | 
+|int8_irq_top                                                                    | neorv32_inst/core_complex_gen[0].core_complex_inst/icache_enabled.icache_inst/neorv32_cache_ram_inst/data_ram_gen[0].data_ram_inst/memory_large.spram_reg | Implied   | 64 x 8               | RAM64X1S x 8   | 
+|int8_irq_top                                                                    | neorv32_inst/core_complex_gen[0].core_complex_inst/icache_enabled.icache_inst/neorv32_cache_ram_inst/data_ram_gen[1].data_ram_inst/memory_large.spram_reg | Implied   | 64 x 8               | RAM64X1S x 8   | 
+|int8_irq_top                                                                    | neorv32_inst/core_complex_gen[0].core_complex_inst/icache_enabled.icache_inst/neorv32_cache_ram_inst/data_ram_gen[2].data_ram_inst/memory_large.spram_reg | Implied   | 64 x 8               | RAM64X1S x 8   | 
+|int8_irq_top                                                                    | neorv32_inst/core_complex_gen[0].core_complex_inst/icache_enabled.icache_inst/neorv32_cache_ram_inst/data_ram_gen[3].data_ram_inst/memory_large.spram_reg | Implied   | 64 x 8               | RAM64X1S x 8   | 
++--------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+----------------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance neorv32_inst/memory_system.dmem_enabled.dmem_inst/dmem_ram_gen[0].dmem_ram/memory_large.spram_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance neorv32_inst/memory_system.dmem_enabled.dmem_inst/dmem_ram_gen[1].dmem_ram/memory_large.spram_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance neorv32_inst/memory_system.dmem_enabled.dmem_inst/dmem_ram_gen[2].dmem_ram/memory_large.spram_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance neorv32_inst/memory_system.dmem_enabled.dmem_inst/dmem_ram_gen[3].dmem_ram/memory_large.spram_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance neorv32_inst/memory_system.imem_enabled.imem_inst/imem_rom.imem_rom_inst/rdata_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance neorv32_inst/memory_system.imem_enabled.imem_inst/imem_rom.imem_rom_inst/rdata_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance neorv32_inst/memory_system.imem_enabled.imem_inst/imem_rom.imem_rom_inst/rdata_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance neorv32_inst/memory_system.imem_enabled.imem_inst/imem_rom.imem_rom_inst/rdata_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 3204.750 ; gain = 1564.773 ; free physical = 7296 ; free virtual = 19012
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 3245.562 ; gain = 1605.586 ; free physical = 7348 ; free virtual = 19093
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 3245.562 ; gain = 1605.586 ; free physical = 7348 ; free virtual = 19093
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 3245.562 ; gain = 1605.586 ; free physical = 7343 ; free virtual = 19089
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 3245.562 ; gain = 1605.586 ; free physical = 7343 ; free virtual = 19088
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 3245.562 ; gain = 1605.586 ; free physical = 7340 ; free virtual = 19086
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 3245.562 ; gain = 1605.586 ; free physical = 7341 ; free virtual = 19086
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++----------------+--------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name     | DSP Mapping        | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++----------------+--------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|neorv32_cpu_alu | A''*B'             | 17     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 0    | 0    | 
+|neorv32_cpu_alu | (PCIN>>17+A'*B')'  | 30     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 1    | 
+|neorv32_cpu_alu | A''*B''            | 17     | 17     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|neorv32_cpu_alu | (PCIN>>17+A''*B')' | 17     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 0    | 1    | 
++----------------+--------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+----------------+------+
+|      |Cell            |Count |
++------+----------------+------+
+|1     |CARRY8          |    55|
+|2     |DSP48E2         |     1|
+|3     |DSP_ALU         |     3|
+|4     |DSP_A_B_DATA    |     3|
+|5     |DSP_C_DATA      |     3|
+|6     |DSP_MULTIPLIER  |     3|
+|7     |DSP_M_DATA      |     3|
+|8     |DSP_OUTPUT      |     3|
+|9     |DSP_PREADD      |     3|
+|10    |DSP_PREADD_DATA |     3|
+|11    |LUT1            |    40|
+|12    |LUT2            |   204|
+|13    |LUT3            |   222|
+|14    |LUT4            |   273|
+|15    |LUT5            |   629|
+|16    |LUT6            |  1003|
+|17    |MUXF7           |     2|
+|18    |MUXF8           |     1|
+|19    |RAM16X1S        |    24|
+|20    |RAM32M          |     2|
+|21    |RAM32M16        |     2|
+|22    |RAM32X1D        |    32|
+|23    |RAM64X1S        |    32|
+|24    |RAMB18E2        |     4|
+|25    |RAMB36E2        |     4|
+|26    |FDCE            |   891|
+|27    |FDPE            |    18|
+|28    |FDRE            |   397|
++------+----------------+------+
+
+Report Instance Areas: 
++------+-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+
+|      |Instance                                               |Module                                                                                                                                                                                   |Cells |
++------+-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+
+|1     |top                                                    |                                                                                                                                                                                         |  3860|
+|2     |  neorv32_inst                                         |neorv32_top                                                                                                                                                                              |  3860|
+|3     |    bus_gateway_inst                                   |neorv32_bus_gateway                                                                                                                                                                      |    48|
+|4     |    \core_complex_gen[0].core_complex_inst             |neorv32_core_complex                                                                                                                                                                     |  3353|
+|5     |      bus_switch_inst                                  |neorv32_bus_switch                                                                                                                                                                       |    57|
+|6     |      cpu_inst                                         |neorv32_cpu                                                                                                                                                                              |  2935|
+|7     |        \cnts_enabled.cpu_counters_inst                |neorv32_cpu_counters                                                                                                                                                                     |   154|
+|8     |          \base_enabled.cycle_inst                     |neorv32_prim_cnt                                                                                                                                                                         |    76|
+|9     |          \base_enabled.instret_inst                   |neorv32_prim_cnt_8                                                                                                                                                                       |    76|
+|10    |        cpu_alu_inst                                   |neorv32_cpu_alu                                                                                                                                                                          |   430|
+|11    |          \cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst  |neorv32_cpu_alu_muldiv                                                                                                                                                                   |   365|
+|12    |            \multiplier_core_parallel.multiplier_inst  |neorv32_prim_mul                                                                                                                                                                         |   112|
+|13    |              res0                                     |\neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_alu_inst/cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/res0_funnel                |     8|
+|14    |              res0__0                                  |\neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_alu_inst/cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/res0__0_funnel             |     8|
+|15    |              \one_reg.res_reg__0                      |\neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_alu_inst/cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/multiplier_core_parallel.multiplier_inst/one_reg.res_reg__0_funnel  |     8|
+|16    |          cpu_alu_shifter_inst                         |neorv32_cpu_alu_shifter                                                                                                                                                                  |    65|
+|17    |        cpu_control_inst                               |neorv32_cpu_control                                                                                                                                                                      |  1599|
+|18    |        cpu_frontend_inst                              |neorv32_cpu_frontend                                                                                                                                                                     |   305|
+|19    |          \prefetch_buffer[0].ipb_inst                 |neorv32_prim_fifo                                                                                                                                                                        |    54|
+|20    |          \prefetch_buffer[1].ipb_inst                 |neorv32_prim_fifo_7                                                                                                                                                                      |   168|
+|21    |        cpu_lsu_inst                                   |neorv32_cpu_lsu                                                                                                                                                                          |   111|
+|22    |        cpu_regfile_inst                               |neorv32_cpu_regfile                                                                                                                                                                      |   304|
+|23    |      \icache_enabled.icache_inst                      |neorv32_cache                                                                                                                                                                            |   361|
+|24    |        neorv32_cache_ram_inst                         |neorv32_cache_ram                                                                                                                                                                        |   211|
+|25    |          \data_ram_gen[0].data_ram_inst               |neorv32_prim_spram__parameterized0                                                                                                                                                       |    33|
+|26    |          \data_ram_gen[1].data_ram_inst               |neorv32_prim_spram__parameterized0_4                                                                                                                                                     |    32|
+|27    |          \data_ram_gen[2].data_ram_inst               |neorv32_prim_spram__parameterized0_5                                                                                                                                                     |    32|
+|28    |          \data_ram_gen[3].data_ram_inst               |neorv32_prim_spram__parameterized0_6                                                                                                                                                     |    36|
+|29    |          tag_ram_inst                                 |neorv32_prim_spram                                                                                                                                                                       |    78|
+|30    |    \io_system.bus_io_switch_inst                      |neorv32_bus_io_switch                                                                                                                                                                    |    94|
+|31    |      neorv32_bus_reg_inst                             |neorv32_bus_reg                                                                                                                                                                          |    94|
+|32    |    \io_system.sysinfo_inst                            |neorv32_sysinfo                                                                                                                                                                          |    48|
+|33    |    \io_system.uart0_enabled.uart0_inst                |neorv32_uart                                                                                                                                                                             |   193|
+|34    |      rx_fifo_inst                                     |neorv32_prim_fifo__parameterized0                                                                                                                                                        |    25|
+|35    |      tx_fifo_inst                                     |neorv32_prim_fifo__parameterized0_3                                                                                                                                                      |    26|
+|36    |    \memory_system.dmem_enabled.dmem_inst              |neorv32_dmem                                                                                                                                                                             |    38|
+|37    |      \dmem_ram_gen[0].dmem_ram                        |neorv32_prim_spram__parameterized1                                                                                                                                                       |     6|
+|38    |      \dmem_ram_gen[1].dmem_ram                        |neorv32_prim_spram__parameterized1_0                                                                                                                                                     |    13|
+|39    |      \dmem_ram_gen[2].dmem_ram                        |neorv32_prim_spram__parameterized1_1                                                                                                                                                     |     7|
+|40    |      \dmem_ram_gen[3].dmem_ram                        |neorv32_prim_spram__parameterized1_2                                                                                                                                                     |     9|
+|41    |    \memory_system.imem_enabled.imem_inst              |neorv32_imem                                                                                                                                                                             |    15|
+|42    |      \imem_rom.imem_rom_inst                          |neorv32_imem_rom                                                                                                                                                                         |    14|
+|43    |    \memory_system.xbus_enabled.xbus_inst              |neorv32_xbus                                                                                                                                                                             |    33|
+|44    |    \soc_generators.sys_clock_inst                     |neorv32_sys_clock                                                                                                                                                                        |    30|
+|45    |    \soc_generators.sys_reset_inst                     |neorv32_sys_reset                                                                                                                                                                        |     8|
++------+-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 3245.562 ; gain = 1605.586 ; free physical = 7341 ; free virtual = 19086
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 3979 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 3245.562 ; gain = 1605.586 ; free physical = 7340 ; free virtual = 19086
+Synthesis Optimization Complete : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 3245.570 ; gain = 1605.586 ; free physical = 7340 ; free virtual = 19086
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3263.406 ; gain = 0.000 ; free physical = 7495 ; free virtual = 19225
+INFO: [Netlist 29-17] Analyzing 154 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3395.832 ; gain = 0.000 ; free physical = 7306 ; free virtual = 19046
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 96 instances were transformed.
+  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD, DSP_PREADD_DATA): 4 instances
+  RAM16X1S => RAM32X1S (RAMS32): 24 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 2 instances
+  RAM32M16 => RAM32M16 (RAMD32(x14), RAMS32(x2)): 2 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 32 instances
+  RAM64X1S => RAM64X1S (RAMS64E): 32 instances
+
+Synth Design complete | Checksum: 5624623
+INFO: [Common 17-83] Releasing license: Synthesis
+134 Infos, 290 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:30 . Memory (MB): peak = 3395.867 ; gain = 1755.891 ; free physical = 7308 ; free virtual = 19048
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2387.179; main = 2358.911; forked = 207.844
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4199.027; main = 3395.836; forked = 994.273
+# set per [format %.3f [expr {1000.0 / $fmhz}]]
+# create_clock -name clk -period $per [get_ports clk_i]
+# report_utilization    -file $out/post_synth_utilization.rpt
+# report_timing_summary -file $out/post_synth_timing_summary.rpt
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Temperature grade: E, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "clk_i" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+report_timing_summary: Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 4443.051 ; gain = 1047.184 ; free physical = 6326 ; free virtual = 18512
+# opt_design
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xczu7ev'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+WARNING: [DRC 23-814] Not all possible (connectivity based) DRCs may have been run because this design is seen as Out of Context.
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.37 . Memory (MB): peak = 4443.051 ; gain = 0.000 ; free physical = 6357 ; free virtual = 18546
+
+Starting Cache Timing Information Task
+Ending Cache Timing Information Task | Checksum: 1d84ee196
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4443.051 ; gain = 0.000 ; free physical = 6355 ; free virtual = 18545
+
+Starting Logic Optimization Task
+
+Phase 1 Initialization
+
+Phase 1.1 Core Generation And Design Setup
+Phase 1.1 Core Generation And Design Setup | Checksum: 1d84ee196
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 4443.051 ; gain = 0.000 ; free physical = 5973 ; free virtual = 18456
+
+Phase 1.2 Setup Constraints And Sort Netlist
+Phase 1.2 Setup Constraints And Sort Netlist | Checksum: 1d84ee196
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 4443.051 ; gain = 0.000 ; free physical = 5973 ; free virtual = 18456
+Phase 1 Initialization | Checksum: 1d84ee196
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 4443.051 ; gain = 0.000 ; free physical = 5973 ; free virtual = 18456
+
+Phase 2 Timer Update And Timing Data Collection
+
+Phase 2.1 Detect if minReqCache needed
+Phase 2.1 Detect if minReqCache needed | Checksum: 1d84ee196
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 4443.051 ; gain = 0.000 ; free physical = 5972 ; free virtual = 18455
+
+Phase 2.2 Timer Update
+Phase 2.2 Timer Update | Checksum: 1d84ee196
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 4443.051 ; gain = 0.000 ; free physical = 5973 ; free virtual = 18455
+Phase 2 Timer Update And Timing Data Collection | Checksum: 1d84ee196
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 4443.051 ; gain = 0.000 ; free physical = 5973 ; free virtual = 18455
+
+Phase 3 Retarget
+INFO: [Opt 31-1851] Number of loadless carry chains removed were: 0
+INFO: [Opt 31-1834] Total Chains To Be Transformed Were: 0 AND Number of Transformed insts Created are: 0
+INFO: [Opt 31-1566] Pulled 2 inverters resulting in an inversion of 40 pins
+INFO: [Opt 31-138] Pushed 3 inverter(s) to 941 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 3 Retarget | Checksum: 14ab6cd3f
+
+Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.08 . Memory (MB): peak = 4443.051 ; gain = 0.000 ; free physical = 5968 ; free virtual = 18455
+Retarget | Checksum: 14ab6cd3f
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 6 cells
+
+Phase 4 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 4 Constant propagation | Checksum: 2128235bc
+
+Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:00.09 . Memory (MB): peak = 4443.051 ; gain = 0.000 ; free physical = 5967 ; free virtual = 18456
+Constant propagation | Checksum: 2128235bc
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
+
+Phase 5 Sweep
+INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4443.051 ; gain = 0.000 ; free physical = 5965 ; free virtual = 18456
+Phase 5 Sweep | Checksum: 21ee55789
+
+Time (s): cpu = 00:00:00.16 ; elapsed = 00:00:00.12 . Memory (MB): peak = 4443.051 ; gain = 0.000 ; free physical = 5966 ; free virtual = 18456
+Sweep | Checksum: 21ee55789
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 0 cells
+
+Phase 6 BUFG optimization
+INFO: [Opt 31-1077] Phase BUFG optimization inserted 0 global clock buffer(s) for CLOCK_LOW_FANOUT.
+Phase 6 BUFG optimization | Checksum: 21ee55789
+
+Time (s): cpu = 00:00:00.17 ; elapsed = 00:00:00.14 . Memory (MB): peak = 4475.066 ; gain = 32.016 ; free physical = 5966 ; free virtual = 18456
+BUFG optimization | Checksum: 21ee55789
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 7 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 7 Shift Register Optimization | Checksum: 21ee55789
+
+Time (s): cpu = 00:00:00.18 ; elapsed = 00:00:00.14 . Memory (MB): peak = 4475.066 ; gain = 32.016 ; free physical = 5966 ; free virtual = 18456
+Shift Register Optimization | Checksum: 21ee55789
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 8 Post Processing Netlist
+Phase 8 Post Processing Netlist | Checksum: 21ee55789
+
+Time (s): cpu = 00:00:00.18 ; elapsed = 00:00:00.15 . Memory (MB): peak = 4475.066 ; gain = 32.016 ; free physical = 5965 ; free virtual = 18456
+Post Processing Netlist | Checksum: 21ee55789
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+
+Phase 9 Finalization
+
+Phase 9.1 Finalizing Design Cores and Updating Shapes
+Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: 1fd8c30c8
+
+Time (s): cpu = 00:00:00.21 ; elapsed = 00:00:00.17 . Memory (MB): peak = 4475.066 ; gain = 32.016 ; free physical = 5965 ; free virtual = 18456
+
+Phase 9.2 Verifying Netlist Connectivity
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4475.066 ; gain = 0.000 ; free physical = 5965 ; free virtual = 18456
+Phase 9.2 Verifying Netlist Connectivity | Checksum: 1fd8c30c8
+
+Time (s): cpu = 00:00:00.21 ; elapsed = 00:00:00.17 . Memory (MB): peak = 4475.066 ; gain = 32.016 ; free physical = 5965 ; free virtual = 18456
+Phase 9 Finalization | Checksum: 1fd8c30c8
+
+Time (s): cpu = 00:00:00.21 ; elapsed = 00:00:00.18 . Memory (MB): peak = 4475.066 ; gain = 32.016 ; free physical = 5965 ; free virtual = 18456
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |               0  |               6  |                                              0  |
+|  Constant propagation         |               0  |               0  |                                              0  |
+|  Sweep                        |               0  |               0  |                                              0  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+Ending Logic Optimization Task | Checksum: 1fd8c30c8
+
+Time (s): cpu = 00:00:00.21 ; elapsed = 00:00:00.18 . Memory (MB): peak = 4475.066 ; gain = 32.016 ; free physical = 5965 ; free virtual = 18456
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 8 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
+Number of BRAM Ports augmented: 0 newly gated: 0 Total Ports: 16
+Ending PowerOpt Patch Enables Task | Checksum: 1fd8c30c8
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 4691.164 ; gain = 0.000 ; free physical = 6159 ; free virtual = 18405
+Ending Power Optimization Task | Checksum: 1fd8c30c8
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 4691.164 ; gain = 216.098 ; free physical = 6147 ; free virtual = 18405
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 1fd8c30c8
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4691.164 ; gain = 0.000 ; free physical = 6147 ; free virtual = 18405
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4691.164 ; gain = 0.000 ; free physical = 6147 ; free virtual = 18405
+INFO: [Common 17-83] Releasing license: Implementation
+26 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+# place_design
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xczu7ev'
+INFO: [Common 17-83] Releasing license: Implementation
+INFO: [DRC 23-27] Running DRC with 8 threads
+WARNING: [DRC 23-814] Not all possible (connectivity based) DRCs may have been run because this design is seen as Out of Context.
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+WARNING: [DRC 23-814] Not all possible (connectivity based) DRCs may have been run because this design is seen as Out of Context.
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
+
+Starting Placer Task
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4691.164 ; gain = 0.000 ; free physical = 6053 ; free virtual = 18426
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 120a259a9
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4691.164 ; gain = 0.000 ; free physical = 6051 ; free virtual = 18425
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4691.164 ; gain = 0.000 ; free physical = 6052 ; free virtual = 18427
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 15a703b45
+
+Time (s): cpu = 00:00:00.69 ; elapsed = 00:00:00.4 . Memory (MB): peak = 4691.164 ; gain = 0.000 ; free physical = 6004 ; free virtual = 18481
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 1b66c588e
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.99 . Memory (MB): peak = 4691.164 ; gain = 0.000 ; free physical = 5984 ; free virtual = 18476
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 1b66c588e
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.99 . Memory (MB): peak = 4691.164 ; gain = 0.000 ; free physical = 5984 ; free virtual = 18476
+Phase 1 Placer Initialization | Checksum: 1b66c588e
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 4691.164 ; gain = 0.000 ; free physical = 5984 ; free virtual = 18476
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+
+Phase 2.1.1 Partition Driven Placement
+
+Phase 2.1.1.1 PBP: Partition Driven Placement
+Phase 2.1.1.1 PBP: Partition Driven Placement | Checksum: 1a6957056
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 4691.164 ; gain = 0.000 ; free physical = 6270 ; free virtual = 18464
+
+Phase 2.1.1.2 PBP: Clock Region Placement
+INFO: [Place 30-3164] Check ILP status : ILP-based clock placer is skipped.
+Phase 2.1.1.2 PBP: Clock Region Placement | Checksum: 1a6957056
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 4691.164 ; gain = 0.000 ; free physical = 6259 ; free virtual = 18467
+
+Phase 2.1.1.3 PBP: Compute Congestion
+Phase 2.1.1.3 PBP: Compute Congestion | Checksum: 1a6957056
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:04 . Memory (MB): peak = 4802.203 ; gain = 111.039 ; free physical = 6124 ; free virtual = 18274
+
+Phase 2.1.1.4 PBP: UpdateTiming
+Phase 2.1.1.4 PBP: UpdateTiming | Checksum: 1dd698f96
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:04 . Memory (MB): peak = 4834.219 ; gain = 143.055 ; free physical = 6095 ; free virtual = 18273
+
+Phase 2.1.1.5 PBP: Add part constraints
+Phase 2.1.1.5 PBP: Add part constraints | Checksum: 1dd698f96
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:04 . Memory (MB): peak = 4834.219 ; gain = 143.055 ; free physical = 6095 ; free virtual = 18273
+Phase 2.1.1 Partition Driven Placement | Checksum: 1dd698f96
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:04 . Memory (MB): peak = 4834.219 ; gain = 143.055 ; free physical = 6093 ; free virtual = 18273
+Phase 2.1 Floorplanning | Checksum: 1cb8f595a
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:04 . Memory (MB): peak = 4834.219 ; gain = 143.055 ; free physical = 6093 ; free virtual = 18274
+
+Phase 2.2 Update Timing before SLR Path Opt
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: 1cb8f595a
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:04 . Memory (MB): peak = 4834.219 ; gain = 143.055 ; free physical = 6093 ; free virtual = 18274
+
+Phase 2.3 Post-Processing in Floorplanning
+Phase 2.3 Post-Processing in Floorplanning | Checksum: 1cb8f595a
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:04 . Memory (MB): peak = 4834.219 ; gain = 143.055 ; free physical = 6089 ; free virtual = 18274
+
+Phase 2.4 Global Place Phase1
+Phase 2.4 Global Place Phase1 | Checksum: 2e65da913
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:09 . Memory (MB): peak = 4907.219 ; gain = 216.055 ; free physical = 5817 ; free virtual = 18304
+
+Phase 2.5 Global Place Phase2
+
+Phase 2.5.1 UpdateTiming Before Physical Synthesis
+Phase 2.5.1 UpdateTiming Before Physical Synthesis | Checksum: 2e65da913
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:09 . Memory (MB): peak = 4914.219 ; gain = 223.055 ; free physical = 5816 ; free virtual = 18302
+
+Phase 2.5.2 Physical Synthesis In Placer
+INFO: [Physopt 32-1035] Found 0 LUTNM shape to break, 102 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1044] Break lutnm for timing: one critical 0, two critical 0, total 0, new lutff created 0
+INFO: [Physopt 32-1138] End 1 Pass. Optimized 34 nets or LUTs. Breaked 0 LUT, combined 34 existing LUTs and moved 0 existing LUT
+INFO: [Physopt 32-670] No setup violation found.  Equivalent Driver Rewiring was not performed.
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-670] No setup violation found.  DSP Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  Shift Register to Pipeline Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  Shift Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  BRAM Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  URAM Register Optimization was not performed.
+INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4914.219 ; gain = 0.000 ; free physical = 5810 ; free virtual = 18313
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |            0  |             34  |                    34  |           0  |           1  |  00:00:00  |
+|  Retime                                           |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Equivalent Driver Rewiring                       |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                                     |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Shift Register                                   |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  URAM Register                                    |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |            0  |             34  |                    34  |           0  |           4  |  00:00:00  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.5.2 Physical Synthesis In Placer | Checksum: 30137276c
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:10 . Memory (MB): peak = 4914.219 ; gain = 223.055 ; free physical = 5808 ; free virtual = 18313
+Phase 2.5 Global Place Phase2 | Checksum: 32c1e6b62
+
+Time (s): cpu = 00:00:44 ; elapsed = 00:00:13 . Memory (MB): peak = 4914.219 ; gain = 223.055 ; free physical = 6011 ; free virtual = 18486
+Phase 2 Global Placement | Checksum: 32c1e6b62
+
+Time (s): cpu = 00:00:44 ; elapsed = 00:00:13 . Memory (MB): peak = 4914.219 ; gain = 223.055 ; free physical = 6011 ; free virtual = 18486
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 2f2bfb7e6
+
+Time (s): cpu = 00:00:55 ; elapsed = 00:00:16 . Memory (MB): peak = 4914.219 ; gain = 223.055 ; free physical = 5808 ; free virtual = 18251
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 2a8e5fcb8
+
+Time (s): cpu = 00:00:56 ; elapsed = 00:00:16 . Memory (MB): peak = 4914.219 ; gain = 223.055 ; free physical = 6128 ; free virtual = 18161
+
+Phase 3.3 Small Shape DP
+
+Phase 3.3.1 Small Shape Clustering
+Phase 3.3.1 Small Shape Clustering | Checksum: 23d2b1223
+
+Time (s): cpu = 00:01:07 ; elapsed = 00:00:19 . Memory (MB): peak = 4914.219 ; gain = 223.055 ; free physical = 5551 ; free virtual = 17946
+
+Phase 3.3.2 Slice Area Swap
+
+Phase 3.3.2.1 Slice Area Swap Initial
+Phase 3.3.2.1 Slice Area Swap Initial | Checksum: 25a85ed20
+
+Time (s): cpu = 00:01:07 ; elapsed = 00:00:19 . Memory (MB): peak = 4914.219 ; gain = 223.055 ; free physical = 5867 ; free virtual = 17934
+Phase 3.3.2 Slice Area Swap | Checksum: 25a85ed20
+
+Time (s): cpu = 00:01:07 ; elapsed = 00:00:19 . Memory (MB): peak = 4914.219 ; gain = 223.055 ; free physical = 5831 ; free virtual = 17930
+Phase 3.3 Small Shape DP | Checksum: 2037c5c7c
+
+Time (s): cpu = 00:01:07 ; elapsed = 00:00:19 . Memory (MB): peak = 4914.219 ; gain = 223.055 ; free physical = 5725 ; free virtual = 17895
+
+Phase 3.4 Re-assign LUT pins
+Phase 3.4 Re-assign LUT pins | Checksum: 224286aa9
+
+Time (s): cpu = 00:01:08 ; elapsed = 00:00:20 . Memory (MB): peak = 4914.219 ; gain = 223.055 ; free physical = 5860 ; free virtual = 18084
+
+Phase 3.5 Pipeline Register Optimization
+Phase 3.5 Pipeline Register Optimization | Checksum: 29c1f6496
+
+Time (s): cpu = 00:01:08 ; elapsed = 00:00:20 . Memory (MB): peak = 4914.219 ; gain = 223.055 ; free physical = 5847 ; free virtual = 18075
+Phase 3 Detail Placement | Checksum: 29c1f6496
+
+Time (s): cpu = 00:01:08 ; elapsed = 00:00:20 . Memory (MB): peak = 4914.219 ; gain = 223.055 ; free physical = 5845 ; free virtual = 18075
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 279ee03c6
+
+Phase 4.1.1.1 BUFG Insertion
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=6.662 | TNS=0.000 |
+Phase 1 Physical Synthesis Initialization | Checksum: 1d0f8c347
+
+Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.04 . Memory (MB): peak = 4914.219 ; gain = 0.000 ; free physical = 5827 ; free virtual = 18142
+INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to netlist editing failed: 0.
+Ending Physical Synthesis Task | Checksum: 2649268b5
+
+Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.06 . Memory (MB): peak = 4914.219 ; gain = 0.000 ; free physical = 5821 ; free virtual = 18143
+Phase 4.1.1.1 BUFG Insertion | Checksum: 279ee03c6
+
+Time (s): cpu = 00:01:19 ; elapsed = 00:00:23 . Memory (MB): peak = 4914.219 ; gain = 223.055 ; free physical = 5817 ; free virtual = 18142
+
+Phase 4.1.1.2 Post Placement Timing Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=6.662. For the most accurate timing information please run report_timing.
+Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 22933f1cb
+
+Time (s): cpu = 00:01:19 ; elapsed = 00:00:23 . Memory (MB): peak = 4914.219 ; gain = 223.055 ; free physical = 5812 ; free virtual = 18143
+
+Time (s): cpu = 00:01:19 ; elapsed = 00:00:23 . Memory (MB): peak = 4914.219 ; gain = 223.055 ; free physical = 5985 ; free virtual = 18142
+Phase 4.1 Post Commit Optimization | Checksum: 22933f1cb
+
+Time (s): cpu = 00:01:19 ; elapsed = 00:00:23 . Memory (MB): peak = 4914.219 ; gain = 223.055 ; free physical = 5982 ; free virtual = 18145
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 22933f1cb
+
+Time (s): cpu = 00:01:32 ; elapsed = 00:00:28 . Memory (MB): peak = 4950.203 ; gain = 259.039 ; free physical = 6096 ; free virtual = 18274
+
+Phase 4.3 Placer Reporting
+
+Phase 4.3.1 Print Estimated Congestion
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ________________________________________________________________________
+|           | Global Congestion | Long Congestion   | Short Congestion  |
+| Direction | Region Size       | Region Size       | Region Size       |
+|___________|___________________|___________________|___________________|
+|      North|                1x1|                1x1|                1x1|
+|___________|___________________|___________________|___________________|
+|      South|                1x1|                1x1|                2x2|
+|___________|___________________|___________________|___________________|
+|       East|                1x1|                1x1|                4x4|
+|___________|___________________|___________________|___________________|
+|       West|                1x1|                1x1|                1x1|
+|___________|___________________|___________________|___________________|
+
+Phase 4.3.1 Print Estimated Congestion | Checksum: 22933f1cb
+
+Time (s): cpu = 00:01:32 ; elapsed = 00:00:28 . Memory (MB): peak = 4950.203 ; gain = 259.039 ; free physical = 6091 ; free virtual = 18274
+Phase 4.3 Placer Reporting | Checksum: 22933f1cb
+
+Time (s): cpu = 00:01:32 ; elapsed = 00:00:29 . Memory (MB): peak = 4950.203 ; gain = 259.039 ; free physical = 6087 ; free virtual = 18274
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4950.203 ; gain = 0.000 ; free physical = 6087 ; free virtual = 18274
+
+Time (s): cpu = 00:01:32 ; elapsed = 00:00:29 . Memory (MB): peak = 4950.203 ; gain = 259.039 ; free physical = 6087 ; free virtual = 18274
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 2317fa4e8
+
+Time (s): cpu = 00:01:32 ; elapsed = 00:00:29 . Memory (MB): peak = 4950.203 ; gain = 259.039 ; free physical = 6081 ; free virtual = 18274
+Ending Placer Task | Checksum: 18ff444b3
+
+Time (s): cpu = 00:01:32 ; elapsed = 00:00:29 . Memory (MB): peak = 4950.203 ; gain = 259.039 ; free physical = 6078 ; free virtual = 18275
+31 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:01:36 ; elapsed = 00:00:30 . Memory (MB): peak = 4950.203 ; gain = 259.039 ; free physical = 6074 ; free virtual = 18275
+# phys_opt_design
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xczu7ev'
+
+Starting Initial Update Timing Task
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "clk_i" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+
+Time (s): cpu = 00:00:00.85 ; elapsed = 00:00:00.23 . Memory (MB): peak = 4950.203 ; gain = 0.000 ; free physical = 5978 ; free virtual = 18294
+INFO: [Vivado_Tcl 4-2279] Estimated Timing Summary | WNS= 6.660 | TNS= 0.000 | 
+INFO: [Vivado_Tcl 4-383] Design worst setup slack (WNS) is greater than or equal to 0.000 ns. All physical synthesis setup optimizations will be skipped.
+INFO: [Vivado_Tcl 4-232] No setup violation found. The netlist was not modified.
+INFO: [Common 17-83] Releasing license: Implementation
+5 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+# route_design
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xczu7ev'
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+
+Phase 1 Build RT Design
+Checksum: PlaceDB: 895faa1c ConstDB: 0 ShapeSum: a152d15 RouteDB: fc7f6d82
+Nodegraph reading from file.  Time (s): cpu = 00:00:00.5 ; elapsed = 00:00:00.52 . Memory (MB): peak = 4950.203 ; gain = 0.000 ; free physical = 5873 ; free virtual = 18276
+WARNING: [Route 35-197] Clock port "clk_i" does not have an associated HD.CLK_SRC. Without this constraint, timing analysis may not be accurate and upstream checks cannot be done to ensure correct clock placement.
+WARNING: [Route 35-198] Port "rstn_i" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rstn_i". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "uart0_rxd_i" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "uart0_rxd_i". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xbus_dat_i[7]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xbus_dat_i[7]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xbus_dat_i[6]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xbus_dat_i[6]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xbus_dat_i[5]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xbus_dat_i[5]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xbus_dat_i[4]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xbus_dat_i[4]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xbus_dat_i[1]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xbus_dat_i[1]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xbus_dat_i[19]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xbus_dat_i[19]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xbus_dat_i[17]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xbus_dat_i[17]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xbus_dat_i[31]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xbus_dat_i[31]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xbus_dat_i[18]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xbus_dat_i[18]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xbus_dat_i[0]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xbus_dat_i[0]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xbus_dat_i[30]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xbus_dat_i[30]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xbus_dat_i[23]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xbus_dat_i[23]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xbus_dat_i[22]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xbus_dat_i[22]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xbus_dat_i[3]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xbus_dat_i[3]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xbus_dat_i[2]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xbus_dat_i[2]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xbus_dat_i[21]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xbus_dat_i[21]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xbus_dat_i[20]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xbus_dat_i[20]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xbus_dat_i[11]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xbus_dat_i[11]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xbus_dat_i[16]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xbus_dat_i[16]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xbus_dat_i[15]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xbus_dat_i[15]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xbus_err_i" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xbus_err_i". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xbus_ack_i" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xbus_ack_i". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xbus_dat_i[12]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xbus_dat_i[12]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xbus_dat_i[10]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xbus_dat_i[10]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xbus_dat_i[29]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xbus_dat_i[29]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xbus_dat_i[28]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xbus_dat_i[28]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xbus_dat_i[14]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xbus_dat_i[14]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xbus_dat_i[13]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xbus_dat_i[13]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xbus_dat_i[9]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xbus_dat_i[9]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xbus_dat_i[8]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xbus_dat_i[8]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xbus_dat_i[27]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xbus_dat_i[27]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xbus_dat_i[26]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xbus_dat_i[26]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xbus_dat_i[25]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xbus_dat_i[25]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xbus_dat_i[24]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xbus_dat_i[24]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "irq_mei_i" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "irq_mei_i". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+Post Restoration Checksum: NetGraph: ea5f2730 | NumContArr: f299d161 | Constraints: c2a8fa9d | Timing: c2a8fa9d
+Phase 1 Build RT Design | Checksum: 3624aedcb
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 4950.203 ; gain = 0.000 ; free physical = 5691 ; free virtual = 18200
+
+Phase 2 Router Initialization
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: 3624aedcb
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 4950.203 ; gain = 0.000 ; free physical = 5687 ; free virtual = 18199
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: 3624aedcb
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 4950.203 ; gain = 0.000 ; free physical = 5687 ; free virtual = 18200
+
+Phase 2.3 Global Clock Net Routing
+Phase 2.3 Global Clock Net Routing | Checksum: 3624aedcb
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 4950.203 ; gain = 0.000 ; free physical = 5902 ; free virtual = 18220
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: 2f659ea63
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 4950.203 ; gain = 0.000 ; free physical = 5845 ; free virtual = 18224
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=6.769  | TNS=0.000  | WHS=0.018  | THS=0.000  |
+
+
+Phase 2.5 Soft Constraint Pins - Fast Budgeting
+Phase 2.5 Soft Constraint Pins - Fast Budgeting | Checksum: 3601390d5
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 4950.203 ; gain = 0.000 ; free physical = 5652 ; free virtual = 18128
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 3458
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 2481
+  Number of Partially Routed Nets     = 977
+  Number of Node Overlaps             = 0
+
+Phase 2 Router Initialization | Checksum: 3601390d5
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 4950.203 ; gain = 0.000 ; free physical = 5633 ; free virtual = 18122
+
+Phase 3 Global Routing
+Phase 3 Global Routing | Checksum: 3601390d5
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 4950.203 ; gain = 0.000 ; free physical = 5633 ; free virtual = 18122
+
+Phase 4 Initial Routing
+
+Phase 4.1 Initial Net Routing Pass
+Phase 4.1 Initial Net Routing Pass | Checksum: 21f674f32
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:05 . Memory (MB): peak = 4950.203 ; gain = 0.000 ; free physical = 6035 ; free virtual = 18128
+Phase 4 Initial Routing | Checksum: 2567a8805
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:05 . Memory (MB): peak = 4950.203 ; gain = 0.000 ; free physical = 6025 ; free virtual = 18128
+
+Phase 5 Rip-up And Reroute
+
+Phase 5.1 Global Iteration 0
+ Number of Nodes with overlaps = 806
+ Number of Nodes with overlaps = 54
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.810  | TNS=0.000  | WHS=0.044  | THS=0.000  |
+
+Phase 5.1 Global Iteration 0 | Checksum: 2874110d0
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:10 . Memory (MB): peak = 4950.203 ; gain = 0.000 ; free physical = 5797 ; free virtual = 18280
+
+Phase 5.2 Additional Iteration for Hold
+Phase 5.2 Additional Iteration for Hold | Checksum: 1f8b73ea1
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:10 . Memory (MB): peak = 4950.203 ; gain = 0.000 ; free physical = 5791 ; free virtual = 18280
+Phase 5 Rip-up And Reroute | Checksum: 1f8b73ea1
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:10 . Memory (MB): peak = 4950.203 ; gain = 0.000 ; free physical = 5789 ; free virtual = 18280
+
+Phase 6 Delay and Skew Optimization
+
+Phase 6.1 Delay CleanUp
+Phase 6.1 Delay CleanUp | Checksum: 1f8b73ea1
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:10 . Memory (MB): peak = 4950.203 ; gain = 0.000 ; free physical = 5784 ; free virtual = 18280
+
+Phase 6.2 Clock Skew Optimization
+Phase 6.2 Clock Skew Optimization | Checksum: 1f8b73ea1
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:10 . Memory (MB): peak = 4950.203 ; gain = 0.000 ; free physical = 5783 ; free virtual = 18280
+Phase 6 Delay and Skew Optimization | Checksum: 1f8b73ea1
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:10 . Memory (MB): peak = 4950.203 ; gain = 0.000 ; free physical = 5783 ; free virtual = 18280
+
+Phase 7 Post Hold Fix
+
+Phase 7.1 Hold Fix Iter
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.810  | TNS=0.000  | WHS=0.044  | THS=0.000  |
+
+Phase 7.1 Hold Fix Iter | Checksum: 20cc44865
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:10 . Memory (MB): peak = 4950.203 ; gain = 0.000 ; free physical = 5724 ; free virtual = 18275
+Phase 7 Post Hold Fix | Checksum: 20cc44865
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:10 . Memory (MB): peak = 4950.203 ; gain = 0.000 ; free physical = 5722 ; free virtual = 18275
+
+Phase 8 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.219848 %
+  Global Horizontal Routing Utilization  = 0.198988 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 8 Route finalize | Checksum: 20cc44865
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:10 . Memory (MB): peak = 4950.203 ; gain = 0.000 ; free physical = 5697 ; free virtual = 18290
+
+Phase 9 Verifying routed nets
+
+ Verification completed successfully
+Phase 9 Verifying routed nets | Checksum: 20cc44865
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:10 . Memory (MB): peak = 4950.203 ; gain = 0.000 ; free physical = 5692 ; free virtual = 18290
+
+Phase 10 Depositing Routes
+Phase 10 Depositing Routes | Checksum: 20cc44865
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:10 . Memory (MB): peak = 4950.203 ; gain = 0.000 ; free physical = 5992 ; free virtual = 18307
+
+Phase 11 Resolve XTalk
+Phase 11 Resolve XTalk | Checksum: 20cc44865
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:10 . Memory (MB): peak = 4950.203 ; gain = 0.000 ; free physical = 5988 ; free virtual = 18310
+
+Phase 12 Post Process Routing
+Phase 12 Post Process Routing | Checksum: 20cc44865
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:10 . Memory (MB): peak = 4950.203 ; gain = 0.000 ; free physical = 5977 ; free virtual = 18310
+
+Phase 13 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=5.810  | TNS=0.000  | WHS=0.044  | THS=0.000  |
+
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 13 Post Router Timing | Checksum: 20cc44865
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:10 . Memory (MB): peak = 4950.203 ; gain = 0.000 ; free physical = 5972 ; free virtual = 18307
+Total Elapsed time in route_design: 10.09 secs
+
+Phase 14 Post-Route Event Processing
+Phase 14 Post-Route Event Processing | Checksum: afc3beb6
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:10 . Memory (MB): peak = 4950.203 ; gain = 0.000 ; free physical = 5959 ; free virtual = 18307
+INFO: [Route 35-16] Router Completed Successfully
+Ending Routing Task | Checksum: afc3beb6
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:10 . Memory (MB): peak = 4950.203 ; gain = 0.000 ; free physical = 5955 ; free virtual = 18308
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+9 Infos, 38 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:10 . Memory (MB): peak = 4950.203 ; gain = 0.000 ; free physical = 5939 ; free virtual = 18306
+# report_utilization        -file $out/post_route_utilization.rpt
+# report_utilization -hierarchical -file $out/post_route_utilization_hier.rpt
+# report_timing_summary -max_paths 10 -file $out/post_route_timing_summary.rpt
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Temperature grade: E, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "clk_i" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+# report_timing -max_paths 5 -sort_by slack -file $out/post_route_worst_paths.rpt
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Temperature grade: E, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 5 -nworst 1 -delay_type max -sort_by slack.
+# report_drc                -file $out/post_route_drc.rpt
+Command: report_drc -file impl/nocfu_nomon_100mhz/post_route_drc.rpt
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/2025.2/data/ip'.
+INFO: [DRC 23-27] Running DRC with 8 threads
+WARNING: [DRC 23-814] Not all possible (connectivity based) DRCs may have been run because this design is seen as Out of Context.
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file impl/nocfu_nomon_100mhz/post_route_drc.rpt.
+report_drc completed successfully
+# write_checkpoint -force $out/post_route.dcp
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00 . Memory (MB): peak = 4950.203 ; gain = 0.000 ; free physical = 6075 ; free virtual = 18310
+Wrote PlaceDB: Time (s): cpu = 00:00:00.3 ; elapsed = 00:00:00.09 . Memory (MB): peak = 4950.203 ; gain = 0.000 ; free physical = 6028 ; free virtual = 18311
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4950.203 ; gain = 0.000 ; free physical = 6028 ; free virtual = 18311
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.07 . Memory (MB): peak = 4950.203 ; gain = 0.000 ; free physical = 5994 ; free virtual = 18311
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4950.203 ; gain = 0.000 ; free physical = 5990 ; free virtual = 18307
+Wrote Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 4950.203 ; gain = 0.000 ; free physical = 5981 ; free virtual = 18306
+Write Physdb Complete: Time (s): cpu = 00:00:00.39 ; elapsed = 00:00:00.18 . Memory (MB): peak = 4950.203 ; gain = 0.000 ; free physical = 5979 ; free virtual = 18306
+INFO: [Common 17-1381] The checkpoint 'impl/nocfu_nomon_100mhz/post_route.dcp' has been generated.
+# puts "DONE top=int8_irq_top cfu=$cfu cfusrc=$cfusrc mon=$mon f=$fmhz period=$per"
+DONE top=int8_irq_top cfu=false cfusrc=rtl/neorv32_cpu_alu_cfu.vhd mon=false f=100 period=10.000
+INFO: [Common 17-206] Exiting Vivado at Wed Oct 21 11:02:59 2026...

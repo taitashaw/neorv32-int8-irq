@@ -1,0 +1,7 @@
+gate: log=sim/logs/xsim_dot4_getacc.log
+gate: N_IRQ=2000 CRIT_N=0
+scenario     n   min   max     mean  bound headroom  result
+DOT4     19175    12    74    25.33    133       59  PASS
+DOT4BB    2000    13    37    16.89    101       64  PASS
+GATE PASS
+gate_dot4_getacc rc=0

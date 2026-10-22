@@ -1,0 +1,20 @@
+Running as unit: run-r7406d2eae6264e2890b66a53b87ea9a0.scope; invocation ID: b79a68c5e7944077bdeb0fc6f056031d
+== xvhdl 2026-10-21T20:21:20Z
+== xelab 2026-10-21T20:21:22Z debug=typical top=int8irq_wave_top
+== done 2026-10-21T20:21:27Z snapshot tb_snap in sim/gui_dot4ins
+Running as unit: run-rf7ae6243806c4a3a86224d83ff19c3f7.scope; invocation ID: f9119d483ddd452f9d8ba2571d6fa187
+== xvhdl 2026-10-21T20:21:27Z
+== xelab 2026-10-21T20:21:29Z debug=typical top=int8irq_wave_top
+== done 2026-10-21T20:21:33Z snapshot tb_snap in sim/gui_irqdot4
+Running as unit: run-rdbf6442c19334b14b48a010270ee0b55.scope; invocation ID: 08f045d13a1241919e942b0dfa6bb32b
+== xvhdl 2026-10-21T20:21:33Z
+== xelab 2026-10-21T20:21:34Z debug=typical top=int8irq_wave_top
+== done 2026-10-21T20:21:39Z snapshot tb_snap in sim/gui_irqcfu
+Running as unit: run-rb4561e7135d6482cb79c89c9d9e2820f.scope; invocation ID: c0ceb9f7e1c54e42ae2b551b28bbbe18
+== xvhdl 2026-10-21T20:21:39Z
+== xelab 2026-10-21T20:21:40Z debug=typical top=int8irq_wave_top
+== done 2026-10-21T20:21:44Z snapshot tb_snap in sim/gui_getacc
+Running as unit: run-r2b4b394b6d074e14836b98a8e888733f.scope; invocation ID: d31fa7e187004727a0815da9bf13bc5f
+== xvhdl 2026-10-21T20:21:44Z
+== xelab 2026-10-21T20:21:45Z debug=typical top=int8irq_wave_top
+== done 2026-10-21T20:21:49Z snapshot tb_snap in sim/gui_fail

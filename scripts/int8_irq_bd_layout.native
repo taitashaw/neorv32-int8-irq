@@ -1,0 +1,25 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.85",
+   "Default View_TopLeft":"-80,-40",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
+#  -string -flagsOSRD
+preplace port port-id_doorbell_button -pg 1 -lvl 0 -x 0 -y 170 -defaultsOSRD
+preplace port port-id_uart_text_in -pg 1 -lvl 0 -x 0 -y 460 -defaultsOSRD
+preplace port port-id_doorbell_led -pg 1 -lvl 5 -x 2150 -y 110 -defaultsOSRD
+preplace port port-id_too_slow_led -pg 1 -lvl 5 -x 2150 -y 300 -defaultsOSRD
+preplace port port-id_uart_text_out -pg 1 -lvl 5 -x 2150 -y 520 -defaultsOSRD
+preplace portBus talking_led -pg 1 -lvl 5 -x 2150 -y 600 -defaultsOSRD
+preplace portBus awake_led -pg 1 -lvl 5 -x 2150 -y 780 -defaultsOSRD
+preplace inst doorbell_sync -pg 1 -lvl 1 -x 320 -y 180 -defaultsOSRD
+preplace inst clock_and_reset -pg 1 -lvl 1 -x 320 -y 720 -defaultsOSRD
+preplace inst riscv_brain_with_int8_math_helper -pg 1 -lvl 2 -x 800 -y 420 -defaultsOSRD
+preplace inst nothing_else_on_bus -pg 1 -lvl 2 -x 800 -y 660 -defaultsOSRD
+preplace inst address_switch -pg 1 -lvl 3 -x 1270 -y 480 -defaultsOSRD
+preplace inst stopwatch_latency_monitor -pg 1 -lvl 4 -x 1740 -y 300 -defaultsOSRD
+preplace inst talking_light_not_gate -pg 1 -lvl 4 -x 1740 -y 600 -defaultsOSRD
+levelinfo -pg 1 0 320 800 1270 1740 2150
+pagesize -pg 1 -db -bbox -sgen -100 -10 2300 860
+"
+}

@@ -1,0 +1,364 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date              : Wed Oct 21 11:04:36 2026
+| Host              : build-host running 64-bit Ubuntu 24.04.5 LTS
+| Command           : report_timing -max_paths 5 -sort_by slack -file impl/nocfu_nomon_200mhz/post_route_worst_paths.rpt
+| Design            : int8_irq_top
+| Device            : xczu7ev-ffvc1156
+| Speed File        : -2  PRODUCTION 1.30 05-15-2022
+| Design State      : Routed
+| Temperature Grade : E
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             1.619ns  (required time - arrival time)
+  Source:                 neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/ctrl_reg[alu_opb_mux]/C
+                            (rising edge-triggered cell FDCE clocked by clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_regfile_inst/arch_sram_sync.regfile_reg_0_31_31_31/SP/I
+                            (rising edge-triggered cell RAMD32 clocked by clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (clk rise@5.000ns - clk rise@0.000ns)
+  Data Path Delay:        3.286ns  (logic 0.705ns (21.454%)  route 2.581ns (78.546%))
+  Logic Levels:           8  (CARRY8=4 LUT3=1 LUT5=1 LUT6=2)
+  Clock Path Skew:        0.013ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.043ns = ( 5.043 - 5.000 ) 
+    Source Clock Delay      (SCD):    0.030ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk_i (IN)
+                         net (fo=1505, unset)         0.030     0.030    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/clk_i
+    SLICE_X57Y145        FDCE                                         r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/ctrl_reg[alu_opb_mux]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X57Y145        FDCE (Prop_HFF2_SLICEM_C_Q)
+                                                      0.078     0.108 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/ctrl_reg[alu_opb_mux]/Q
+                         net (fo=170, routed)         0.624     0.732    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/ctrl[alu_opb_mux]
+    SLICE_X62Y134        LUT3 (Prop_H5LUT_SLICEL_I2_O)
+                                                      0.096     0.828 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/barrel_shifter.sreg[30]_i_3/O
+                         net (fo=14, routed)          0.685     1.513    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/ctrl_reg[alu_imm][4]_1[1]
+    SLICE_X55Y151        LUT5 (Prop_B6LUT_SLICEL_I3_O)
+                                                      0.051     1.564 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/req[addr][7]_i_16/O
+                         net (fo=1, routed)           0.009     1.573    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/req[addr][7]_i_16_n_0
+    SLICE_X55Y151        CARRY8 (Prop_CARRY8_SLICEL_S[1]_CO[7])
+                                                      0.186     1.759 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/req_reg[addr][7]_i_1/CO[7]
+                         net (fo=1, routed)           0.026     1.785    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/req_reg[addr][7]_i_1_n_0
+    SLICE_X55Y152        CARRY8 (Prop_CARRY8_SLICEL_CI_CO[7])
+                                                      0.015     1.800 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/req_reg[addr][15]_i_1/CO[7]
+                         net (fo=1, routed)           0.026     1.826    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/req_reg[addr][15]_i_1_n_0
+    SLICE_X55Y153        CARRY8 (Prop_CARRY8_SLICEL_CI_CO[7])
+                                                      0.015     1.841 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/req_reg[addr][23]_i_1/CO[7]
+                         net (fo=1, routed)           0.026     1.867    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/req_reg[addr][23]_i_1_n_0
+    SLICE_X55Y154        CARRY8 (Prop_CARRY8_SLICEL_CI_O[7])
+                                                      0.123     1.990 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/req_reg[addr][31]_i_1/O[7]
+                         net (fo=3, routed)           0.340     2.330    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/alu_add[31]
+    SLICE_X55Y140        LUT6 (Prop_G6LUT_SLICEL_I5_O)
+                                                      0.089     2.419 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/arch_sram_sync.regfile_reg_0_31_31_31_i_3/O
+                         net (fo=1, routed)           0.360     2.779    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst_n_345
+    SLICE_X53Y155        LUT6 (Prop_G6LUT_SLICEM_I3_O)
+                                                      0.052     2.831 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/arch_sram_sync.regfile_reg_0_31_31_31_i_1/O
+                         net (fo=2, routed)           0.485     3.316    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_regfile_inst/arch_sram_sync.regfile_reg_0_31_31_31/D
+    SLICE_X54Y132        RAMD32                                       r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_regfile_inst/arch_sram_sync.regfile_reg_0_31_31_31/SP/I
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        5.000     5.000 r  
+                                                      0.000     5.000 r  clk_i (IN)
+                         net (fo=1505, unset)         0.043     5.043    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_regfile_inst/arch_sram_sync.regfile_reg_0_31_31_31/WCLK
+    SLICE_X54Y132        RAMD32                                       r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_regfile_inst/arch_sram_sync.regfile_reg_0_31_31_31/SP/CLK
+                         clock pessimism              0.000     5.043    
+                         clock uncertainty           -0.035     5.008    
+    SLICE_X54Y132        RAMD32 (Setup_H6LUT_SLICEM_CLK_I)
+                                                     -0.072     4.936    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_regfile_inst/arch_sram_sync.regfile_reg_0_31_31_31/SP
+  -------------------------------------------------------------------
+                         required time                          4.936    
+                         arrival time                          -3.316    
+  -------------------------------------------------------------------
+                         slack                                  1.619    
+
+Slack (MET) :             1.647ns  (required time - arrival time)
+  Source:                 neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/ctrl_reg[alu_opb_mux]/C
+                            (rising edge-triggered cell FDCE clocked by clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_regfile_inst/arch_sram_sync.regfile_reg_0_31_31_31/DP/I
+                            (rising edge-triggered cell RAMD32 clocked by clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (clk rise@5.000ns - clk rise@0.000ns)
+  Data Path Delay:        3.251ns  (logic 0.705ns (21.685%)  route 2.546ns (78.316%))
+  Logic Levels:           8  (CARRY8=4 LUT3=1 LUT5=1 LUT6=2)
+  Clock Path Skew:        0.013ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.043ns = ( 5.043 - 5.000 ) 
+    Source Clock Delay      (SCD):    0.030ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk_i (IN)
+                         net (fo=1505, unset)         0.030     0.030    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/clk_i
+    SLICE_X57Y145        FDCE                                         r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/ctrl_reg[alu_opb_mux]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X57Y145        FDCE (Prop_HFF2_SLICEM_C_Q)
+                                                      0.078     0.108 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/ctrl_reg[alu_opb_mux]/Q
+                         net (fo=170, routed)         0.624     0.732    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/ctrl[alu_opb_mux]
+    SLICE_X62Y134        LUT3 (Prop_H5LUT_SLICEL_I2_O)
+                                                      0.096     0.828 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/barrel_shifter.sreg[30]_i_3/O
+                         net (fo=14, routed)          0.685     1.513    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/ctrl_reg[alu_imm][4]_1[1]
+    SLICE_X55Y151        LUT5 (Prop_B6LUT_SLICEL_I3_O)
+                                                      0.051     1.564 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/req[addr][7]_i_16/O
+                         net (fo=1, routed)           0.009     1.573    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/req[addr][7]_i_16_n_0
+    SLICE_X55Y151        CARRY8 (Prop_CARRY8_SLICEL_S[1]_CO[7])
+                                                      0.186     1.759 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/req_reg[addr][7]_i_1/CO[7]
+                         net (fo=1, routed)           0.026     1.785    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/req_reg[addr][7]_i_1_n_0
+    SLICE_X55Y152        CARRY8 (Prop_CARRY8_SLICEL_CI_CO[7])
+                                                      0.015     1.800 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/req_reg[addr][15]_i_1/CO[7]
+                         net (fo=1, routed)           0.026     1.826    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/req_reg[addr][15]_i_1_n_0
+    SLICE_X55Y153        CARRY8 (Prop_CARRY8_SLICEL_CI_CO[7])
+                                                      0.015     1.841 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/req_reg[addr][23]_i_1/CO[7]
+                         net (fo=1, routed)           0.026     1.867    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/req_reg[addr][23]_i_1_n_0
+    SLICE_X55Y154        CARRY8 (Prop_CARRY8_SLICEL_CI_O[7])
+                                                      0.123     1.990 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/req_reg[addr][31]_i_1/O[7]
+                         net (fo=3, routed)           0.340     2.330    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/alu_add[31]
+    SLICE_X55Y140        LUT6 (Prop_G6LUT_SLICEL_I5_O)
+                                                      0.089     2.419 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/arch_sram_sync.regfile_reg_0_31_31_31_i_3/O
+                         net (fo=1, routed)           0.360     2.779    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst_n_345
+    SLICE_X53Y155        LUT6 (Prop_G6LUT_SLICEM_I3_O)
+                                                      0.052     2.831 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/arch_sram_sync.regfile_reg_0_31_31_31_i_1/O
+                         net (fo=2, routed)           0.450     3.281    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_regfile_inst/arch_sram_sync.regfile_reg_0_31_31_31/D
+    SLICE_X54Y132        RAMD32                                       r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_regfile_inst/arch_sram_sync.regfile_reg_0_31_31_31/DP/I
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        5.000     5.000 r  
+                                                      0.000     5.000 r  clk_i (IN)
+                         net (fo=1505, unset)         0.043     5.043    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_regfile_inst/arch_sram_sync.regfile_reg_0_31_31_31/WCLK
+    SLICE_X54Y132        RAMD32                                       r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_regfile_inst/arch_sram_sync.regfile_reg_0_31_31_31/DP/CLK
+                         clock pessimism              0.000     5.043    
+                         clock uncertainty           -0.035     5.008    
+    SLICE_X54Y132        RAMD32 (Setup_G6LUT_SLICEM_CLK_I)
+                                                     -0.079     4.929    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_regfile_inst/arch_sram_sync.regfile_reg_0_31_31_31/DP
+  -------------------------------------------------------------------
+                         required time                          4.929    
+                         arrival time                          -3.281    
+  -------------------------------------------------------------------
+                         slack                                  1.647    
+
+Slack (MET) :             1.689ns  (required time - arrival time)
+  Source:                 neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/ctrl_reg[alu_opb_mux]/C
+                            (rising edge-triggered cell FDCE clocked by clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_regfile_inst/arch_sram_sync.regfile_reg_0_31_11_11/SP/I
+                            (rising edge-triggered cell RAMD32 clocked by clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (clk rise@5.000ns - clk rise@0.000ns)
+  Data Path Delay:        3.208ns  (logic 0.654ns (20.388%)  route 2.554ns (79.612%))
+  Logic Levels:           6  (CARRY8=2 LUT3=1 LUT5=1 LUT6=2)
+  Clock Path Skew:        0.013ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.043ns = ( 5.043 - 5.000 ) 
+    Source Clock Delay      (SCD):    0.030ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk_i (IN)
+                         net (fo=1505, unset)         0.030     0.030    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/clk_i
+    SLICE_X57Y145        FDCE                                         r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/ctrl_reg[alu_opb_mux]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X57Y145        FDCE (Prop_HFF2_SLICEM_C_Q)
+                                                      0.078     0.108 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/ctrl_reg[alu_opb_mux]/Q
+                         net (fo=170, routed)         0.624     0.732    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/ctrl[alu_opb_mux]
+    SLICE_X62Y134        LUT3 (Prop_H5LUT_SLICEL_I2_O)
+                                                      0.096     0.828 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/barrel_shifter.sreg[30]_i_3/O
+                         net (fo=14, routed)          0.685     1.513    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/ctrl_reg[alu_imm][4]_1[1]
+    SLICE_X55Y151        LUT5 (Prop_B6LUT_SLICEL_I3_O)
+                                                      0.051     1.564 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/req[addr][7]_i_16/O
+                         net (fo=1, routed)           0.009     1.573    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/req[addr][7]_i_16_n_0
+    SLICE_X55Y151        CARRY8 (Prop_CARRY8_SLICEL_S[1]_CO[7])
+                                                      0.186     1.759 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/req_reg[addr][7]_i_1/CO[7]
+                         net (fo=1, routed)           0.026     1.785    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/req_reg[addr][7]_i_1_n_0
+    SLICE_X55Y152        CARRY8 (Prop_CARRY8_SLICEL_CI_O[3])
+                                                      0.089     1.874 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/req_reg[addr][15]_i_1/O[3]
+                         net (fo=3, routed)           0.432     2.306    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/alu_add[11]
+    SLICE_X54Y139        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.053     2.359 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/arch_sram_sync.regfile_reg_0_31_11_11_i_3/O
+                         net (fo=1, routed)           0.338     2.697    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst_n_366
+    SLICE_X53Y151        LUT6 (Prop_H6LUT_SLICEM_I3_O)
+                                                      0.101     2.798 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/arch_sram_sync.regfile_reg_0_31_11_11_i_1/O
+                         net (fo=2, routed)           0.440     3.238    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_regfile_inst/arch_sram_sync.regfile_reg_0_31_11_11/D
+    SLICE_X54Y135        RAMD32                                       r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_regfile_inst/arch_sram_sync.regfile_reg_0_31_11_11/SP/I
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        5.000     5.000 r  
+                                                      0.000     5.000 r  clk_i (IN)
+                         net (fo=1505, unset)         0.043     5.043    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_regfile_inst/arch_sram_sync.regfile_reg_0_31_11_11/WCLK
+    SLICE_X54Y135        RAMD32                                       r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_regfile_inst/arch_sram_sync.regfile_reg_0_31_11_11/SP/CLK
+                         clock pessimism              0.000     5.043    
+                         clock uncertainty           -0.035     5.008    
+    SLICE_X54Y135        RAMD32 (Setup_F6LUT_SLICEM_CLK_I)
+                                                     -0.081     4.927    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_regfile_inst/arch_sram_sync.regfile_reg_0_31_11_11/SP
+  -------------------------------------------------------------------
+                         required time                          4.927    
+                         arrival time                          -3.238    
+  -------------------------------------------------------------------
+                         slack                                  1.689    
+
+Slack (MET) :             1.690ns  (required time - arrival time)
+  Source:                 neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/ctrl_reg[alu_opb_mux]/C
+                            (rising edge-triggered cell FDCE clocked by clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_regfile_inst/arch_sram_sync.regfile_reg_0_31_11_11/DP/I
+                            (rising edge-triggered cell RAMD32 clocked by clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (clk rise@5.000ns - clk rise@0.000ns)
+  Data Path Delay:        3.209ns  (logic 0.654ns (20.382%)  route 2.555ns (79.618%))
+  Logic Levels:           6  (CARRY8=2 LUT3=1 LUT5=1 LUT6=2)
+  Clock Path Skew:        0.013ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.043ns = ( 5.043 - 5.000 ) 
+    Source Clock Delay      (SCD):    0.030ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk_i (IN)
+                         net (fo=1505, unset)         0.030     0.030    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/clk_i
+    SLICE_X57Y145        FDCE                                         r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/ctrl_reg[alu_opb_mux]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X57Y145        FDCE (Prop_HFF2_SLICEM_C_Q)
+                                                      0.078     0.108 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/ctrl_reg[alu_opb_mux]/Q
+                         net (fo=170, routed)         0.624     0.732    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/ctrl[alu_opb_mux]
+    SLICE_X62Y134        LUT3 (Prop_H5LUT_SLICEL_I2_O)
+                                                      0.096     0.828 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/barrel_shifter.sreg[30]_i_3/O
+                         net (fo=14, routed)          0.685     1.513    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/ctrl_reg[alu_imm][4]_1[1]
+    SLICE_X55Y151        LUT5 (Prop_B6LUT_SLICEL_I3_O)
+                                                      0.051     1.564 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/req[addr][7]_i_16/O
+                         net (fo=1, routed)           0.009     1.573    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/req[addr][7]_i_16_n_0
+    SLICE_X55Y151        CARRY8 (Prop_CARRY8_SLICEL_S[1]_CO[7])
+                                                      0.186     1.759 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/req_reg[addr][7]_i_1/CO[7]
+                         net (fo=1, routed)           0.026     1.785    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/req_reg[addr][7]_i_1_n_0
+    SLICE_X55Y152        CARRY8 (Prop_CARRY8_SLICEL_CI_O[3])
+                                                      0.089     1.874 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/req_reg[addr][15]_i_1/O[3]
+                         net (fo=3, routed)           0.432     2.306    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/alu_add[11]
+    SLICE_X54Y139        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.053     2.359 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/arch_sram_sync.regfile_reg_0_31_11_11_i_3/O
+                         net (fo=1, routed)           0.338     2.697    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst_n_366
+    SLICE_X53Y151        LUT6 (Prop_H6LUT_SLICEM_I3_O)
+                                                      0.101     2.798 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/arch_sram_sync.regfile_reg_0_31_11_11_i_1/O
+                         net (fo=2, routed)           0.441     3.239    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_regfile_inst/arch_sram_sync.regfile_reg_0_31_11_11/D
+    SLICE_X54Y135        RAMD32                                       r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_regfile_inst/arch_sram_sync.regfile_reg_0_31_11_11/DP/I
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        5.000     5.000 r  
+                                                      0.000     5.000 r  clk_i (IN)
+                         net (fo=1505, unset)         0.043     5.043    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_regfile_inst/arch_sram_sync.regfile_reg_0_31_11_11/WCLK
+    SLICE_X54Y135        RAMD32                                       r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_regfile_inst/arch_sram_sync.regfile_reg_0_31_11_11/DP/CLK
+                         clock pessimism              0.000     5.043    
+                         clock uncertainty           -0.035     5.008    
+    SLICE_X54Y135        RAMD32 (Setup_E6LUT_SLICEM_CLK_I)
+                                                     -0.079     4.929    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_regfile_inst/arch_sram_sync.regfile_reg_0_31_11_11/DP
+  -------------------------------------------------------------------
+                         required time                          4.929    
+                         arrival time                          -3.239    
+  -------------------------------------------------------------------
+                         slack                                  1.690    
+
+Slack (MET) :             1.707ns  (required time - arrival time)
+  Source:                 neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/exec_reg[ir][13]_rep/C
+                            (rising edge-triggered cell FDCE clocked by clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_regfile_inst/arch_sram_sync.regfile_reg_0_31_27_27/SP/I
+                            (rising edge-triggered cell RAMD32 clocked by clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (clk rise@5.000ns - clk rise@0.000ns)
+  Data Path Delay:        3.215ns  (logic 0.756ns (23.516%)  route 2.459ns (76.484%))
+  Logic Levels:           9  (CARRY8=4 LUT4=1 LUT6=4)
+  Clock Path Skew:        0.014ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.043ns = ( 5.043 - 5.000 ) 
+    Source Clock Delay      (SCD):    0.029ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk_i (IN)
+                         net (fo=1505, unset)         0.029     0.029    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/clk_i
+    SLICE_X52Y141        FDCE                                         r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/exec_reg[ir][13]_rep/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X52Y141        FDCE (Prop_HFF2_SLICEL_C_Q)
+                                                      0.080     0.109 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/exec_reg[ir][13]_rep/Q
+                         net (fo=130, routed)         0.771     0.880    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_alu_inst/cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/arch_sram_sync.regfile_reg_0_31_17_17_i_7_0
+    SLICE_X57Y131        LUT4 (Prop_D6LUT_SLICEM_I1_O)
+                                                      0.145     1.025 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_alu_inst/cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/arch_sram_sync.regfile_reg_0_31_1_1_i_8/O
+                         net (fo=1, routed)           0.233     1.258    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_alu_inst/cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/arch_sram_sync.regfile_reg_0_31_1_1_i_8_n_0
+    SLICE_X58Y133        CARRY8 (Prop_CARRY8_SLICEL_CI_CO[7])
+                                                      0.151     1.409 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_alu_inst/cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/arch_sram_sync.regfile_reg_0_31_1_1_i_7/CO[7]
+                         net (fo=1, routed)           0.026     1.435    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_alu_inst/cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/arch_sram_sync.regfile_reg_0_31_1_1_i_7_n_0
+    SLICE_X58Y134        CARRY8 (Prop_CARRY8_SLICEL_CI_CO[7])
+                                                      0.015     1.450 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_alu_inst/cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/arch_sram_sync.regfile_reg_0_31_9_9_i_7/CO[7]
+                         net (fo=1, routed)           0.026     1.476    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_alu_inst/cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/arch_sram_sync.regfile_reg_0_31_9_9_i_7_n_0
+    SLICE_X58Y135        CARRY8 (Prop_CARRY8_SLICEL_CI_CO[7])
+                                                      0.015     1.491 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_alu_inst/cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/arch_sram_sync.regfile_reg_0_31_17_17_i_7/CO[7]
+                         net (fo=1, routed)           0.026     1.517    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_alu_inst/cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/arch_sram_sync.regfile_reg_0_31_17_17_i_7_n_0
+    SLICE_X58Y136        CARRY8 (Prop_CARRY8_SLICEL_CI_O[2])
+                                                      0.067     1.584 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_alu_inst/cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/arch_sram_sync.regfile_reg_0_31_25_25_i_7/O[2]
+                         net (fo=1, routed)           0.273     1.857    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_alu_inst/cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/minusOp[27]
+    SLICE_X57Y137        LUT6 (Prop_E6LUT_SLICEM_I0_O)
+                                                      0.100     1.957 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_alu_inst/cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst/arch_sram_sync.regfile_reg_0_31_27_27_i_6/O
+                         net (fo=1, routed)           0.219     2.176    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/div_res[26]
+    SLICE_X55Y137        LUT6 (Prop_E6LUT_SLICEL_I2_O)
+                                                      0.051     2.227 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/arch_sram_sync.regfile_reg_0_31_27_27_i_4/O
+                         net (fo=1, routed)           0.279     2.506    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/arch_sram_sync.regfile_reg_0_31_27_27_i_4_n_0
+    SLICE_X58Y139        LUT6 (Prop_F6LUT_SLICEL_I1_O)
+                                                      0.035     2.541 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst/arch_sram_sync.regfile_reg_0_31_27_27_i_3/O
+                         net (fo=1, routed)           0.356     2.897    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_control_inst_n_350
+    SLICE_X58Y160        LUT6 (Prop_G6LUT_SLICEL_I3_O)
+                                                      0.097     2.994 r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/arch_sram_sync.regfile_reg_0_31_27_27_i_1/O
+                         net (fo=2, routed)           0.250     3.244    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_regfile_inst/arch_sram_sync.regfile_reg_0_31_27_27/D
+    SLICE_X57Y159        RAMD32                                       r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_regfile_inst/arch_sram_sync.regfile_reg_0_31_27_27/SP/I
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        5.000     5.000 r  
+                                                      0.000     5.000 r  clk_i (IN)
+                         net (fo=1505, unset)         0.043     5.043    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_regfile_inst/arch_sram_sync.regfile_reg_0_31_27_27/WCLK
+    SLICE_X57Y159        RAMD32                                       r  neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_regfile_inst/arch_sram_sync.regfile_reg_0_31_27_27/SP/CLK
+                         clock pessimism              0.000     5.043    
+                         clock uncertainty           -0.035     5.008    
+    SLICE_X57Y159        RAMD32 (Setup_F5LUT_SLICEM_CLK_I)
+                                                     -0.057     4.951    neorv32_inst/core_complex_gen[0].core_complex_inst/cpu_inst/cpu_regfile_inst/arch_sram_sync.regfile_reg_0_31_27_27/SP
+  -------------------------------------------------------------------
+                         required time                          4.951    
+                         arrival time                          -3.244    
+  -------------------------------------------------------------------
+                         slack                                  1.707    
+
+
+
+

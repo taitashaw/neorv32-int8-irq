@@ -1,0 +1,57 @@
+#-----------------------------------------------------------
+# xsim v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Wed Oct 21 16:13:25 2026
+# Process ID         : 1508033
+# Current directory  : sim/run_fail_crit100
+# Command line       : xsim -mode tcl -source {xsim.dir/tb_snap/xsim_script.tcl}
+# Log file           : sim/run_fail_crit100/xsim.log
+# Journal file       : sim/run_fail_crit100/xsim.jou
+# Running On         : build-host
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.5 LTS
+# Processor Detail   : Intel(R) Core(TM) Ultra 9 275HX
+# CPU Frequency      : 3321.019 MHz
+# CPU Physical cores : 24
+# CPU Logical cores  : 24
+# Host memory        : 66815 MB
+# Swap memory        : 8589 MB
+# Total Virtual      : 75404 MB
+# Available Virtual  : 30423 MB
+#-----------------------------------------------------------
+source xsim.dir/tb_snap/xsim_script.tcl
+# xsim {tb_snap} -autoloadwcfg -tclbatch {run.tcl} -onerror quit
+Time resolution is 1 ps
+source run.tcl
+## run 2000ms
+Note: [NEORV32] CPU tuning options: trace fast_mul fast_mul_regs=1 fast_shift rf_arch=sram_sync 
+Time: 0 ps  Iteration: 0  Process: /int8_irq_tb/dut/neorv32_inst/\core_complex_gen(0)\/core_complex_inst/cpu_inst/hello_neorv32/line__201  File: neorv32/rtl/core/neorv32_cpu.vhd
+Note: [NEORV32] CPU ISA: rv32icmx_zca_zicntr_zicsr_zifencei_zkt_xcfu
+Time: 0 ps  Iteration: 0  Process: /int8_irq_tb/dut/neorv32_inst/\core_complex_gen(0)\/core_complex_inst/cpu_inst/hello_neorv32/line__156  File: neorv32/rtl/core/neorv32_cpu.vhd
+Note: [NEORV32] BOOT_MODE_SELECT 2 - booting IMEM image
+Time: 0 ps  Iteration: 0  Process: /int8_irq_tb/dut/neorv32_inst/config_checks/line__455  File: neorv32/rtl/core/neorv32_top.vhd
+Warning: [NEORV32] Assuming this is a simulation.
+Time: 0 ps  Iteration: 0  Process: /int8_irq_tb/dut/neorv32_inst/config_checks/line__443  File: neorv32/rtl/core/neorv32_top.vhd
+Note: [NEORV32] Processor Configuration: CPU (single-core) IMEM-ROM DMEM I-CACHE XBUS UART0 SYSINFO 
+Time: 0 ps  Iteration: 0  Process: /int8_irq_tb/dut/neorv32_inst/config_checks/line__406  File: neorv32/rtl/core/neorv32_top.vhd
+Note: [NEORV32] The NEORV32 RISC-V Processor (v01.13.06.00), github.com/stnolting/neorv32
+Time: 0 ps  Iteration: 0  Process: /int8_irq_tb/dut/neorv32_inst/config_checks/line__397  File: neorv32/rtl/core/neorv32_top.vhd
+IRQLAT start N_IRQ=2000 CRIT_N=100
+IRQLAT id=0 name=BASE n=2000 min=13 max=34 sum=28760 maxb=29 nviol=0 orphan=0 overrun=0 bound=63 shift=1 handled=2000 hist=0:0:0:0:0:0:660:902:363:74:0:0:0:0:0:1
+IRQLAT id=1 name=DIV n=2001 min=33 max=119 sum=156463 maxb=48 nviol=0 orphan=0 overrun=0 bound=127 shift=3 handled=2001 hist=0:0:0:0:61:57:57:74:378:368:379:396:192:24:15:0
+IRQLAT id=2 name=LDST n=2000 min=15 max=90 sum=122338 maxb=49 nviol=0 orphan=0 overrun=0 bound=139 shift=3 handled=2000 hist=0:2:10:6:101:61:456:500:566:170:116:12:0:0:0:0
+Error: [TB:GATE] FAIL: interrupt latency above bound, tag=3 latency=905 cycles
+Time: 19190675 ns  Iteration: 0  Process: /int8_irq_tb/gate_assert  File: sim/int8_irq_tb.vhd
+IRQLAT id=3 name=CRIT n=2000 min=12 max=918 sum=931400 maxb=46 nviol=885 orphan=0 overrun=0 bound=521 shift=5 handled=2000 hist=128:65:69:68:54:71:63:66:67:70:57:61:64:60:72:965
+IRQLAT id=4 name=B2B n=2008 min=33 max=67 sum=87950 maxb=28 nviol=0 orphan=0 overrun=0 bound=111 shift=3 handled=2008 hist=0:0:0:0:1:2005:0:1:1:0:0:0:0:0:0:0
+IRQLAT id=5 name=ICOLD n=2001 min=13 max=115 sum=159328 maxb=94 nviol=0 orphan=0 overrun=0 bound=180 shift=5 handled=2001 hist=76:0:1545:380:0:0:0:0:0:0:0:0:0:0:0:0
+IRQLAT done
+Note: [TB] software signalled DONE, code=0 at cycle 5089185
+Time: 50891855 ns  Iteration: 0  Process: /int8_irq_tb/finish_proc  File: sim/int8_irq_tb.vhd
+$finish called at time : 50891855 ns
+run: Time (s): cpu = 00:00:00.02 ; elapsed = 00:02:26 . Memory (MB): peak = 1364.758 ; gain = 0.000 ; free physical = 18868 ; free virtual = 28426
+## quit
+INFO: xsimkernel Simulation Memory Usage: 281560 KB (Peak: 338896 KB), Simulation CPU Usage: 130380 ms
+INFO: [Common 17-206] Exiting xsim at Wed Oct 21 16:15:52 2026...

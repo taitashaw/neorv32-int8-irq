@@ -1,0 +1,52 @@
+
+****** xsim v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Wed Oct 21 16:25:11 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_snap/xsim_script.tcl
+# xsim {tb_snap} -autoloadwcfg -tclbatch {scripts/count_ic_refills.tcl}
+Time resolution is 1 ps
+source scripts/count_ic_refills.tcl
+## set T /int8irq_wave_top/tb
+## set k $::env(CNT_K)
+## set m $::env(CNT_M)
+## run [expr {$k + 5}]ns
+Note: [NEORV32] CPU tuning options: trace fast_mul fast_mul_regs=1 fast_shift rf_arch=sram_sync 
+Time: 0 ps  Iteration: 0  Process: /int8irq_wave_top/tb/dut/neorv32_inst/\core_complex_gen(0)\/core_complex_inst/cpu_inst/hello_neorv32/line__201  File: neorv32/rtl/core/neorv32_cpu.vhd
+Note: [NEORV32] CPU ISA: rv32icmx_zca_zicntr_zicsr_zifencei_zkt_xcfu
+Time: 0 ps  Iteration: 0  Process: /int8irq_wave_top/tb/dut/neorv32_inst/\core_complex_gen(0)\/core_complex_inst/cpu_inst/hello_neorv32/line__156  File: neorv32/rtl/core/neorv32_cpu.vhd
+Note: [NEORV32] BOOT_MODE_SELECT 2 - booting IMEM image
+Time: 0 ps  Iteration: 0  Process: /int8irq_wave_top/tb/dut/neorv32_inst/config_checks/line__455  File: neorv32/rtl/core/neorv32_top.vhd
+Warning: [NEORV32] Assuming this is a simulation.
+Time: 0 ps  Iteration: 0  Process: /int8irq_wave_top/tb/dut/neorv32_inst/config_checks/line__443  File: neorv32/rtl/core/neorv32_top.vhd
+Note: [NEORV32] Processor Configuration: CPU (single-core) IMEM-ROM DMEM I-CACHE XBUS UART0 SYSINFO 
+Time: 0 ps  Iteration: 0  Process: /int8irq_wave_top/tb/dut/neorv32_inst/config_checks/line__406  File: neorv32/rtl/core/neorv32_top.vhd
+Note: [NEORV32] The NEORV32 RISC-V Processor (v01.13.06.00), github.com/stnolting/neorv32
+Time: 0 ps  Iteration: 0  Process: /int8irq_wave_top/tb/dut/neorv32_inst/config_checks/line__397  File: neorv32/rtl/core/neorv32_top.vhd
+IRQLAT start N_IRQ=2000 CRIT_N=0
+DOT4 build: handler touches CFU = 1
+vec 0: logits -16 1308 -206 535 -1294 class 1 cycles 35171
+vec 1: logits 857 1854 2 955 -2748 class 1 cycles 35285
+DOT4REF vectors=64 logit_mismatches=0 class_mismatches=0 cycles_mean=35155 cycles_min=34942 cycles_max=35348
+run: Time (s): cpu = 00:00:00.16 ; elapsed = 00:02:12 . Memory (MB): peak = 1444.578 ; gain = 0.000 ; free physical = 18692 ; free virtual = 28901
+## set t [expr {$k + 5}]
+## set stb 0
+## set ack 0
+## set prev 0
+## set bursts 0
+## while {$t <= $m + 5} {
+##   set s [get_value $T/p_ic_stb]; set a [get_value $T/p_ic_ack]
+##   if {$s eq "1"} { incr stb; if {$prev eq "0"} { incr bursts } }
+##   if {$a eq "1"} { incr ack }
+##   set prev $s
+##   run 10ns; incr t 10
+## }
+## puts "ICCOUNT k=$k m=$m cycles=[expr {($m-$k)/10}] ic_stb_cycles=$stb ic_ack_cycles=$ack stb_runs=$bursts"
+ICCOUNT k=27353955 m=27354695 cycles=74 ic_stb_cycles=48 ic_ack_cycles=48 stb_runs=6
+## quit
+INFO: xsimkernel Simulation Memory Usage: 290596 KB (Peak: 339928 KB), Simulation CPU Usage: 127480 ms
+INFO: [Common 17-206] Exiting xsim at Wed Oct 21 16:27:26 2026...

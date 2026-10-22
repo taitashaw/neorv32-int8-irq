@@ -1,0 +1,59 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Wed Oct 21 16:21:15 2026
+| Host         : build-host running 64-bit Ubuntu 24.04.5 LTS
+| Command      : report_utilization -hierarchical -file build/bd_reports/post_route_utilization_hier.rpt
+| Design       : int8_irq_bd_wrapper
+| Device       : xczu7ev-ffvc1156-2-e
+| Speed File   : -2
+| Design State : Routed
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++----------------------------------------------------------------+------------------------------------------------------------------------+------------+------------+---------+------+------+--------+--------+------+------------+
+|                            Instance                            |                                 Module                                 | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | URAM | DSP Blocks |
++----------------------------------------------------------------+------------------------------------------------------------------------+------------+------------+---------+------+------+--------+--------+------+------------+
+| int8_irq_bd_wrapper                                            |                                                                  (top) |       3148 |       3007 |     140 |    1 | 1919 |      4 |      4 |    0 |          4 |
+|   (int8_irq_bd_wrapper)                                        |                                                                  (top) |          0 |          0 |       0 |    0 |    0 |      0 |      0 |    0 |          0 |
+|   int8_irq_bd_i                                                |                                                            int8_irq_bd |       3148 |       3007 |     140 |    1 | 1919 |      4 |      4 |    0 |          4 |
+|     stopwatch_latency_monitor                                  |                                int8_irq_bd_stopwatch_latency_monitor_0 |        580 |        540 |      40 |    0 |  438 |      0 |      0 |    0 |          0 |
+|       inst                                                     |                 int8_irq_bd_stopwatch_latency_monitor_0_irq_bd_monitor |        580 |        540 |      40 |    0 |  438 |      0 |      0 |    0 |          0 |
+|         mon_inst                                               |                    int8_irq_bd_stopwatch_latency_monitor_0_irq_lat_mon |        578 |        538 |      40 |    0 |  438 |      0 |      0 |    0 |          0 |
+|     riscv_brain_with_int8_math_helper                          |                        int8_irq_bd_riscv_brain_with_int8_math_helper_0 |       2529 |       2429 |     100 |    0 | 1444 |      4 |      4 |    0 |          4 |
+|       inst                                                     |         int8_irq_bd_riscv_brain_with_int8_math_helper_0_int8irq_bd_cpu |       2529 |       2429 |     100 |    0 | 1444 |      4 |      4 |    0 |          4 |
+|         neorv32_inst                                           |            int8_irq_bd_riscv_brain_with_int8_math_helper_0_neorv32_top |       2529 |       2429 |     100 |    0 | 1444 |      4 |      4 |    0 |          4 |
+|           core_complex_gen[0].core_complex_inst                |   int8_irq_bd_riscv_brain_with_int8_math_helper_0_neorv32_core_complex |       2345 |       2245 |     100 |    0 | 1185 |      0 |      0 |    0 |          4 |
+|             icache_enabled.icache_inst                         |          int8_irq_bd_riscv_brain_with_int8_math_helper_0_neorv32_cache |        203 |        159 |      44 |    0 |  106 |      0 |      0 |    0 |          0 |
+|               (icache_enabled.icache_inst)                     |          int8_irq_bd_riscv_brain_with_int8_math_helper_0_neorv32_cache |         77 |         77 |       0 |    0 |   50 |      0 |      0 |    0 |          0 |
+|               neorv32_cache_ram_inst                           |      int8_irq_bd_riscv_brain_with_int8_math_helper_0_neorv32_cache_ram |        127 |         83 |      44 |    0 |   56 |      0 |      0 |    0 |          0 |
+|             cpu_inst                                           |            int8_irq_bd_riscv_brain_with_int8_math_helper_0_neorv32_cpu |       2099 |       2043 |      56 |    0 | 1073 |      0 |      0 |    0 |          4 |
+|               cpu_regfile_inst                                 |    int8_irq_bd_riscv_brain_with_int8_math_helper_0_neorv32_cpu_regfile |        207 |        175 |      32 |    0 |   64 |      0 |      0 |    0 |          0 |
+|               cnts_enabled.cpu_counters_inst                   |   int8_irq_bd_riscv_brain_with_int8_math_helper_0_neorv32_cpu_counters |          4 |          4 |       0 |    0 |  134 |      0 |      0 |    0 |          0 |
+|                 base_enabled.instret_inst                      |     int8_irq_bd_riscv_brain_with_int8_math_helper_0_neorv32_prim_cnt_8 |          2 |          2 |       0 |    0 |   66 |      0 |      0 |    0 |          0 |
+|                 base_enabled.cycle_inst                        |       int8_irq_bd_riscv_brain_with_int8_math_helper_0_neorv32_prim_cnt |          2 |          2 |       0 |    0 |   66 |      0 |      0 |    0 |          0 |
+|               cpu_alu_inst                                     |        int8_irq_bd_riscv_brain_with_int8_math_helper_0_neorv32_cpu_alu |        596 |        596 |       0 |    0 |  306 |      0 |      0 |    0 |          4 |
+|                 cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst     | int8_irq_bd_riscv_brain_with_int8_math_helper_0_neorv32_cpu_alu_muldiv |        198 |        198 |       0 |    0 |  140 |      0 |      0 |    0 |          4 |
+|                   (cpu_alu_muldiv_enabled.cpu_alu_muldiv_inst) | int8_irq_bd_riscv_brain_with_int8_math_helper_0_neorv32_cpu_alu_muldiv |        120 |        120 |       0 |    0 |  106 |      0 |      0 |    0 |          0 |
+|                   multiplier_core_parallel.multiplier_inst     |       int8_irq_bd_riscv_brain_with_int8_math_helper_0_neorv32_prim_mul |         78 |         78 |       0 |    0 |   34 |      0 |      0 |    0 |          4 |
+|                 cpu_alu_cfu_enabled.cpu_alu_cfu_inst           |    int8_irq_bd_riscv_brain_with_int8_math_helper_0_neorv32_cpu_alu_cfu |        366 |        366 |       0 |    0 |  100 |      0 |      0 |    0 |          0 |
+|               cpu_control_inst                                 |    int8_irq_bd_riscv_brain_with_int8_math_helper_0_neorv32_cpu_control |       1006 |       1006 |       0 |    0 |  419 |      0 |      0 |    0 |          0 |
+|               cpu_frontend_inst                                |   int8_irq_bd_riscv_brain_with_int8_math_helper_0_neorv32_cpu_frontend |        251 |        227 |      24 |    0 |   44 |      0 |      0 |    0 |          0 |
+|                 prefetch_buffer[1].ipb_inst                    |    int8_irq_bd_riscv_brain_with_int8_math_helper_0_neorv32_prim_fifo_7 |        174 |        162 |      12 |    0 |    4 |      0 |      0 |    0 |          0 |
+|               cpu_lsu_inst                                     |        int8_irq_bd_riscv_brain_with_int8_math_helper_0_neorv32_cpu_lsu |          5 |          5 |       0 |    0 |  102 |      0 |      0 |    0 |          0 |
+|           io_system.bus_io_switch_inst                         |  int8_irq_bd_riscv_brain_with_int8_math_helper_0_neorv32_bus_io_switch |         13 |         13 |       0 |    0 |   75 |      0 |      0 |    0 |          0 |
+|             neorv32_bus_reg_inst                               |        int8_irq_bd_riscv_brain_with_int8_math_helper_0_neorv32_bus_reg |         13 |         13 |       0 |    0 |   75 |      0 |      0 |    0 |          0 |
+|           io_system.uart0_enabled.uart0_inst                   |           int8_irq_bd_riscv_brain_with_int8_math_helper_0_neorv32_uart |         76 |         76 |       0 |    0 |  100 |      0 |      0 |    0 |          0 |
+|             (io_system.uart0_enabled.uart0_inst)               |           int8_irq_bd_riscv_brain_with_int8_math_helper_0_neorv32_uart |         51 |         51 |       0 |    0 |   80 |      0 |      0 |    0 |          0 |
++----------------------------------------------------------------+------------------------------------------------------------------------+------------+------------+---------+------+------+--------+--------+------+------------+
+* Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining
+
+

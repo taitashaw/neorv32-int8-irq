@@ -1,0 +1,5 @@
+t=640640ns  (just before the edge at 640645 ns) start_i=0
+t=640650ns  (just after the edge at 640645 ns)  start_i=1 rs1=1646720010 rs2=3421439694 acc=4294964183 instruction=DOT4ACC
+t=640660ns  (just before the edge at 640665 ns) valid_o=0
+t=640670ns  (just after the edge at 640665 ns)  valid_o=1 result=4294957771 acc=4294957771 dot4_products=4294966796,4294967224,4294966650,4294962102
+t=640800ns run stopped here; marker A start_i = 640645 ns, marker B valid_o = 640665 ns, gap 20 ns = 2 ticks

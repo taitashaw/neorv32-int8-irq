@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_snap_irqcfu_test.wdb" id="1">
+         <top_modules>
+            <top_module name="int8irq_wave_top" />
+            <top_module name="neorv32_imem_image" />
+            <top_module name="neorv32_package" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="32474665000 ps"></ZoomStartTime>
+      <ZoomEndTime time="32475365000 ps"></ZoomEndTime>
+      <Cursor1Time time="32475245000 ps"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="330"></NameColumnWidth>
+      <ValueColumnWidth column_width="130"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="6" />
+   <wave_markers>
+      <marker label="A irq" time="32474745000" />
+      <marker label="B entry +50" time="32475245000" />
+      <marker label="C bound +133" time="32476075000" />
+   </wave_markers>
+   <wvobject type="group" fp_name="group1">
+      <obj_property name="label">0 clock and reset</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="logic" fp_name="/int8irq_wave_top/tb/clk">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+         <obj_property name="CustomSignalColor">#00FF00</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="label">clk</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/int8irq_wave_top/tb/rstn">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">rstn</obj_property>
+         <obj_property name="ObjectShortName">rstn</obj_property>
+         <obj_property name="CustomSignalColor">#00FF00</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="label">rstn</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group4">
+      <obj_property name="label">1 interrupt request</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="logic" fp_name="/int8irq_wave_top/tb/irq_mei">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">irq_mei</obj_property>
+         <obj_property name="ObjectShortName">irq_mei</obj_property>
+         <obj_property name="CustomSignalColor">#FF55FF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="label">irq_mei</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/int8irq_wave_top/tb/dut/neorv32_inst/\core_complex_gen(0)\/core_complex_inst/cpu_inst/cpu_control_inst/irq_pnd[2]">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">[2]</obj_property>
+         <obj_property name="ObjectShortName">[2]</obj_property>
+         <obj_property name="CustomSignalColor">#FF55FF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="label">ctrl.irq_pnd[2]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/int8irq_wave_top/tb/dut/neorv32_inst/\core_complex_gen(0)\/core_complex_inst/cpu_inst/cpu_control_inst/irq_buf[2]">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">[2]</obj_property>
+         <obj_property name="ObjectShortName">[2]</obj_property>
+         <obj_property name="CustomSignalColor">#FF55FF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="label">ctrl.irq_buf[2]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group8">
+      <obj_property name="label">2 execute</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="other" fp_name="/int8irq_wave_top/tb/dut/neorv32_inst/\core_complex_gen(0)\/core_complex_inst/cpu_inst/cpu_control_inst/exec.state">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">.state</obj_property>
+         <obj_property name="ObjectShortName">.state</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="label">ctrl.exec.state</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/int8irq_wave_top/tb/dut/neorv32_inst/\core_complex_gen(0)\/core_complex_inst/cpu_inst/cpu_control_inst/exec.pc">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">.pc[31:0]</obj_property>
+         <obj_property name="ObjectShortName">.pc[31:0]</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+         <obj_property name="label">ctrl.exec.pc</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/int8irq_wave_top/tb/dut/neorv32_inst/\core_complex_gen(0)\/core_complex_inst/cpu_inst/cpu_control_inst/exec.ir">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">.ir[31:0]</obj_property>
+         <obj_property name="ObjectShortName">.ir[31:0]</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+         <obj_property name="label">ctrl.exec.ir</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/int8irq_wave_top/tb/dut/neorv32_inst/\core_complex_gen(0)\/core_complex_inst/cpu_inst/cpu_alu_inst/cpu_alu_cfu_enabled/cpu_alu_cfu_inst/start_i">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">start_i</obj_property>
+         <obj_property name="ObjectShortName">start_i</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="label">cfu.start_i</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/int8irq_wave_top/tb/dut/neorv32_inst/\core_complex_gen(0)\/core_complex_inst/cpu_inst/cpu_alu_inst/cpu_alu_cfu_enabled/cpu_alu_cfu_inst/valid_o">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">valid_o</obj_property>
+         <obj_property name="ObjectShortName">valid_o</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="label">cfu.valid_o</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/int8irq_wave_top/tb/dut/trace.valid">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">.valid</obj_property>
+         <obj_property name="ObjectShortName">.valid</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="label">trace.valid</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/int8irq_wave_top/tb/dut/trace.pc_rdata">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">.pc_rdata[31:0]</obj_property>
+         <obj_property name="ObjectShortName">.pc_rdata[31:0]</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+         <obj_property name="label">trace.pc_rdata</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group16">
+      <obj_property name="label">3 trap entry</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="logic" fp_name="/int8irq_wave_top/tb/dut/neorv32_inst/\core_complex_gen(0)\/core_complex_inst/cpu_inst/cpu_control_inst/irq_fire[0]">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">[0]</obj_property>
+         <obj_property name="ObjectShortName">[0]</obj_property>
+         <obj_property name="CustomSignalColor">#B58CFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="label">ctrl.irq_fire[0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/int8irq_wave_top/tb/dut/neorv32_inst/\core_complex_gen(0)\/core_complex_inst/cpu_inst/cpu_control_inst/env_enter">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">env_enter</obj_property>
+         <obj_property name="ObjectShortName">env_enter</obj_property>
+         <obj_property name="CustomSignalColor">#B58CFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="label">ctrl.env_enter</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/int8irq_wave_top/tb/p_ic_stb">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">p_ic_stb</obj_property>
+         <obj_property name="ObjectShortName">p_ic_stb</obj_property>
+         <obj_property name="CustomSignalColor">#B58CFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="label">p_ic_stb</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/int8irq_wave_top/tb/p_ic_ack">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">p_ic_ack</obj_property>
+         <obj_property name="ObjectShortName">p_ic_ack</obj_property>
+         <obj_property name="CustomSignalColor">#B58CFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="label">p_ic_ack</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/int8irq_wave_top/tb/dut/trace.intr">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">.intr</obj_property>
+         <obj_property name="ObjectShortName">.intr</obj_property>
+         <obj_property name="CustomSignalColor">#B58CFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="label">trace.intr</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group22">
+      <obj_property name="label">4 latency monitor</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="logic" fp_name="/int8irq_wave_top/tb/dut/mon_enabled/mon_inst/pend">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">pend</obj_property>
+         <obj_property name="ObjectShortName">pend</obj_property>
+         <obj_property name="CustomSignalColor">#20C0A0</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="label">mon.pend</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/int8irq_wave_top/tb/dut/mon_enabled/mon_inst/cnt">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">cnt[31:0]</obj_property>
+         <obj_property name="ObjectShortName">cnt[31:0]</obj_property>
+         <obj_property name="CustomSignalColor">#20C0A0</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="label">mon.cnt</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/int8irq_wave_top/tb/smp_valid">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">smp_valid</obj_property>
+         <obj_property name="ObjectShortName">smp_valid</obj_property>
+         <obj_property name="CustomSignalColor">#20C0A0</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="label">smp_valid</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/int8irq_wave_top/tb/smp_lat">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">smp_lat[31:0]</obj_property>
+         <obj_property name="ObjectShortName">smp_lat[31:0]</obj_property>
+         <obj_property name="CustomSignalColor">#20C0A0</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="label">smp_lat</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/int8irq_wave_top/tb/dut/mon_enabled/mon_inst/st_min">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">st_min[31:0]</obj_property>
+         <obj_property name="ObjectShortName">st_min[31:0]</obj_property>
+         <obj_property name="CustomSignalColor">#20C0A0</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="label">mon.st_min</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/int8irq_wave_top/tb/dut/mon_enabled/mon_inst/st_max">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">st_max[31:0]</obj_property>
+         <obj_property name="ObjectShortName">st_max[31:0]</obj_property>
+         <obj_property name="CustomSignalColor">#20C0A0</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="label">mon.st_max</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/int8irq_wave_top/tb/dut/mon_enabled/mon_inst/st_count">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">st_count[31:0]</obj_property>
+         <obj_property name="ObjectShortName">st_count[31:0]</obj_property>
+         <obj_property name="CustomSignalColor">#20C0A0</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="label">mon.st_count</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group30">
+      <obj_property name="label">5 gate</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="array" fp_name="/int8irq_wave_top/tb/dut/mon_enabled/mon_inst/bound">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">bound[31:0]</obj_property>
+         <obj_property name="ObjectShortName">bound[31:0]</obj_property>
+         <obj_property name="CustomSignalColor">#FFA0D0</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="label">mon.bound</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/int8irq_wave_top/tb/viol">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">viol</obj_property>
+         <obj_property name="ObjectShortName">viol</obj_property>
+         <obj_property name="CustomSignalColor">#FFA0D0</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="label">viol</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/int8irq_wave_top/tb/dut/mon_enabled/mon_inst/st_nviol">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">st_nviol[31:0]</obj_property>
+         <obj_property name="ObjectShortName">st_nviol[31:0]</obj_property>
+         <obj_property name="CustomSignalColor">#FFA0D0</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="label">mon.st_nviol</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

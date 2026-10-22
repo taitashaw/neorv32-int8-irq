@@ -1,0 +1,138 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_package.vhd" into library neorv32
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_sys.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_sys_reset'
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_sys_clock'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_prim.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_prim_fifo'
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_prim_spram'
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_prim_mul'
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_prim_cnt'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_cpu_decompressor.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_decompressor'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_cpu_frontend.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_frontend'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_cpu_control.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_control'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_cpu_hwtrig.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_hwtrig'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_cpu_counters.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_counters'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_cpu_alu_shifter.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_alu_shifter'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_cpu_alu_muldiv.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_alu_muldiv'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_cpu_alu_bitmanip.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_alu_bitmanip'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_cpu_alu_fpu.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_alu_fpu'
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_alu_fpu_normalizer'
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_alu_fpu_f2i'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_cpu_alu_cond.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_alu_cond'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_cpu_alu_crypto.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_alu_crypto'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_cpu_alu.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_alu'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_cpu_lsu.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_lsu'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_cpu_pmp.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_pmp'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_cpu_trace.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_trace'
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_trace_simlog'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_cpu.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_cache.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cache'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_bus.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_bus_switch'
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_bus_reg'
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_bus_gateway'
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_bus_io_switch'
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_bus_amo_rmw'
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_bus_amo_rvs'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_core_complex.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_core_complex'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_dma.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_dma'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_smc.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_smc'
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_smc_mac'
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_smc_phy'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_xbus.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_xbus'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_sdi.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_sdi'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_gpio.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_gpio'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_wdt.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_wdt'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_clint.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_clint'
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_clint_mtimecmp'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_uart.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_uart'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_spi.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_spi'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_twi.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_twi'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_twd.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_twd'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_pwm.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_pwm'
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_pwm_channel'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_trng.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_trng'
+INFO: [VRFC 10-3107] analyzing entity 'neoTRNG'
+INFO: [VRFC 10-3107] analyzing entity 'neoTRNG_cell'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_neoled.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_neoled'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_gptmr.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_gptmr'
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_gptmr_slice'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_onewire.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_onewire'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_slink.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_slink'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_tracer.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_tracer'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_sysinfo.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_sysinfo'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_debug_dtm.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_debug_dtm'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_debug_auth.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_debug_auth'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_debug_dm.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_debug_dm'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_top.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_top'
+INFO: [VRFC 10-163] Analyzing VHDL file "rtl/neorv32_cpu_alu_cfu.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_alu_cfu'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_cpu_regfile.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cpu_regfile'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_cache_ram.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cache_ram'
+INFO: [VRFC 10-163] Analyzing VHDL file "sim/images/int8_cfu/neorv32_imem_image.vhd" into library neorv32
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_imem.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_imem'
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_imem_rom'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_dmem.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_dmem'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_bootrom_image.vhd" into library neorv32
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_bootrom.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_bootrom'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/rtl/core/neorv32_cfs.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_cfs'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/sim/jtag_dmi_pkg.vhd" into library neorv32
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/sim/sim_uart_rx.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'sim_uart_rx'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/sim/xbus_memory.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'xbus_memory'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/sim/xbus_gateway.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'xbus_gateway'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/sim/xbus_fmem.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'xbus_fmem'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/sim/psram_model.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'psram_model'
+INFO: [VRFC 10-163] Analyzing VHDL file "neorv32/sim/neorv32_tb.vhd" into library neorv32
+INFO: [VRFC 10-3107] analyzing entity 'neorv32_tb'

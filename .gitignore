@@ -1,0 +1,10 @@
+xsim.dir/
+*.wdb
+*.vcd
+*.jou
+*.pb
+*.str
+.Xil/
+sim/gui_*/
+sw/build_*/
+build/vivado_bd/

@@ -1,0 +1,12 @@
+gate: log=sim/logs/xsim_fail_crit100.log
+gate: N_IRQ=2000 CRIT_N=100
+scenario     n   min   max     mean  bound headroom  result
+BASE      2000    13    34    14.38     63       29  PASS
+DIV       2001    33   119    78.19    127        8  PASS
+LDST      2000    15    90    61.17    139       49  PASS
+CRIT      2000    12   918   465.70    521     -397  FAIL
+B2B       2008    33    67    43.80    111       44  PASS
+ICOLD     2001    13   115    79.62    180       65  PASS
+note: CRIT: worst case 918 cycles exceeds bound 521 by 397 (885 of 2000 samples above the bound)
+GATE FAIL
+gate_fail_crit100 rc=1

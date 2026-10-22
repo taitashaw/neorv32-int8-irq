@@ -1,0 +1,9 @@
+{
+  "_comment": "Worst-case latency budgets in clock cycles for the DOT4 scenarios of the combined design, same formula as the profiler's scripts/bounds.json: L_max = S + 2T + E + 2R. Constants were read from the smoke-run VCD windows (sim/run_vcd_dot4_smoke, N_IRQ = 200) BEFORE the final run: S = 2 (irq_pnd and irq_buf registers), E = 9 (handler fetch hits the i-cache, profiler value), R = 20 (longest 64-byte line refill burst from IMEM seen: 18 to 20 cycles, sim/logs/dot4_constants_smoke.txt), T = longest commit-to-commit time of one instruction in the code that runs while the generator is on (sim/logs/instr_cycles_dot4_smoke_w2_dot4_irq.txt, sim/logs/instr_cycles_dot4_smoke_w3_dot4bb.txt). A DOT4ACC or SETACC itself takes 5 cycles commit to commit when its line is cached (CFU start to done = 2 cycles in all 9203 CFU operations of the windows).",
+  "DOT4":   133,
+  "DOT4BB": 101,
+  "_derivation": {
+    "DOT4":   "S + 2T + E + 2R = 2 + 2*41 + 9 + 40 (T = 41: first instruction of run_pass, addi sp,sp,-96 at 0x426, after the call when its line has to be refilled; the inner DOT4ACC loop itself has T = 30 at most, a DOT4ACC whose line was evicted by the handler)",
+    "DOT4BB": "S + 2T + E + 2R = 2 + 2*25 + 9 + 40 (T = 25: the SETACC at the top of the loop after the handler evicted the loop line; DOT4ACC 5 to 8)"
+  }
+}
