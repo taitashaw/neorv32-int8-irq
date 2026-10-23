@@ -3,7 +3,7 @@
 Line format (hex, 32-bit): <op> <rs1> <rs2> <expected rd>
 op: 0 = DOT4ACC, 1 = SETACC, 7 = illegal encoding (expects no valid pulse; acc unchanged).
 The reference model is plain Python integers, independent of the VHDL."""
-import random
+import os, random
 random.seed(20261020)
 M = 1 << 32
 def lanes(w):
@@ -46,7 +46,7 @@ for i in range(20000):
     r = random.random()
     a = random.getrandbits(32); b = random.getrandbits(32)
     emit(1 if r < 0.08 else (7 if r < 0.09 else 0), a, b)
-with open('../neorv32-int8-cfu/tb/cfu_vectors.txt', 'w') as f:
+with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cfu_vectors.txt'), 'w') as f:
     for op, a, b, e in out:
         f.write(f'{op:x} {a:08x} {b:08x} {e:08x}\n')
 print(len(out), 'vectors;', sum(1 for o in out if o[0] == 0), 'DOT4ACC,', sum(1 for o in out if o[0] == 1), 'SETACC,', sum(1 for o in out if o[0] == 7), 'illegal')

@@ -6,6 +6,7 @@
   "CRIT":  521,
   "B2B":   111,
   "ICOLD": 180,
+  "_b2b_note": "A later static cycle model of the B2B loop gives an upper bound of 118 cycles, above this budget of 111; the slowest B2B sample is 64 in sim/run_final and sim/run_restored and 67 in sim/run_final_serialmulshift and sim/run_fail_crit100 (2,008 to 2,009 samples per run). The budget is compiled into sw/irq_lat, and gate.py checks it against the bound each log reports, so raising it to 118 needs those runs repeated.",
   "_derivation": {
     "BASE":  "S + 2T + E + 2R = 2 + 2*6 + 9 + 40 (T = 6: ALU op after a taken branch)",
     "DIV":   "S + 2T + E + 2R = 2 + 2*38 + 9 + 40 (T = 38: serial divide)",

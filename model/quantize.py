@@ -15,10 +15,13 @@ Scheme (the C code and the CFU reproduce it bit for bit):
     first index wins on ties)
 Calibration set: x_test[0:500]. Exported test vectors: x_test[0:64].
 """
-import sys, json, h5py, numpy as np
+import os, sys, json, h5py, numpy as np
 
-D = '../hls4ml-fpga-classifier'
-OUT = '../neorv32-int8-cfu'
+# Inputs: the trained model and test data of https://github.com/taitashaw/hls4ml-fpga-classifier,
+# cloned next to this repo (or give its path as the first argument). Outputs go into this repo.
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+D = sys.argv[1] if len(sys.argv) > 1 else os.path.join(ROOT, '..', 'hls4ml-fpga-classifier')
+OUT = ROOT
 NVEC = 64
 CAL = slice(0, 500)
 

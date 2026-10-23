@@ -20,7 +20,7 @@ Everything here is measured in simulation (Vivado XSim 2025.2, Vitis HLS 2025.2 
 | Cycles per inference, plain software / with `DOT4ACC` | 118,146 / 35,795 (3.30x) |
 | Network outputs bit-exact (64 inputs, 320 values) | 320 of 320 |
 | Same, with 19,175 interrupts landing during inference and a handler that uses the INT8 unit | 320 of 320 |
-| Worst interrupt response during inference | 74 cycles (average 25.33, limit 133, gate PASS) |
+| Slowest observed interrupt response during inference | 74 cycles (average 25.33, limit 133, gate PASS) |
 | Same handler without the save | 0 of 320 right, 45 of 64 classes wrong (timing gate still PASS) |
 | Cost of the save/restore | `GETACC`: 33 LUTs and 1 flip-flop in the INT8 unit; 4 instructions, 20 cycles per interrupt |
 | Block design, 100 MHz, with bitstream | met, WNS +5.543 ns, 3,148 LUTs, 1,919 FFs, 6 BRAM tiles, 4 DSPs |
@@ -66,7 +66,7 @@ Two other options were measured:
 
 ![The slowest interrupt during inference, 74 cycles, XSim waveform](docs/figures/fig4_irqdot4_worst_74_cycles.png)
 
-*Figure 4. The 74-cycle worst case. The stopwatch runs from marker A (the first clock edge that sees `irq_mei`) to marker B (the first handler instruction completes): 740 ns, 74 ticks of 10 ns. Here, too, the request arrives during the previous interrupt's `mret`, and the cache fetches three 64-byte lines before B.*
+*Figure 4. The slowest observed answer, 74 cycles. The stopwatch runs from marker A (the first clock edge that sees `irq_mei`) to marker B (the first handler instruction completes): 740 ns, 74 ticks of 10 ns. Here, too, the request arrives during the previous interrupt's `mret`, and the cache fetches three 64-byte lines before B.*
 
 ## Same network as an hls4ml block
 
@@ -81,7 +81,7 @@ The two give the same 320 outputs, bit for bit (hls4ml RTL cosimulation on the 6
 
 ## Other interrupts, other clocks
 
-* Timer, software and fast interrupts: during inference the fastest answer is 12 cycles for each; worst cases 62 (external), 86 (timer, requests landing inside its own handler) and 65 (fast GPIO, 2 cycles of input synchroniser). With the instruction cache off every answer takes 12 to 23 cycles. A second CPU core sharing the instruction bus raises the first core's worst case from 23 to 30 cycles (cache off).
+* Timer, software and fast interrupts: during inference the fastest answer is 12 cycles for each; slowest observed 62 (external), 86 (timer, requests landing inside its own handler) and 65 (fast GPIO, 2 cycles of input synchroniser). With the instruction cache off every answer takes 12 to 23 cycles. A second CPU core sharing the instruction bus raises the first core's slowest observed answer from 23 to 30 cycles (cache off).
 * Static bounds: a worst-case bound built from instruction timings and cache refills, for the earlier handler: 86 cycles for the network scenario, against 82 measured with that handler and 74 with the final one. It is a model with a 2-cycle allowance taken from measurements, not a formal proof.
 * Faster clocks: block designs meet timing at 187.5 MHz (the closest the board's PS clock gets to 200) and, with a 3-stage INT8 unit, at 300 MHz (WNS +0.271 ns). The 3-stage unit costs 1,197 cycles per inference and does not have `GETACC` yet.
 * Power: Vivado estimates (confidence low, measured before `GETACC` was added) put the INT8 unit at 0.5 to 1.0 mW at 100 MHz; the Zynq PS dominates the 3.37 W total.
@@ -146,7 +146,7 @@ python3 scripts/gate.py sim/run_dot4_getacc/xsim.log sim/run_dot4_getacc/irq_sam
 vivado -mode batch -source scripts/build_bd.tcl     # block design and bitstream
 ```
 
-Expected numbers: `sim/logs/xsim_dot4_getacc.log` (320 of 320 outputs) and `sim/logs/gate_dot4_getacc.txt` (worst 74, average 25.33, bound 133). `scripts/build_dot4_sw.sh dot4_clobber 1 0` builds the handler without the save (all outputs wrong).
+Expected numbers: `sim/logs/xsim_dot4_getacc.log` (320 of 320 outputs) and `sim/logs/gate_dot4_getacc.txt` (max 74, mean 25.33, bound 133). `scripts/build_dot4_sw.sh dot4_clobber 1 0` builds the handler without the save (all outputs wrong).
 
 To open the pictures on your own screen: `scripts/open_view.sh` (block design, INT8 schematic and the 74-cycle waveform), or `scripts/open_view.sh all` for all seven.
 
