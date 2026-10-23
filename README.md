@@ -9,6 +9,10 @@ Together they answer a third question: what happens to the network and to interr
 
 Everything here is measured in simulation (Vivado XSim 2025.2, Vitis HLS 2025.2 cosimulation) and in Vivado 2025.2 implementation on the xczu7ev (ZCU104 board part). The run on the ZCU104 board is the next step.
 
+![NEORV32 as built in this repo: enabled CPU extensions, processor modules and the INT8 unit](docs/figures/fig1_processor.png)
+
+*Figure 1. The processor in this repo, NEORV32 v1.13.6, in the layout of NEORV32's own processor figure. Teal parts are built, grey parts are left out, the INT8 unit is the custom-instruction slot (`Xcfu`). The CPU reports its ISA as `rv32icmx_zca_zicntr_zicsr_zifencei_zkt_xcfu` and its modules as `IMEM-ROM DMEM I-CACHE XBUS UART0 SYSINFO` (`sim/run_dot4_getacc/xsim.log`). Boot mode 2 runs the program image pre-loaded in IMEM, so there is no bootloader ROM. The interfaces and board pins are in the table under figure 5.*
+
 ## Result
 
 | | Value |
@@ -43,9 +47,9 @@ addi sp, sp, 16
 mret
 ```
 
-![GETACC saves the running total and SETACC restores it, XSim waveform](docs/figures/fig1_getacc_save_restore.png)
+![GETACC saves the running total and SETACC restores it, XSim waveform](docs/figures/fig2_getacc_save_restore.png)
 
-*Figure 1. The interrupt of figure 2 (markers A and B are there), from the start of the handler (the yellow cursor, B) to the return. `cfu.acc` is 6 when the handler starts: the `DOT4ACC` the CPU completed before answering took it from -21 to 6. `GETACC` copies 6 (C) and it is stored on the stack (`trace.mem_wdata` 00000006). The handler's own `SETACC x0` sets the total to 0 (D). `SETACC t0` puts 6 back (E). The CPU is back in the network at 0x3f2 (F), and the next `DOT4ACC` adds to 6.*
+*Figure 2. The interrupt of figure 3 (markers A and B are there), from the start of the handler (the yellow cursor, B) to the return. `cfu.acc` is 6 when the handler starts: the `DOT4ACC` the CPU completed before answering took it from -21 to 6. `GETACC` copies 6 (C) and it is stored on the stack (`trace.mem_wdata` 00000006). The handler's own `SETACC x0` sets the total to 0 (D). `SETACC t0` puts 6 back (E). The CPU is back in the network at 0x3f2 (F), and the next `DOT4ACC` adds to 6.*
 
 Two other options were measured:
 * No new hardware: `DOT4ACC t0, x0, x0` (add zero, return the total) as the read works on the original unit. The run is byte-identical to the `GETACC` run. `GETACC` was kept because it says what it does.
@@ -53,16 +57,16 @@ Two other options were measured:
 
 ## What the INT8 instruction does to interrupt response
 
-![The slowest interrupt taken at a DOT4ACC, 50 cycles, XSim waveform](docs/figures/fig2_irqcfu_interrupt_at_dot4acc.png)
+![The slowest interrupt taken at a DOT4ACC, 50 cycles, XSim waveform](docs/figures/fig3_irqcfu_interrupt_at_dot4acc.png)
 
-*Figure 2. The slowest of the 2,674 interrupts the CPU took at a `DOT4ACC` (the last instruction it completed before the handler): 50 cycles. The request arrives (A) while the CPU is still returning from the previous interrupt (`ctrl.exec.pc` 0x814, `mret`) and waiting for the cache to fetch the code at 0x3ee. NEORV32 takes an interrupt only while an instruction executes (`neorv32_cpu_control.vhd`, `irq_fire`), so the `DOT4ACC` at 0x3ee runs first: `ctrl.irq_fire[0]` goes high as it starts, `cfu.start_i` and `cfu.valid_o` are 2 clock ticks apart, then `ctrl.env_enter`.*
+*Figure 3. The slowest of the 2,674 interrupts the CPU took at a `DOT4ACC` (the last instruction it completed before the handler): 50 cycles. The request arrives (A) while the CPU is still returning from the previous interrupt (`ctrl.exec.pc` 0x814, `mret`) and waiting for the cache to fetch the code at 0x3ee. NEORV32 takes an interrupt only while an instruction executes (`neorv32_cpu_control.vhd`, `irq_fire`), so the `DOT4ACC` at 0x3ee runs first: `ctrl.irq_fire[0]` goes high as it starts, `cfu.start_i` and `cfu.valid_o` are 2 clock ticks apart, then `ctrl.env_enter`.*
 
 * A `DOT4ACC` takes 5 cycles from one finished instruction to the next. An ordinary ALU instruction takes 2. The CPU never drops an instruction half way, so an interrupt taken at a `DOT4ACC` waits 3 cycles longer.
 * That is small next to the instruction cache. The slowest answer during inference, 74 cycles, spent 48 of them with the cache fetching code: 48 words, three 64-byte lines (`sim/logs/count_ic_irqdot4.log`). The cache has 4 lines of 64 bytes; the network code is 440 bytes and the handler competes with it.
 
-![The slowest interrupt during inference, 74 cycles, XSim waveform](docs/figures/fig3_irqdot4_worst_74_cycles.png)
+![The slowest interrupt during inference, 74 cycles, XSim waveform](docs/figures/fig4_irqdot4_worst_74_cycles.png)
 
-*Figure 3. The 74-cycle worst case. The stopwatch runs from marker A (the first clock edge that sees `irq_mei`) to marker B (the first handler instruction completes): 740 ns, 74 ticks of 10 ns. Here, too, the request arrives during the previous interrupt's `mret`, and the cache fetches three 64-byte lines before B.*
+*Figure 4. The 74-cycle worst case. The stopwatch runs from marker A (the first clock edge that sees `irq_mei`) to marker B (the first handler instruction completes): 740 ns, 74 ticks of 10 ns. Here, too, the request arrives during the previous interrupt's `mret`, and the cache fetches three 64-byte lines before B.*
 
 ## Same network as an hls4ml block
 
@@ -84,17 +88,31 @@ The two give the same 320 outputs, bit for bit (hls4ml RTL cosimulation on the 6
 
 ## The pieces
 
-![Vivado block design with the CPU, the INT8 unit and the stopwatch](docs/figures/fig4_block_design.png)
+![Vivado block design with the CPU, the INT8 unit and the stopwatch](docs/figures/fig5_block_design.png)
 
-*Figure 4. The block design: Zynq PS for the clock, the CPU with the INT8 unit (`DOT4ACC`, `SETACC` and `GETACC` are inside `riscv_brain_with_int8_math_helper`), an address switch, the stopwatch, a push button as the interrupt, LEDs and a UART. It validates, builds to a bitstream and meets 100 MHz with 5.543 ns to spare.*
+*Figure 5. The block design: Zynq PS for the clock, the CPU with the INT8 unit (`DOT4ACC`, `SETACC` and `GETACC` are inside `riscv_brain_with_int8_math_helper`), an address switch, the stopwatch, a push button as the interrupt, LEDs and a UART. It validates, builds to a bitstream and meets 100 MHz with 5.543 ns to spare.*
 
-![Elaborated schematic of the INT8 unit](docs/figures/fig5_cfu_schematic.png)
+How the processor of figure 1 connects to the rest of the block design:
 
-*Figure 5. The INT8 unit alone: four 8x8 multipliers, an adder tree, the running total and the `GETACC` read path.*
+| Interface | NEORV32 port | Direction | Connected to in the block design | ZCU104 pin |
+|---|---|---|---|---|
+| Clock, 100 MHz | `clk_i` | in | Zynq PS `pl_clk0` | inside the chip |
+| Reset | `rstn_i` | in | `reset_helper`; also drives `awake_led` | LED A5 |
+| Machine external interrupt | `irq_mei_i` | in | `doorbell_sync` (2 flip-flops) from `doorbell_button`; the same signal goes to the stopwatch and `doorbell_led` | button B4, LED D6 |
+| Trace | `trace_cpu0_o` | out | `trace_valid` (an instruction completed) and `trace_intr` (first instruction of a trap handler) to the stopwatch | inside the chip |
+| XBUS (Wishbone) | `xbus_*` | both | `address_switch`: 0xF00000xx to the stopwatch, any other address gets a bus error | inside the chip |
+| UART0 | `uart0_txd_o`, `uart0_rxd_i` | out, in | `uart_text_out`, `uart_text_in`; `talking_led` is the inverted send line | C19, A20, LED B5 |
+| Too slow | stopwatch output | out | `too_slow_led`, lights and stays lit once an answer goes past its limit | LED D5 |
 
-![One DOT4ACC instruction, XSim waveform](docs/figures/fig6_dot4ins_one_instruction.png)
+CPU and memory settings (generics in `rtl/bd/int8irq_bd_cpu.vhd`): single core, `C`, `M`, `Zicntr` and `Xcfu` on, fast multiply on DSPs (1 register stage), barrel shifter, 32 KB IMEM, 8 KB DMEM, 4-block x 64-byte instruction cache, no data cache, trace port on. The simulation top `rtl/int8_irq_top.vhd` has the same settings as its defaults; six of them are generics there so the comparison runs can turn off the INT8 unit, the stopwatch, the cache or the fast multiply and shift, or turn on the DMEM output register.
 
-*Figure 6. One `DOT4ACC` inside the full CPU simulation: weights (10, -12, 38, 98) times inputs (-50, 6, -17, -53) add -6,412 to the running total: `cfu.acc` goes from -3,113 to -9,525 when `cfu.valid_o` rises, 2 ticks after `cfu.start_i` (markers A and B).*
+![Elaborated schematic of the INT8 unit](docs/figures/fig6_cfu_schematic.png)
+
+*Figure 6. The INT8 unit alone: four 8x8 multipliers, an adder tree, the running total and the `GETACC` read path.*
+
+![One DOT4ACC instruction, XSim waveform](docs/figures/fig7_dot4ins_one_instruction.png)
+
+*Figure 7. One `DOT4ACC` inside the full CPU simulation: weights (10, -12, 38, 98) times inputs (-50, 6, -17, -53) add -6,412 to the running total: `cfu.acc` goes from -3,113 to -9,525 when `cfu.valid_o` rises, 2 ticks after `cfu.start_i` (markers A and B).*
 
 The check can fail: with interrupts held off twice as long, one answer takes 905 cycles against a limit of 521, and `viol` goes high and `mon.st_nviol` counts it. `scripts/open_view.sh fail` opens this waveform.
 

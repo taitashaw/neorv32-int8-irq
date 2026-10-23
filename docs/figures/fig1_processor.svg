@@ -1,0 +1,205 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1140" height="812" viewBox="0 0 1140 812">
+<defs><marker id="ah" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto-start-reverse"><path d="M0,1 L8,5 L0,9 z" fill="#4b5563"/></marker></defs>
+<rect width="1140" height="812" fill="#ffffff"/>
+<text x="252" y="36" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="22" font-weight="bold" fill="#111827" text-anchor="start">NEORV32 v1.13.6 as built in this repo</text>
+<text x="908" y="36" font-family="'DejaVu Sans Mono', Consolas, 'Liberation Mono', monospace" font-size="12" font-weight="normal" fill="#4b5563" text-anchor="end">rtl/bd/int8irq_bd_cpu.vhd</text>
+<rect x="252" y="52" width="656" height="680" rx="12" fill="#ffffff" stroke="#9ca3af" stroke-width="2"/>
+<rect x="266" y="66" width="464" height="254" rx="8" fill="#e6f4f1" stroke="#0f766e" stroke-width="2"/>
+<text x="276" y="88" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" font-weight="bold" fill="#0f3d38" text-anchor="start">NEORV32 CPU (single core)</text>
+<text x="276" y="107" font-family="'DejaVu Sans Mono', Consolas, 'Liberation Mono', monospace" font-size="12" font-weight="normal" fill="#0f3d38" text-anchor="start">rv32icmx_zca_zicntr_zicsr_zifencei_zkt_xcfu</text>
+<rect x="276" y="118" width="52.87445887445887" height="24" rx="4" fill="#0f766e" stroke="#0f766e" stroke-width="1.2"/>
+<text x="302.43722943722946" y="135" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">RV32</text>
+<rect x="333.87445887445887" y="118" width="27.290043290043286" height="24" rx="4" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
+<text x="347.5194805194805" y="135" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#5f6672" text-anchor="middle">A</text>
+<rect x="366.16450216450215" y="118" width="27.290043290043286" height="24" rx="4" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
+<text x="379.8095238095238" y="135" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#5f6672" text-anchor="middle">B</text>
+<rect x="398.45454545454544" y="118" width="27.290043290043286" height="24" rx="4" fill="#0f766e" stroke="#0f766e" stroke-width="1.2"/>
+<text x="412.0995670995671" y="135" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">C</text>
+<rect x="430.7445887445887" y="118" width="27.290043290043286" height="24" rx="4" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
+<text x="444.38961038961037" y="135" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#5f6672" text-anchor="middle">E</text>
+<rect x="463.034632034632" y="118" width="27.290043290043286" height="24" rx="4" fill="#0f766e" stroke="#0f766e" stroke-width="1.2"/>
+<text x="476.67965367965365" y="135" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">I</text>
+<rect x="495.3246753246753" y="118" width="27.290043290043286" height="24" rx="4" fill="#0f766e" stroke="#0f766e" stroke-width="1.2"/>
+<text x="508.96969696969694" y="135" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">M</text>
+<rect x="527.6147186147186" y="118" width="27.290043290043286" height="24" rx="4" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
+<text x="541.2597402597403" y="135" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#5f6672" text-anchor="middle">U</text>
+<rect x="559.9047619047619" y="118" width="27.290043290043286" height="24" rx="4" fill="#0f766e" stroke="#0f766e" stroke-width="1.2"/>
+<text x="573.5497835497836" y="135" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">X</text>
+<rect x="592.1948051948052" y="118" width="61.402597402597394" height="24" rx="4" fill="#0f766e" stroke="#0f766e" stroke-width="1.2"/>
+<text x="622.8961038961039" y="135" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">Zicsr</text>
+<rect x="658.5974025974026" y="118" width="61.402597402597394" height="24" rx="4" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
+<text x="689.2987012987013" y="135" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#5f6672" text-anchor="middle">Zfinx</text>
+<rect x="276" y="147" width="65.2987012987013" height="24" rx="4" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
+<text x="308.64935064935065" y="164" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#5f6672" text-anchor="middle">Zmmul</text>
+<rect x="346.2987012987013" y="147" width="74.36796536796537" height="24" rx="4" fill="#0f766e" stroke="#0f766e" stroke-width="1.2"/>
+<text x="383.48268398268397" y="164" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">Zicntr</text>
+<rect x="425.6666666666667" y="147" width="65.2987012987013" height="24" rx="4" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
+<text x="458.31601731601734" y="164" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#5f6672" text-anchor="middle">Zihpm</text>
+<rect x="495.965367965368" y="147" width="92.50649350649351" height="24" rx="4" fill="#0f766e" stroke="#0f766e" stroke-width="1.2"/>
+<text x="542.2186147186147" y="164" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">Zifencei</text>
+<rect x="593.4718614718615" y="147" width="74.36796536796537" height="24" rx="4" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
+<text x="630.6558441558442" y="164" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#5f6672" text-anchor="middle">Zicond</text>
+<rect x="672.8398268398269" y="147" width="47.160173160173166" height="24" rx="4" fill="#0f766e" stroke="#0f766e" stroke-width="1.2"/>
+<text x="696.4199134199134" y="164" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">Zca</text>
+<rect x="276" y="176" width="68.25339366515837" height="24" rx="4" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
+<text x="310.12669683257917" y="193" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#5f6672" text-anchor="middle">Sdext</text>
+<rect x="349.25339366515834" y="176" width="77.73303167420814" height="24" rx="4" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
+<text x="388.11990950226243" y="193" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#5f6672" text-anchor="middle">Sdtrig</text>
+<rect x="431.98642533936646" y="176" width="58.7737556561086" height="24" rx="4" fill="#f59e0b" stroke="#b45309" stroke-width="1.2"/>
+<text x="461.3733031674208" y="193" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1f2937" text-anchor="middle">Xcfu</text>
+<rect x="495.7601809954751" y="176" width="106.17194570135746" height="24" rx="4" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
+<text x="548.8461538461538" y="193" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#5f6672" text-anchor="middle">Smcntrpmf</text>
+<rect x="606.9321266968325" y="176" width="58.7737556561086" height="24" rx="4" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
+<text x="636.3190045248867" y="193" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#5f6672" text-anchor="middle">Zknh</text>
+<rect x="670.7058823529411" y="176" width="49.294117647058826" height="24" rx="4" fill="#0f766e" stroke="#0f766e" stroke-width="1.2"/>
+<text x="695.3529411764705" y="193" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">Zkt</text>
+<rect x="276" y="205" width="59.142857142857146" height="24" rx="4" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
+<text x="305.57142857142856" y="222" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#5f6672" text-anchor="middle">Zbkb</text>
+<rect x="340.1428571428571" y="205" width="59.142857142857146" height="24" rx="4" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
+<text x="369.71428571428567" y="222" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#5f6672" text-anchor="middle">Zbkc</text>
+<rect x="404.2857142857142" y="205" width="59.142857142857146" height="24" rx="4" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
+<text x="433.8571428571428" y="222" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#5f6672" text-anchor="middle">Zbkx</text>
+<rect x="468.42857142857133" y="205" width="68.6820276497696" height="24" rx="4" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
+<text x="502.7695852534561" y="222" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#5f6672" text-anchor="middle">Smpmp</text>
+<rect x="542.1105990783409" y="205" width="49.603686635944705" height="24" rx="4" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
+<text x="566.9124423963133" y="222" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#5f6672" text-anchor="middle">Zkn</text>
+<rect x="596.7142857142856" y="205" width="59.142857142857146" height="24" rx="4" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
+<text x="626.2857142857141" y="222" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#5f6672" text-anchor="middle">Zkne</text>
+<rect x="660.8571428571427" y="205" width="59.142857142857146" height="24" rx="4" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
+<text x="690.4285714285712" y="222" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#5f6672" text-anchor="middle">Zknd</text>
+<rect x="276" y="234" width="45.63948497854077" height="24" rx="4" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
+<text x="298.81974248927037" y="251" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#5f6672" text-anchor="middle">Zba</text>
+<rect x="326.6394849785408" y="234" width="45.63948497854077" height="24" rx="4" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
+<text x="349.45922746781116" y="251" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#5f6672" text-anchor="middle">Zbb</text>
+<rect x="377.2789699570816" y="234" width="45.63948497854077" height="24" rx="4" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
+<text x="400.09871244635195" y="251" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#5f6672" text-anchor="middle">Zbc</text>
+<rect x="427.9184549356224" y="234" width="45.63948497854077" height="24" rx="4" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
+<text x="450.73819742489275" y="251" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#5f6672" text-anchor="middle">Zbs</text>
+<rect x="478.55793991416317" y="234" width="63.1931330472103" height="24" rx="4" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
+<text x="510.1545064377683" y="251" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#5f6672" text-anchor="middle">Zimop</text>
+<rect x="546.7510729613734" y="234" width="45.63948497854077" height="24" rx="4" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
+<text x="569.5708154506439" y="251" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#5f6672" text-anchor="middle">Zks</text>
+<rect x="597.3905579399142" y="234" width="54.41630901287554" height="24" rx="4" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
+<text x="624.5987124463519" y="251" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#5f6672" text-anchor="middle">Zksh</text>
+<rect x="656.8068669527897" y="234" width="63.1931330472103" height="24" rx="4" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
+<text x="688.4034334763949" y="251" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#5f6672" text-anchor="middle">Zksed</text>
+<rect x="276" y="263" width="77.31764705882354" height="24" rx="4" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
+<text x="314.6588235294118" y="280" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#5f6672" text-anchor="middle">Zibi</text>
+<rect x="358.3176470588235" y="263" width="89.78823529411765" height="24" rx="4" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
+<text x="403.21176470588233" y="280" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#5f6672" text-anchor="middle">Zaamo</text>
+<rect x="453.1058823529412" y="263" width="102.25882352941176" height="24" rx="4" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
+<text x="504.2352941176471" y="280" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#5f6672" text-anchor="middle">Zalrsc</text>
+<rect x="560.364705882353" y="263" width="64.84705882352941" height="24" rx="4" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
+<text x="592.7882352941176" y="280" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#5f6672" text-anchor="middle">Zcb</text>
+<rect x="630.2117647058824" y="263" width="89.78823529411765" height="24" rx="4" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
+<text x="675.1058823529412" y="280" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#5f6672" text-anchor="middle">Zcmop</text>
+<text x="276" y="310" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#0f3d38" text-anchor="start">Tuning: fast multiply (DSP), fast shift (barrel), trace port</text>
+<rect x="740" y="66" width="148" height="148" rx="8" fill="#f59e0b" stroke="#b45309" stroke-width="2"/>
+<text x="814.0" y="88" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1f2937" text-anchor="middle">INT8 unit (Xcfu)</text>
+<text x="814.0" y="109" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#1f2937" text-anchor="middle">added in this repo</text>
+<text x="814.0" y="130" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#1f2937" text-anchor="middle">DOT4ACC: 4 INT8</text>
+<text x="814.0" y="151" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#1f2937" text-anchor="middle">products + total</text>
+<text x="814.0" y="172" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#1f2937" text-anchor="middle">SETACC: set total</text>
+<text x="814.0" y="193" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#1f2937" text-anchor="middle">GETACC: read total</text>
+<rect x="740" y="224" width="148" height="40" rx="6" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="814.0" y="242" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#5f6672" text-anchor="middle">On-chip debugger</text>
+<text x="814.0" y="257" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" fill="#5f6672" text-anchor="middle">(OCD, JTAG)</text>
+<rect x="740" y="274" width="148" height="46" rx="6" fill="#0f766e" stroke="#0f766e" stroke-width="1.5"/>
+<text x="814.0" y="294" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">CPU trace port</text>
+<text x="814.0" y="310" font-family="'DejaVu Sans Mono', Consolas, 'Liberation Mono', monospace" font-size="11" font-weight="normal" fill="#ffffff" text-anchor="middle">TRACE_PORT_EN</text>
+<rect x="266" y="334" width="148" height="46" rx="6" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="340.0" y="363" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="normal" fill="#5f6672" text-anchor="middle">SMC</text>
+<rect x="424" y="334" width="148" height="46" rx="6" fill="#0f766e" stroke="#0f766e" stroke-width="1.5"/>
+<text x="498.0" y="354" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">Bus System</text>
+<text x="498.0" y="371" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#ffffff" text-anchor="middle">always built</text>
+<rect x="582" y="334" width="148" height="46" rx="6" fill="#0f766e" stroke="#0f766e" stroke-width="1.5"/>
+<text x="656.0" y="354" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">Clock &amp; Reset</text>
+<text x="656.0" y="371" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#ffffff" text-anchor="middle">always built</text>
+<rect x="740" y="334" width="148" height="46" rx="6" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="814.0" y="363" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="normal" fill="#5f6672" text-anchor="middle">SPI</text>
+<rect x="266" y="389" width="148" height="46" rx="6" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="340.0" y="418" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="normal" fill="#5f6672" text-anchor="middle">SLINK</text>
+<rect x="424" y="389" width="148" height="46" rx="6" fill="#0f766e" stroke="#0f766e" stroke-width="1.5"/>
+<text x="498.0" y="409" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">IMEM</text>
+<text x="498.0" y="426" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#ffffff" text-anchor="middle">32 KB, pre-loaded</text>
+<rect x="582" y="389" width="148" height="46" rx="6" fill="#0f766e" stroke="#0f766e" stroke-width="1.5"/>
+<text x="656.0" y="409" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">I-CACHE</text>
+<text x="656.0" y="426" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#ffffff" text-anchor="middle">4 blocks x 64 B</text>
+<rect x="740" y="389" width="148" height="46" rx="6" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="814.0" y="418" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="normal" fill="#5f6672" text-anchor="middle">SDI</text>
+<rect x="266" y="444" width="148" height="46" rx="6" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="340.0" y="473" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="normal" fill="#5f6672" text-anchor="middle">TWI</text>
+<rect x="424" y="444" width="148" height="46" rx="6" fill="#0f766e" stroke="#0f766e" stroke-width="1.5"/>
+<text x="498.0" y="464" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">DMEM</text>
+<text x="498.0" y="481" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#ffffff" text-anchor="middle">8 KB</text>
+<rect x="582" y="444" width="148" height="46" rx="6" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="656.0" y="473" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="normal" fill="#5f6672" text-anchor="middle">D-CACHE</text>
+<rect x="740" y="444" width="148" height="46" rx="6" fill="#0f766e" stroke="#0f766e" stroke-width="1.5"/>
+<text x="814.0" y="464" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">UART0</text>
+<text x="814.0" y="481" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#ffffff" text-anchor="middle">console</text>
+<rect x="266" y="499" width="148" height="46" rx="6" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="340.0" y="528" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="normal" fill="#5f6672" text-anchor="middle">TWD</text>
+<rect x="424" y="499" width="148" height="46" rx="6" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="498.0" y="519" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="normal" fill="#5f6672" text-anchor="middle">BOOTROM</text>
+<text x="498.0" y="536" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#5f6672" text-anchor="middle">off: boot mode 2</text>
+<rect x="582" y="499" width="148" height="46" rx="6" fill="#0f766e" stroke="#0f766e" stroke-width="1.5"/>
+<text x="656.0" y="519" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">SYSINFO</text>
+<text x="656.0" y="536" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#ffffff" text-anchor="middle">always built</text>
+<rect x="740" y="499" width="148" height="46" rx="6" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="814.0" y="528" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="normal" fill="#5f6672" text-anchor="middle">UART1</text>
+<rect x="266" y="554" width="148" height="46" rx="6" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="340.0" y="583" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="normal" fill="#5f6672" text-anchor="middle">PWM</text>
+<rect x="424" y="554" width="148" height="46" rx="6" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="498.0" y="583" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="normal" fill="#5f6672" text-anchor="middle">TRNG</text>
+<rect x="582" y="554" width="148" height="46" rx="6" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="656.0" y="583" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="normal" fill="#5f6672" text-anchor="middle">CLINT</text>
+<rect x="740" y="554" width="148" height="46" rx="6" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="814.0" y="583" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="normal" fill="#5f6672" text-anchor="middle">ONEWIRE</text>
+<rect x="266" y="609" width="148" height="46" rx="6" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="340.0" y="638" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="normal" fill="#5f6672" text-anchor="middle">NEOLED</text>
+<rect x="424" y="609" width="148" height="46" rx="6" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="498.0" y="638" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="normal" fill="#5f6672" text-anchor="middle">GPTMR</text>
+<rect x="582" y="609" width="148" height="46" rx="6" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="656.0" y="638" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="normal" fill="#5f6672" text-anchor="middle">CFS</text>
+<rect x="740" y="609" width="148" height="46" rx="6" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="814.0" y="629" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="normal" fill="#5f6672" text-anchor="middle">TRACER</text>
+<text x="814.0" y="646" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#5f6672" text-anchor="middle">trace buffer</text>
+<rect x="266" y="664" width="148" height="46" rx="6" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="340.0" y="693" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="normal" fill="#5f6672" text-anchor="middle">GPIO</text>
+<rect x="424" y="664" width="148" height="46" rx="6" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="498.0" y="693" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="normal" fill="#5f6672" text-anchor="middle">WDT</text>
+<rect x="582" y="664" width="148" height="46" rx="6" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="656.0" y="693" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="normal" fill="#5f6672" text-anchor="middle">DMA</text>
+<rect x="740" y="664" width="148" height="46" rx="6" fill="#0f766e" stroke="#0f766e" stroke-width="1.5"/>
+<text x="814.0" y="684" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">XBUS</text>
+<text x="814.0" y="701" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#ffffff" text-anchor="middle">Wishbone</text>
+<text x="190" y="88" font-family="'DejaVu Sans Mono', Consolas, 'Liberation Mono', monospace" font-size="13" font-weight="bold" fill="#111827" text-anchor="end">clock &amp; reset</text>
+<text x="190" y="105" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#4b5563" text-anchor="end">100 MHz from the Zynq PS,</text>
+<text x="190" y="120" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#4b5563" text-anchor="end">reset_helper</text>
+<line x1="196" y1="92" x2="250" y2="92" stroke="#4b5563" stroke-width="2" marker-end="url(#ah)"/>
+<text x="190" y="166" font-family="'DejaVu Sans Mono', Consolas, 'Liberation Mono', monospace" font-size="13" font-weight="bold" fill="#111827" text-anchor="end">machine interrupt</text>
+<text x="190" y="183" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#4b5563" text-anchor="end">(MEI) push button</text>
+<text x="190" y="198" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#4b5563" text-anchor="end">through 2 flip-flops</text>
+<line x1="196" y1="170" x2="250" y2="170" stroke="#4b5563" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="910" y1="297.0" x2="954" y2="297.0" stroke="#4b5563" stroke-width="2" marker-end="url(#ah)"/>
+<text x="964" y="293.0" font-family="'DejaVu Sans Mono', Consolas, 'Liberation Mono', monospace" font-size="13" font-weight="bold" fill="#111827" text-anchor="start">trace</text>
+<text x="964" y="310.0" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#4b5563" text-anchor="start">trace_valid, trace_intr</text>
+<text x="964" y="325.0" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#4b5563" text-anchor="start">to the stopwatch</text>
+<line x1="910" y1="467.0" x2="954" y2="467.0" stroke="#4b5563" stroke-width="2" marker-end="url(#ah)" marker-start="url(#ah)"/>
+<text x="964" y="463.0" font-family="'DejaVu Sans Mono', Consolas, 'Liberation Mono', monospace" font-size="13" font-weight="bold" fill="#111827" text-anchor="start">UART</text>
+<text x="964" y="480.0" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#4b5563" text-anchor="start">uart_text_out / in pins;</text>
+<text x="964" y="495.0" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#4b5563" text-anchor="start">talking_led lights</text>
+<text x="964" y="510.0" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#4b5563" text-anchor="start">while text goes out</text>
+<line x1="910" y1="687.0" x2="954" y2="687.0" stroke="#4b5563" stroke-width="2" marker-end="url(#ah)" marker-start="url(#ah)"/>
+<text x="964" y="683.0" font-family="'DejaVu Sans Mono', Consolas, 'Liberation Mono', monospace" font-size="13" font-weight="bold" fill="#111827" text-anchor="start">Wishbone</text>
+<text x="964" y="700.0" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#4b5563" text-anchor="start">to address_switch:</text>
+<text x="964" y="715.0" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#4b5563" text-anchor="start">0xF00000xx = stopwatch,</text>
+<text x="964" y="730.0" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#4b5563" text-anchor="start">other addresses: bus error</text>
+<rect x="252" y="745" width="26" height="16" rx="3" fill="#0f766e" stroke="#0f766e" stroke-width="1.5"/>
+<text x="286" y="758" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#111827" text-anchor="start">NEORV32 part, built here</text>
+<rect x="474" y="745" width="26" height="16" rx="3" fill="#f59e0b" stroke="#b45309" stroke-width="1.5"/>
+<text x="508" y="758" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#111827" text-anchor="start">Added in this repo</text>
+<rect x="696" y="745" width="26" height="16" rx="3" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="730" y="758" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#111827" text-anchor="start">NEORV32 part, not built</text>
+<text x="252" y="786" font-family="'DejaVu Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#4b5563" text-anchor="start">Source: generics in rtl/bd/int8irq_bd_cpu.vhd; the CPU ISA and Processor Configuration lines NEORV32 prints in sim/run_dot4_getacc/xsim.log.</text>
+</svg>
